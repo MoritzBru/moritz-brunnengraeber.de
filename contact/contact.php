@@ -1,7 +1,6 @@
 <?php
 /*
 THIS FILE USES PHPMAILER INSTEAD OF THE PHP MAIL() FUNCTION
-AND ALSO SMTP TO SEND THE EMAILS
 */
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -26,15 +25,9 @@ $sendToName = 'Moritz Brunnengräber';
 // subject of the email
 $subject = 'Message from contact form on moritz-brunnengraeber.de';
 
-// smtp credentials and server
-
-$smtpHost = 'mxf9a3.netcup.net';
-$smtpUsername = 'contact@moritz-brunnengraeber.de';
-$smtpPassword = '1Uhb_22d';
-
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'email' => 'Email', 'message' => 'Message');
+$fields = array('name' => 'Name', 'email' => 'E-mail', 'message' => 'Message');
 
 // message that will be displayed when everything is OK :)
 $okMessage = 'Contact form successfully submitted. Thank you!';
@@ -54,7 +47,7 @@ try
 
     if(count($_POST) == 0) throw new \Exception('Form is empty');
 
-    $emailTextHtml = "<h1>You have a new message from your contact form</h1><hr>";
+    $emailTextHtml = "<h1>New message from the contact form on https://www.moritz-brunnengraeber.de/</h1><hr>";
     $emailTextHtml .= "<table>";
 
     foreach ($_POST as $key => $value) {
@@ -75,43 +68,11 @@ try
     $mail->isHTML(true);
 
     $mail->Subject = $subject;
-    $mail->Body    = $emailTextHtml;
     $mail->msgHTML($emailTextHtml); // this will also create a plain-text version of the HTML email, very handy
 
 
-    $mail->isSMTP();
-
-    //Enable SMTP debugging
-    // 0 = off (for production use)
-    // 1 = client messages
-    // 2 = client and server messages
-    $mail->SMTPDebug = 2;
-    $mail->Debugoutput = 'html';
-
-    //Set the hostname of the mail server
-    // use
-    // $mail->Host = gethostbyname('smtp.gmail.com');
-    // if your network does not support SMTP over IPv6
-    $mail->Host = gethostbyname($smtpHost);
-
-    //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-    $mail->Port = 587;
-
-    //Set the encryption system to use - ssl (deprecated) or tls
-    $mail->SMTPSecure = 'tls';
-
-    //Whether to use SMTP authentication
-    $mail->SMTPAuth = true;
-
-    //Username to use for SMTP authentication - use full email address for gmail
-    $mail->Username = $smtpHost;
-
-    //Password to use for SMTP authentication
-    $mail->Password = $smtpPassword;
-
-
     if(!$mail->send()) {
-        throw new \Exception('Could not send email.' . $mail->ErrorInfo);
+        throw new \Exception('I could not send the email. ' . $mail->ErrorInfo);
     }
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
