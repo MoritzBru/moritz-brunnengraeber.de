@@ -27,7 +27,7 @@ $(function () {
 
         // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
-            var url = "/contact/contact.php";
+            var url = "contact/contact.php";
 
             // POST values in the background the the script URL
             $.ajax({
