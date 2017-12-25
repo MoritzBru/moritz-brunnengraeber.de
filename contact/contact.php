@@ -60,7 +60,8 @@ try
 
     $mail = new PHPMailer;
 
-    $mail->CharSet("UTF-8");
+    $mail->CharSet = "UTF-8";
+    
     $mail->setFrom($fromEmail, $fromName);
     $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
     $mail->addReplyTo($_POST[email]);
