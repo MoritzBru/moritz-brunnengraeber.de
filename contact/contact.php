@@ -47,8 +47,8 @@ try
 
     if(count($_POST) == 0) throw new \Exception('Form is empty');
 
-    $emailTextHtml = "<h1>New message</h1>";
-    $emailTextHtml .= "<p>You got a new message from the contact your form on https://www.moritz-brunnengraeber.de/</p><hr>";
+    $emailTextHtml = "<h2>New message</h2>";
+    $emailTextHtml .= "<p>Here is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
 
     foreach ($_POST as $key => $value) {
         // If the field exists in the $fields array, include it in the email
@@ -56,12 +56,12 @@ try
             $emailTextHtml .= "<h3>$fields[$key]</h3><p>$value</p>";
         }
     }
-    $emailTextHtml .= "<p>Have a nice day!</p><p>Cheers,<br>Moritz</p>";
+    $emailTextHtml .= "<hr><p>Cheers</p>";
 
     $mail = new PHPMailer;
 
     $mail->CharSet = "UTF-8";
-    
+
     $mail->setFrom($fromEmail, $fromName);
     $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
     $mail->addReplyTo($_POST[email]);
