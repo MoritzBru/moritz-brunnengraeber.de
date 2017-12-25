@@ -1,0 +1,17 @@
+// Bootstrap overrides for this template
+.btn {
+  font-family: $font-family-sans-serif;
+  cursor: pointer;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+}
+
+.card-img-top {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.input-group-addon {
+  padding: $input-btn-padding-y $input-btn-padding-x $input-btn-padding-y $input-btn-padding-x-lg;
+}

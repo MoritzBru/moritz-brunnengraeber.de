@@ -1,0 +1,353 @@
+// Moe's Custom stuff
+
+// =============================================================================
+// Misc
+
+.load-invisible {
+  display:none;
+}
+
+// hide every sr class (scroll reveal or screen reader)
+[class*='sr-'] {
+  visibility: hidden;
+}
+
+img,
+.no-select {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+// =============================================================================
+// Navbar
+
+.navbar-nav {
+  text-align: center;
+}
+
+// Navbar Toggle
+$timing: 0.2s;
+
+.navbar-toggler {
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  cursor: pointer;
+  overflow: visible;
+
+  &:hover, &:focus {
+    outline: 0;
+
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      background-color: $primary;
+    }
+  }
+
+  .hamburger-box {
+    width: 32px;
+    height: 1em;
+    display: inline-block;
+    position: relative;
+  }
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+
+    &, &::before, &::after {
+      width: 32px;
+      height: 4px;
+      background-color: $gray-800;
+      border-radius: 4px;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: $timing;
+      transition-timing-function: ease;
+    }
+    &::before, &::after {
+      content: "";
+      display: block;
+    }
+    &::before {
+      top: -0.5em;
+    }
+    &::after {
+      bottom: -0.5em;
+    }
+  }//hamburger-inner
+
+  &:not(.collapsed) {
+    .hamburger-inner {
+      transform: rotate(45deg);
+      transition-delay: $timing;
+      transition-timing-function: ease;
+      &::before {
+        top: 0;
+        opacity: 0;
+        transition: top $timing ease, opacity 0.01s $timing ease;
+      }
+      &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom $timing ease, transform $timing $timing ease;
+      }
+    }
+  }//not collapsed
+
+  &.collapsed {
+    .hamburger-inner {
+      transition-duration: $timing;
+      transition-timing-function: ease;
+      &::before {
+        transition: top $timing $timing ease, opacity $timing $timing ease;
+        }
+      &::after {
+        transition: bottom $timing $timing ease, transform $timing ease;
+      }
+    }
+  }//collapsed
+}//navbar-toggler
+
+
+// =============================================================================
+// Particles
+
+#bg-particle {
+  // position: absolute;
+  // width: 100%;
+  // box-sizing: border-box;
+  // height: calc(100% - 57px);
+  // min-height: calc(650px - 57px);
+  // top: 57px;
+  position: fixed;
+  width: 100vw;
+  height: calc(100vh);
+  // top: 57px;
+  z-index: -10;
+  background-color: $gray-800;
+  background-image: linear-gradient(to bottom, $gray-700, $gray-900);
+  // @media (min-width: 992px) {
+  //   height: 100%;
+  //   min-height: 650px;
+  //   top: 0;
+  // }
+}
+
+// =============================================================================
+// Masthead
+
+.header-image {
+  width: 70%;
+  height: auto;
+  max-width: 300px;
+}
+
+$header-shadow-color: rgba(0,0,0,0.5);
+$header-text-shadow-blur: 5px;
+
+.header-box-shadow {
+  box-shadow: 0 0 10px 5px $header-shadow-color;
+}
+
+.header-text-shadow {
+  text-shadow:
+    1px 1px $header-text-shadow-blur $header-shadow-color,
+    1px -1px $header-text-shadow-blur $header-shadow-color,
+    -1px 1px $header-text-shadow-blur $header-shadow-color,
+    -1px -1px $header-text-shadow-blur $header-shadow-color,
+}
+
+
+// =============================================================================
+// Google maps
+
+#google_map {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+// =============================================================================
+// Textarea
+
+$text-area-border-radius: 0.75em;
+.textarea {
+  border-top-right-radius: $text-area-border-radius;
+  border-bottom-right-radius: $text-area-border-radius;
+  overflow: hidden;
+}
+.textarea-addon {
+  border-top-left-radius: $text-area-border-radius;
+  border-bottom-left-radius: $text-area-border-radius;
+}
+
+// =============================================================================
+// Background
+
+.bg-0 {
+  background: 0;
+}
+
+// background fixed gradient
+// @mixin bg-fixed-gradient($parent, $color) {
+//   #{$parent} {
+//     background: $color linear-gradient(0deg, darken($color, 15%), $color, lighten($color, 15%) ) repeat-x fixed !important;
+//   }
+// }
+// @each $color, $value in $theme-colors {
+//   @include bg-fixed-gradient('.bg-fixed-gradient-#{$color}', $value);
+// }
+
+// =============================================================================
+// Material icons
+
+@for $i from 1 through 5 {
+    .mdi-#{$i}x {
+      &.mdi::before {
+        font-size: #{$i}em;
+      }
+    }
+    .mdi-top-#{$i}px {
+      position: relative;
+      top: #{$i}px;
+    }
+  }
+
+.mdi-donkey-fix::before {
+  font-size: 29px !important;
+  top: 3px !important;
+}
+
+.mdi-lh1.mdi::before {
+  line-height: 1em;
+}
+
+.mdi::before {
+    font-size: 24px;
+    line-height: 14px;
+}
+.btn .mdi::before {
+    position: relative;
+    top: 2px;
+}
+.btn-xs .mdi::before {
+    font-size: 18px;
+    top: 3px;
+}
+.btn-sm .mdi::before {
+    font-size: 18px;
+    top: 3px;
+}
+.dropdown-menu .mdi {
+    width: 18px;
+}
+.dropdown-menu .mdi::before {
+    position: relative;
+    top: 4px;
+    left: -8px;
+}
+.nav .mdi::before {
+    position: relative;
+    top: 4px;
+}
+.navbar .navbar-toggle .mdi::before {
+    position: relative;
+    top: 4px;
+    color: #FFF;
+}
+.breadcrumb .mdi::before {
+    position: relative;
+    top: 4px;
+}
+.breadcrumb a:hover {
+    text-decoration: none;
+}
+.breadcrumb a:hover span {
+    text-decoration: underline;
+}
+.alert .mdi::before {
+    position: relative;
+    top: 4px;
+    margin-right: 2px;
+}
+.input-group-addon .mdi::before {
+    position: relative;
+    top: 3px;
+}
+.navbar-brand .mdi::before {
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+}
+.list-group-item .mdi::before {
+    position: relative;
+    top: 3px;
+    left: -3px
+}
+
+
+// =============================================================================
+// Fancybox
+.fancybox-toolbar {
+  top: 0.5em;
+  right: 0.5em;
+}
+.fancybox-button:focus {
+  outline: 0;
+}
+.fancybox-button:focus, .fancybox-button:hover {
+    color: $primary;
+}
+.fancybox-navigation button::before,
+.fancybox-button {
+  border-radius: 10em;
+}
+.fancybox-button--close:hover {
+  color: $danger;
+}
+.fancybox-infobar {
+  font-family: $font-family-monospace;
+  background: rgba(30,30,30,.6);
+  border-radius: 10em;
+  top: 0.5em;
+  left: 0.5em;
+}
+
+// =============================================================================
+// Social Icons
+.social-icon{
+  font-size: 2em;
+  color: $gray-100;
+  margin: 0 0.5em;
+  @include transition($transition-base);
+  &:hover, &:focus{
+    &.fb { color: #3b5998;}
+    &.gp { color: #dd4b39;}
+    &.mail { color: $gray-600}
+    &.tsc { color: #c33135;}
+  }
+  &:active{
+    &.fb { color: darken(#3b5998, 10%);}
+    &.gp { color: darken(#dd4b39, 10%);}
+    &.mail { color: darken($gray-600, 10%)}
+    &.tsc { color: darken(#c33135, 10%);}
+  }
+}
+
+// =============================================================================
+// Footer
+.list-footer {
+  font-family: $font-family-monospace;
+  font-size: 0.8em;
+  margin: 0 0.4em;
+  & a {
+    color: inherit;
+    border-bottom: dotted 1px;
+    &:focus, &:active, &:hover {
+      outline: 0;
+      border-bottom-color: $white;
+    }
+  }
+}

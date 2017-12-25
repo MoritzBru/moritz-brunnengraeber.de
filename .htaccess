@@ -1,0 +1,167 @@
+# Apache Server Configs v2.14.0 | MIT License
+# https://github.com/h5bp/server-configs-apache
+
+# (!) Using `.htaccess` files slows down Apache, therefore, if you have
+# access to the main server configuration file (which is usually called
+# `httpd.conf`), you should add this logic there.
+#
+# https://httpd.apache.org/docs/current/howto/htaccess.html.
+
+
+# ######################################################################
+# # ERRORS                                                             #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Custom error messages/pages                                        |
+# ----------------------------------------------------------------------
+
+# Customize what Apache returns to the client in case of an error.
+# https://httpd.apache.org/docs/current/mod/core.html#errordocument
+
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------------
+# | Error prevention                                                   |
+# ----------------------------------------------------------------------
+
+# Disable the pattern matching based on filenames.
+#
+# This setting prevents Apache from returning a 404 error as the result
+# of a rewrite when the directory with the same name does not exist.
+#
+# https://httpd.apache.org/docs/current/content-negotiation.html#multiviews
+
+Options -MultiViews
+
+
+# ######################################################################
+# # SECURITY                                                           #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | File access                                                        |
+# ----------------------------------------------------------------------
+
+# Block access to directories without a default document.
+#
+# You should leave the following uncommented, as you shouldn't allow
+# anyone to surf through every directory on your server (which may
+# includes rather private places such as the CMS's directories).
+
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to all hidden files and directories with the exception of
+# the visible content from within the `/.well-known/` hidden directory.
+#
+# These types of files usually contain user preferences or the preserved
+# state of an utility, and can include rather private places like, for
+# example, the `.git` or `.svn` directories.
+#
+# The `/.well-known/` directory represents the standard (RFC 5785) path
+# prefix for "well-known locations" (e.g.: `/.well-known/manifest.json`,
+# `/.well-known/keybase.txt`), and therefore, access to its visible
+# content should not be blocked.
+#
+# https://www.mnot.net/blog/2010/04/07/well-known
+# https://tools.ietf.org/html/rfc5785
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to files that can expose sensitive information.
+#
+# By default, block access to backup and source files that may be
+# left by some text editors and can pose a security risk when anyone
+# has access to them.
+#
+# http://feross.org/cmsploit/
+#
+# (!) Update the `<FilesMatch>` regular expression from below to
+# include any files that might end up on your production server and
+# can expose sensitive information about your website. These files may
+# include: configuration files, files that contain metadata about the
+# project (e.g.: project dependencies), build scripts, etc..
+
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
+
+    # Apache < 2.3
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+        Satisfy All
+    </IfModule>
+
+    # Apache ≥ 2.3
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# | Reducing MIME type security risks                                  |
+# ----------------------------------------------------------------------
+
+# Prevent some browsers from MIME-sniffing the response.
+#
+# This reduces exposure to drive-by download attacks and cross-origin
+# data leaks, and should be left uncommented, especially if the server
+# is serving user-uploaded content or content that could potentially be
+# treated as executable by the browser.
+#
+# http://www.slideshare.net/hasegawayosuke/owasp-hasegawa
+# http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx
+# https://msdn.microsoft.com/en-us/library/ie/gg622941.aspx
+# https://mimesniff.spec.whatwg.org/
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Server-side technology information                                 |
+# ----------------------------------------------------------------------
+
+# Remove the `X-Powered-By` response header that:
+#
+#  * is set by some frameworks and server-side languages
+#    (e.g.: ASP.NET, PHP), and its value contains information
+#    about them (e.g.: their name, version number)
+#
+#  * doesn't provide any value as far as users are concern,
+#    and in some cases, the information provided by it can
+#    be used by attackers
+#
+# (!) If you can, you should disable the `X-Powered-By` header from the
+# language / framework level (e.g.: for PHP, you can do that by setting
+# `expose_php = off` in `php.ini`)
+#
+# https://php.net/manual/en/ini.core.php#ini.expose-php
+
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Server software information                                        |
+# ----------------------------------------------------------------------
+
+# Prevent Apache from adding a trailing footer line containing
+# information about the server to the server-generated documents
+# (e.g.: error messages, directory listings, etc.)
+#
+# https://httpd.apache.org/docs/current/mod/core.html#serversignature
+
+ServerSignature Off

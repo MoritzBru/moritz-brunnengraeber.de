@@ -1,0 +1,131 @@
+// 404 animation
+$_404delay: 0.3s;
+$_404time: 5s alternate infinite;
+$_404color1: $primary;
+$_404color2: #a8a8a8;
+$_404color3: #545454;
+$_404percentage0: 10%;
+$_404percentage1: 30%;
+$_404percentage2: 50%;
+
+.text-mono{
+  font-family: $font-family-monospace;
+}
+
+// .body404 {
+//   border: 1em solid $secondary;
+//   min-height: 100vh;
+// }
+
+@keyframes _4moveUp {
+  #{$_404percentage0} {
+    transform: translateY(50%);
+  }
+  #{$_404percentage1},
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes _4moveUpscaleX {
+  #{$_404percentage0} {
+    transform-origin: right;
+    transform: translateY(25%) scaleX(0.5);
+  }
+  #{$_404percentage1} {
+    transform-origin: right;
+    transform: translateY(0) scaleX(0.5);
+  }
+  #{$_404percentage2},
+  100%
+   {
+    transform-origin: right;
+    transform: translateY(0) scaleX(1);
+  }
+}
+@keyframes _4scale {
+  #{$_404percentage0},
+  #{$_404percentage1} {
+    transform-origin: bottom right;
+    transform: scale(0);
+  }
+  #{$_404percentage2},
+  100% {
+    transform-origin: bottom right;
+    transform: scale(1);
+  }
+}
+@keyframes _0Scale05 {
+  #{$_404percentage0} {
+    transform-origin: bottom right;
+    transform: scale(0.5);
+  }
+  #{$_404percentage1},
+  100% {
+    transform-origin: bottom right;
+    transform:  scale(1);
+  }
+}
+@keyframes _0Scale0 {
+  #{$_404percentage0},
+  #{$_404percentage1} {
+    transform-origin: bottom right;
+    transform: scale(0);
+  }
+  #{$_404percentage2},
+  100% {
+    transform-origin: bottom right;
+    transform:  scale(1);
+  }
+}
+
+._4 {
+  width: 100%;
+  max-width: 256px;
+  .bottom {
+    fill: $_404color3;
+  }
+  .top {
+    fill: $_404color1;
+    transform: translateY(50%);
+    animation: _4moveUp $_404time;
+  }
+  .hz {
+    fill: $_404color2;
+    transform-origin: right;
+    transform: translateY(25%) scaleX(0.5);
+    animation: _4moveUpscaleX $_404time;
+  }
+  .slant {
+    fill: $_404color3;
+    transform-origin: bottom right;
+    transform: scale(0);
+    animation: _4scale $_404time;
+  }
+  &.delayed {
+    .slant, .hz, .top {
+      animation-delay: $_404delay*2;
+    }
+  }
+}
+
+._0 {
+  width: 100%;
+  max-width: 256px;
+  ._0_circle {
+    fill: $_404color2;
+    transform-origin: 128px 128px; //FIXME
+    transform: scale(0.5);
+    animation: _0Scale05 $_404time;
+  }
+  ._0_hightlight {
+    fill: $_404color1;
+    transform-origin: bottom right;
+    transform: scale(0);
+    animation: _0Scale0 $_404time;
+  }
+  &.delayed {
+    ._0_circle, ._0_hightlight {
+      animation-delay: $_404delay;
+    }
+  }
+}
