@@ -49,8 +49,10 @@ $(function () {
                     if (messageAlert && messageText) {
                         // inject the alert to .messages div in our form
                         $(form).find(".messages").html(alertBox);
-                        // empty the form
-                        $(form).reset();
+                        // empty the form if message was sent
+                        if (data.type == "success") {
+                          form.reset();
+                        }
                     }
                 }
             });
