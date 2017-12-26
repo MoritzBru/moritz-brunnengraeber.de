@@ -1,25 +1,27 @@
-(function($) {
-  "use strict"; // Start of use strict
+$(function () {
+  "use strict";
 
   // Autoresize textares
-  autosize($("textarea"));
+  autosize($('textarea'));
 
-  var form = $("#contact_form")[0];
+  var form = $('#contact_form')[0];
 
   // Custom JavaScript for Validation
-  form.addEventListener("submit", function(e) {
-    if (form.checkValidity() == false) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    form.classList.add("was-validated");
+  window.addEventListener("load", function() {
+    form.addEventListener("submit", function(event) {
+      if (form.checkValidity() == false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add("was-validated");
+    }, false); // on submit
+    form.addEventListener("reset", function(event) {
+      form.classList.remove("was-validated");
+    }, false); // on reset
+  }, false);
 
-    // if the validator does not prevent form submit
-    if (!e.defaultPrevented) {
-      var url = "contact/contact.php";
 
   // when the form is submitted
-
   $(form).on("submit", function (event) {
 
     // if the validator does not prevent form submit
@@ -55,5 +57,5 @@
       });
       return false;
     }
-  })
-});
+  }) // on submit
+}); // use strict
