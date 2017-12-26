@@ -15,6 +15,9 @@ $(function () {
     form.classList.add("was-validated");
   }, false); // on submit
   form.addEventListener("reset", function(e) {
+    form.reset();
+    var alertBox = "<div class='alert " + "alert-danger" + " alert-dismissable fade show'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>" + "test" + "</div>";
+    form.querySelector('.contact_response').innerHTML = alertBox;
     form.classList.remove("was-validated");
   }, false); // on reset
 
