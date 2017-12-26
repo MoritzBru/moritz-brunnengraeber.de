@@ -43,7 +43,7 @@ $(function () {
           // If we have messageAlert and messageText
           if (messageAlert && messageText) {
             // inject the alert to .messages div in our form
-            $(form).find(".messages").html(alertBox);
+            form.querySelector('.contact_response').innerHTML = alertBox;
             // empty the form if message was sent
             if (data.type == "success") {
               form.reset();
