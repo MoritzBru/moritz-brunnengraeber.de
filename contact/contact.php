@@ -53,6 +53,7 @@ try
     foreach ($_POST as $key => $value) {
         // If the field exists in the $fields array, include it in the email
         if (isset($fields[$key])) {
+            $value = nl2br($value);
             $emailTextHtml .= "<h3>$fields[$key]</h3><p>$value</p>";
         }
     }
