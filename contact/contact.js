@@ -20,11 +20,10 @@ $(function () {
 
 
   // when the form is submitted
-  // $(form).on("submit", function (e) {
   form.addEventListener("submit", function(e) {
 
     // if the validator does not prevent form submit
-    if (!e.isDefaultPrevented()) {
+    if (!e.defaultPrevented) {
       var url = "contact/contact.php";
 
       // POST values in the background the the script URL
