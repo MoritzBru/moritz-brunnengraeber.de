@@ -44,8 +44,10 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 try
 {
+    echo("<script>console.log('PHP: "count($_POST)"');</script>");
 
     if(count($_POST) == 0) throw new \Exception('Form is empty');
+
 
     $emailTextHtml = "<h2>New message</h2>";
     $emailTextHtml .= "<p>Here is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
