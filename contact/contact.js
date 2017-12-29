@@ -17,17 +17,17 @@ $( document ).ready(function() {
     }
     form.addClass("was-validated");
     if (!e.isDefaultPrevented()) {
-      e.preventDefault();
-      e.stopPropagation();
+      // e.preventDefault();
+      // e.stopPropagation();
       phpCommunication(form);
     }
-  }); // on submit
+  }, false); // on submit
 
   //reset
   form.on("reset", function(event) {
     form.removeClass("was-validated");
     form[0].reset();
-  }); // on reset
+  }, false); // on reset
 
 }); // document ready
 
@@ -60,6 +60,7 @@ function phpCommunication(form) {
           form[0].reset();
         }
       }
+      return false;
     }// succes
   });// ajax
 
