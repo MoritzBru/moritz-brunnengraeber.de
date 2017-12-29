@@ -17,7 +17,8 @@ $( document ).ready(function() {
     }
     form.addClass("was-validated");
     if (!e.isDefaultPrevented()) {
-      e.preventDefault;
+      e.preventDefault();
+      e.stopPropagation();
       phpCommunication(form);
     }
   }); // on submit
@@ -41,10 +42,11 @@ function phpCommunication(form) {
     url: url,
     data: $(form).serialize(),
     dataType: "json",
-    success: function (data) { // data = JSON object that contact.php returns
+    success: function (response) {
+      // data = JSON object that contact.php returns
 
-      var messageAlert = "alert-" + data.type;
-      var messageText = data.message;
+      var messageAlert = "alert-" + response.type;
+      var messageText = response.message;
 
       // Bootstrap alert box HTML
       var alertBox = "<div class='alert " + messageAlert + " alert-dismissable fade show'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>" + messageText + "</div>";
@@ -54,8 +56,8 @@ function phpCommunication(form) {
         // display the alert box
         form.find(".contact_response").html(alertBox);
         // empty the form if message was sent
-        if (data.type == "success") {
-          form.reset();
+        if (response.type == "success") {
+          form[0].reset();
         }
       }
     }// succes
