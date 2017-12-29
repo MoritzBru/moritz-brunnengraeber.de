@@ -53,8 +53,8 @@ try
     foreach ($_POST as $key => $value) {
       // If the field exists in the $fields array, include it in the email
       if (isset($fields[$key])) {
-        $value = nl2br($value);
-        $emailTextHtml .= "<h3>$fields[$key]</h3><p>$value</p>";
+        $value_ = nl2br($value);
+        $emailTextHtml .= "<h3>$fields[$key]</h3><p>$value_</p>";
       }
     }
     $emailTextHtml .= "<hr><p>Cheers</p>";
@@ -65,7 +65,7 @@ try
 
     $mail->setFrom($fromEmail, $fromName);
     $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
-    $mail->addReplyTo($_POST['email']);
+    $mail->addReplyTo($_POST["email"]);
 
     $mail->isHTML(true);
 
