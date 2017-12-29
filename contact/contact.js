@@ -17,8 +17,6 @@ $( document ).ready(function() {
     }
     form.addClass("was-validated");
     if (!e.isDefaultPrevented()) {
-      // e.preventDefault();
-      // e.stopPropagation();
       phpCommunication(form);
     }
     return false;
@@ -28,7 +26,6 @@ $( document ).ready(function() {
   form.on("reset", function(event) {
     form.removeClass("was-validated");
     form[0].reset();
-    return false;
   }); // on reset
 
 }); // document ready
@@ -64,6 +61,4 @@ function phpCommunication(form) {
       }
     }// succes
   });// ajax
-
-  return false;
 } // php communication
