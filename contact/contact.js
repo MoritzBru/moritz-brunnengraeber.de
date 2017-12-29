@@ -21,13 +21,15 @@ $( document ).ready(function() {
       // e.stopPropagation();
       phpCommunication(form);
     }
-  }, false); // on submit
+    return false;
+  }); // on submit
 
   //reset
   form.on("reset", function(event) {
     form.removeClass("was-validated");
     form[0].reset();
-  }, false); // on reset
+    return false;
+  }); // on reset
 
 }); // document ready
 
@@ -60,7 +62,6 @@ function phpCommunication(form) {
           form[0].reset();
         }
       }
-      return false;
     }// succes
   });// ajax
 
