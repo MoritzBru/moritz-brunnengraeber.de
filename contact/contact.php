@@ -44,20 +44,18 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 try
 {
-    echo("<script>console.log('PHP: "count($_POST)"');</script>");
+  if(count($_POST) == 0) throw new \Exception('Form is empty');
 
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
-
-
-    $emailTextHtml = "<h2>New message</h2>";
-    $emailTextHtml .= "<p>Here is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
+  
+  $emailTextHtml = "<h2>New message</h2>";
+  $emailTextHtml .= "<p>Here is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
 
     foreach ($_POST as $key => $value) {
-        // If the field exists in the $fields array, include it in the email
-        if (isset($fields[$key])) {
-            $value = nl2br($value);
-            $emailTextHtml .= "<h3>$fields[$key]</h3><p>$value</p>";
-        }
+      // If the field exists in the $fields array, include it in the email
+      if (isset($fields[$key])) {
+        $value = nl2br($value);
+        $emailTextHtml .= "<h3>$fields[$key]</h3><p>$value</p>";
+      }
     }
     $emailTextHtml .= "<hr><p>Cheers</p>";
 
@@ -76,27 +74,27 @@ try
 
 
     if(!$mail->send()) {
-        throw new \Exception('I could not send the email. ' . $mail->ErrorInfo);
+      throw new \Exception('I could not send the email. ' . $mail->ErrorInfo);
     }
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
-}
-catch (\Exception $e)
-{
+  }
+  catch (\Exception $e)
+  {
     // $responseArray = array('type' => 'danger', 'message' => $errorMessage);
     $responseArray = array('type' => 'danger', 'message' => $e->getMessage());
-}
+  }
 
 
-// if requested by AJAX request return JSON response
-if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+  // if requested by AJAX request return JSON response
+  if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
     $encoded = json_encode($responseArray);
 
     header('Content-Type: application/json');
 
     echo $encoded;
-}
-// else just display the message
-else {
+  }
+  // else just display the message
+  else {
     echo $responseArray['message'];
-}
+  }
