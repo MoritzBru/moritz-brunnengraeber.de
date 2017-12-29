@@ -342,7 +342,7 @@
                 <div class="input-group-text"><i class="fas fa-user"></i></div>
               </div>
               <input type="text" name="name" class="form-control" id="contact_name" placeholder="Name" required>
-              <div class="invalid-feedback">I want to know who wrote me.</div>
+              <div class="invalid-feedback ml-5">Name required! I want to know who wrote me.</div>
             </div>
           </div>
           <div class="form-group col-md-6">
@@ -352,7 +352,7 @@
                 <div class="input-group-text"><i class="fas fa-at"></i></div>
               </div>
               <input type="email" name="email" class="form-control" id="contact_email" placeholder="Email" required>
-              <div class="invalid-feedback">I need a valid email so that I can perhaps reply.</div>
+              <div class="invalid-feedback ml-5">Email required! I need a valid email so that I can perhaps reply.</div>
             </div>
           </div>
         </div>
@@ -360,10 +360,10 @@
           <label for="contact_textarea" class="sr-only">Message</label>
           <div class="input-group">
             <div class="input-group-prepend">
-              <div class="input-group-text"><i class="fas fa-comment-alt"></i></div>
+              <div class="input-group-text textarea-prepend"><i class="fas fa-comment-alt textarea-text-vertcenter"></i></div>
             </div>
-            <textarea name="message" class="form-control" id="contact_textarea" rows="5" placeholder="Message…" required></textarea>
-            <div class="invalid-feedback">Huh, I thought you were here to write me a message?!</div>
+            <textarea name="message" class="form-control textarea" id="contact_textarea" rows="5" placeholder="Message…" required></textarea>
+            <div class="invalid-feedback ml-5">Huh, I thought you were here to write me a message?!</div>
           </div>
         </div>
         <div class="form-row">

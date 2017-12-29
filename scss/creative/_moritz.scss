@@ -160,16 +160,22 @@ $header-text-shadow-blur: 5px;
 // =============================================================================
 // Textarea
 
-// $text-area-border-radius: 0.75em;
-// .textarea {
-//   border-top-right-radius: $text-area-border-radius;
-//   border-bottom-right-radius: $text-area-border-radius;
-//   overflow: hidden;
-// }
-// .textarea-prepend {
-//   border-top-left-radius: $text-area-border-radius;
-//   border-bottom-left-radius: $text-area-border-radius;
-// }
+$text-area-border-radius: 1em;
+.textarea {
+  border-top-right-radius: $text-area-border-radius !important;
+  border-bottom-right-radius: $text-area-border-radius !important;
+  overflow: hidden;
+}
+.textarea-prepend {
+  border-top-left-radius: $text-area-border-radius !important;
+  border-bottom-left-radius: $text-area-border-radius !important;
+}
+
+.textarea-text-vertcenter {
+  position: relative;
+  top: 50%;
+  transform: translateY(-100%);
+}
 
 // =============================================================================
 // Background
