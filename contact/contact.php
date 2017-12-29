@@ -44,9 +44,9 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 try
 {
-  if(count($_POST) == 0) throw new \Exception('Form is empty');
+  if(count($_POST) == 0) throw new \Exception("Form is empty");
 
-  
+
   $emailTextHtml = "<h2>New message</h2>";
   $emailTextHtml .= "<p>Here is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
 
@@ -65,7 +65,7 @@ try
 
     $mail->setFrom($fromEmail, $fromName);
     $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
-    $mail->addReplyTo($_POST[email]);
+    $mail->addReplyTo($_POST['email']);
 
     $mail->isHTML(true);
 
@@ -74,7 +74,7 @@ try
 
 
     if(!$mail->send()) {
-      throw new \Exception('I could not send the email. ' . $mail->ErrorInfo);
+      throw new \Exception("I could not send the email. " . $mail->ErrorInfo);
     }
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
@@ -87,14 +87,19 @@ try
 
 
   // if requested by AJAX request return JSON response
-  if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+  // if (
+  //   (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') ||
+  //   (!empty($_SERVER['X_REQUESTED_WITH']) && strtolower($_SERVER['X_REQUESTED_WITH']) == 'xmlhttprequest')
+  // ) {
     $encoded = json_encode($responseArray);
 
     header('Content-Type: application/json');
 
     echo $encoded;
-  }
+
+    exit;
+  // }
   // else just display the message
-  else {
-    echo $responseArray['message'];
-  }
+  // else {
+  //   echo $responseArray['message'];
+  // }

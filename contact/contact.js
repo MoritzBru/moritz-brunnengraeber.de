@@ -1,61 +1,65 @@
-$(function () {
-  "use strict";
+// Contact Form
 
-  // Autoresize textares
-  autosize($('textarea'));
+$( document ).ready(function() {
 
-  var form = $('#contact_form')[0];
+  // Autoresize Textarea
+  autosize($("textarea"));
 
-  // Custom JavaScript for Validation
-  window.addEventListener("load", function() {
-    form.addEventListener("submit", function(event) {
-      if (form.checkValidity() == false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add("was-validated");
-    }, false); // on submit
-    form.addEventListener("reset", function(event) {
-      form.classList.remove("was-validated");
-    }, false); // on reset
-  }, false);
+  // Contact Form
+  var form = $("#contact_form");
 
+  // submit
+  form.on("submit", function(e) {
 
-  // when the form is submitted
-  $(form).on("submit", function (event) {
-
-    // if the validator does not prevent form submit
-    if (!event.isDefaultPrevented()) {
-      var url = "contact/contact.php";
-
-      // POST values in the background the the script URL
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: $(this).serialize(),
-        success: function (data)
-        {
-          // data = JSON object that contact.php returns
-
-          // we recieve the type of the message: success x danger and apply it to the
-          var messageAlert = "alert-" + data.type;
-          var messageText = data.message;
-
-          // let's compose Bootstrap alert box HTML
-          var alertBox = "<div class='alert " + messageAlert + " alert-dismissable fade show'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>" + messageText + "</div>";
-
-          // If we have messageAlert and messageText
-          if (messageAlert && messageText) {
-            // inject the alert to .messages div in our form
-            $(form).find(".messages").html(alertBox);
-            // empty the form if message was sent
-            if (data.type == "success") {
-              form.reset();
-            }
-          }
-        }
-      });
-      return false;
+    if (form[0].checkValidity() == false) {
+      e.preventDefault();
+      e.stopPropagation();
     }
-  }) // on submit
-}); // use strict
+    form.addClass("was-validated");
+    if (!e.isDefaultPrevented()) {
+      e.preventDefault;
+      phpCommunication(form);
+    }
+  }); // on submit
+
+  //reset
+  form.on("reset", function(event) {
+    form.removeClass("was-validated");
+    form[0].reset();
+  }); // on reset
+
+}); // document ready
+
+
+// PHP communication
+function phpCommunication(form) {
+
+  var url = "contact/contact.php";
+
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: $(form).serialize(),
+    dataType: "json",
+    success: function (data) { // data = JSON object that contact.php returns
+
+      var messageAlert = "alert-" + data.type;
+      var messageText = data.message;
+
+      // Bootstrap alert box HTML
+      var alertBox = "<div class='alert " + messageAlert + " alert-dismissable fade show'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>" + messageText + "</div>";
+
+      // If we have messageAlert and messageText
+      if (messageAlert && messageText) {
+        // display the alert box
+        form.find(".contact_response").html(alertBox);
+        // empty the form if message was sent
+        if (data.type == "success") {
+          form.reset();
+        }
+      }
+    }// succes
+  });// ajax
+
+  return false;
+} // php communication
