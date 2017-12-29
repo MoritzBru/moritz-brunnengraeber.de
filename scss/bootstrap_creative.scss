@@ -1,9 +1,5 @@
 /*!
- * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- *
+ * Bootstrap
  * Adapted by Moritz Brunnengräber
  */
 
@@ -20,6 +16,10 @@ $font-family-sans-serif:      "Roboto", sans-serif;
 $font-family-serif:           "Roboto Slab", serif;
 $font-family-monospace:       "Roboto Mono", monospace;
 
+// Links
+$link-decoration:           none;
+$link-hover-decoration:     none;
+
 // Border radius
 $round-border-radius:         10em;
 
@@ -32,14 +32,7 @@ $input-border-radius-lg:      $round-border-radius;
 $input-border-radius-sm:      $round-border-radius;
 
 
-// Input focus color
-// $input-btn-focus-color:       rgba(#343a40, .25);
-
-
- // Links
- $link-decoration:           none;
- $link-hover-decoration:     none;
-
+// =============================================================================
 
 // Import bootstrap
 @import "bootstrap/bootstrap";

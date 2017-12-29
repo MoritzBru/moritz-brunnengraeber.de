@@ -115,24 +115,12 @@ $timing: 0.2s;
 // Particles
 
 #bg-particle {
-  // position: absolute;
-  // width: 100%;
-  // box-sizing: border-box;
-  // height: calc(100% - 57px);
-  // min-height: calc(650px - 57px);
-  // top: 57px;
   position: fixed;
   width: 100vw;
   height: calc(100vh);
-  // top: 57px;
   z-index: -10;
   background-color: $gray-800;
   background-image: linear-gradient(to bottom, $gray-700, $gray-900);
-  // @media (min-width: 992px) {
-  //   height: 100%;
-  //   min-height: 650px;
-  //   top: 0;
-  // }
 }
 
 // =============================================================================
@@ -172,16 +160,16 @@ $header-text-shadow-blur: 5px;
 // =============================================================================
 // Textarea
 
-$text-area-border-radius: 0.75em;
-.textarea {
-  border-top-right-radius: $text-area-border-radius;
-  border-bottom-right-radius: $text-area-border-radius;
-  overflow: hidden;
-}
-.textarea-addon {
-  border-top-left-radius: $text-area-border-radius;
-  border-bottom-left-radius: $text-area-border-radius;
-}
+// $text-area-border-radius: 0.75em;
+// .textarea {
+//   border-top-right-radius: $text-area-border-radius;
+//   border-bottom-right-radius: $text-area-border-radius;
+//   overflow: hidden;
+// }
+// .textarea-prepend {
+//   border-top-left-radius: $text-area-border-radius;
+//   border-bottom-left-radius: $text-area-border-radius;
+// }
 
 // =============================================================================
 // Background

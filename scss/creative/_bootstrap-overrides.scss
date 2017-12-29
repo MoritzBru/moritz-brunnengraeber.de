@@ -12,6 +12,6 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.input-group-addon {
-  padding: $input-btn-padding-y $input-btn-padding-x $input-btn-padding-y $input-btn-padding-x-lg;
+.input-group > .input-group-prepend > .input-group-text {
+  padding-left: $input-btn-padding-x-lg;
 }
