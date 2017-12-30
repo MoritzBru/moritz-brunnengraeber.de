@@ -23,7 +23,7 @@ $sendToEmail = 'mail@moritz-brunnengraeber.de';
 $sendToName = 'Moritz Brunnengräber';
 
 // subject of the email
-$subject = 'New message';
+$subject = 'New message from ';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
@@ -67,7 +67,7 @@ try
 
     $mail->isHTML(true);
 
-    $mail->Subject = $subject;
+    $mail->Subject = $subject . $_POST["name"];
     $mail->msgHTML($emailTextHtml); // this will also create a plain-text version of the HTML email, very handy
 
 
