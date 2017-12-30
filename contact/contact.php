@@ -46,9 +46,7 @@ try
 {
   if(count($_POST) == 0) throw new \Exception("Form is empty");
 
-
-  $emailTextHtml = "<h2>New message</h2>";
-  $emailTextHtml .= "<p>Here is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
+  $emailTextHtml = "<p>There is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
 
     foreach ($_POST as $key => $value) {
       // If the field exists in the $fields array, include it in the email
