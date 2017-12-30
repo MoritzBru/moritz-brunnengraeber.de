@@ -33,7 +33,7 @@ $fields = array('name' => 'Name', 'email' => 'E-mail', 'message' => 'Message');
 $okMessage = 'Contact form successfully submitted. Thank you!';
 
 // If something goes wrong, we will display this message.
-$errorMessage = 'There was an error while submitting the form. Please try again later';
+$errorMessage = 'There was an error while submitting the form. Please try again later.';
 
 /*
 *  LET'S DO THE SENDING
@@ -45,6 +45,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 try
 {
   if(count($_POST) == 0) throw new \Exception("Form is empty");
+  //if($_POST["name"] == "ErrorTest" && $_POST["email"] == "Error@Test") throw new \Exception("This is an Error Test");
 
   $emailTextHtml = "<p>There is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
 
@@ -72,7 +73,7 @@ try
 
 
     if(!$mail->send()) {
-      throw new \Exception("I could not send the email. " . $mail->ErrorInfo);
+      throw new \Exception($mail->ErrorInfo);
     }
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
@@ -80,7 +81,7 @@ try
   catch (\Exception $e)
   {
     // $responseArray = array('type' => 'danger', 'message' => $errorMessage);
-    $responseArray = array('type' => 'danger', 'message' => $e->getMessage());
+    $responseArray = array('type' => 'danger', 'message' => $errorMessage . "<br/>" . $e->getMessage());
   }
 
 
