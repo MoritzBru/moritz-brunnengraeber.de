@@ -45,7 +45,9 @@ error_reporting(E_ALL & ~E_NOTICE);
 try
 {
   if(count($_POST) == 0) throw new \Exception("Form is empty");
-  //if($_POST["name"] == "ErrorTest" && $_POST["email"] == "Error@Test") throw new \Exception("This is an Error Test");
+
+  // This is just for testing
+  if($_POST["name"] == "ErrorTest" && $_POST["email"] == "Error@Test") throw new \Exception("This is an Error Test");
 
   $emailTextHtml = "<p>There is a new message from the contact form on https://www.moritz-brunnengraeber.de/</p><hr>";
 
