@@ -90,22 +90,21 @@
 
   // Configure ScrollReveal now
   configScrollReveal()
-  // // Configure ScrollRevealon each resize
-  // $(window).resize(configScrollReveal);
+
+  //Function to check if browser id small/mobile (HACKY!!)
+  function isSmall(){
+      if ($('.navbar-toggler').css('display') == 'none' ){
+        return false
+      } else {
+        return true
+      }
+    }
+
 
   // Show elements that should load hidden
   $(document).ready(function() {
     $('.load-invisible').removeClass('load-invisible');
   });
-
-//Function to check if browser id small/mobile (HACKY!!)
-function isSmall(){
-    if ($('.navbar-toggler').css('display') == 'none' ){
-      return false
-    } else {
-      return true
-    }
-  }
 
 
   // Tooltip
@@ -134,11 +133,11 @@ function isSmall(){
                    '</button>',
     }
 	});
-  $('[data-fancybox=legal_notice]').fancybox({
+  $('[data-fancybox=panos]').fancybox({
     toolbar: true,
     buttons: ['close']
 	});
-  $('[data-fancybox=panos]').fancybox({
+  $('[data-fancybox=legal_notice]').fancybox({
     toolbar: true,
     buttons: ['close']
 	});
