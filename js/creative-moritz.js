@@ -137,7 +137,7 @@
     toolbar: true,
     buttons: ['close']
 	});
-  $('[data-fancybox=legal_notice]').fancybox({
+  $('[data-fancybox=legal-notice]').fancybox({
     toolbar: true,
     buttons: ['close']
 	});
