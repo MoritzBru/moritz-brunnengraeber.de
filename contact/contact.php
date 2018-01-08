@@ -15,7 +15,7 @@ require 'PHPMailer-master/src/SMTP.php';
 */
 
 // an email address that will be in the From field of the email.
-$fromEmail = 'mail@moritz-brunnengraeber.de';
+$fromEmail = 'contact@moritz-brunnengraeber.de';
 $fromName = 'Contact form';
 
 // an email address that will receive the email with the output of the form
