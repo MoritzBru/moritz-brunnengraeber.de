@@ -316,13 +316,16 @@ $text-area-border-radius: 1em;
   color: $gray-100;
   margin: 0 0.5em;
   @include transition($transition-base);
-  &:hover, &:focus{
+  &:hover, &:focus, &:active {
+    outline: 0;
+  }
+  &:hover, &:focus {
     &.fb { color: #3b5998;}
     &.gp { color: #dd4b39;}
     &.mail { color: $gray-600}
     &.tsc { color: #c33135;}
   }
-  &:active{
+  &:active {
     &.fb { color: darken(#3b5998, 10%);}
     &.gp { color: darken(#dd4b39, 10%);}
     &.mail { color: darken($gray-600, 10%)}
