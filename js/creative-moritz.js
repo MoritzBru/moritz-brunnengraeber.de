@@ -114,7 +114,7 @@
 
 
   // Fancybox
-  $('[data-fancybox=images]').fancybox({
+  $('[data-fancybox=fancybox-images]').fancybox({
 		loop: true,
 		toolbar: true,
 		protect: true,
@@ -133,11 +133,11 @@
                    '</button>',
     }
 	});
-  $('[data-fancybox=panos]').fancybox({
+  $('[data-fancybox=fancybox-panos]').fancybox({
     toolbar: true,
     buttons: ['close']
 	});
-  $('[data-fancybox=legal-notice]').fancybox({
+  $('[data-fancybox=fancybox-legal-notice]').fancybox({
     toolbar: true,
     buttons: ['close']
 	});
