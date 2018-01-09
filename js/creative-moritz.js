@@ -48,7 +48,7 @@
     var delay = isSmall() ? null : 200;
 
     sr.reveal(".sr-icons", {
-      duration: 600,
+      duration: 500,
       scale: 0.3,
       reset: true
     }, delay);
@@ -58,13 +58,29 @@
       reset: true
     }, delay);
     sr.reveal(".sr-buttons", {
-      duration: 600
+      duration: 500
     }, delay);
     sr.reveal(".sr-scroll-buttons", {
       origin: "top",
       distance: "1em",
       duration: 800,
       reset: true
+    });
+    sr.reveal(".sr-map", {
+      duration: 500,
+      scale: 0.9,
+      reset: true,
+      beforeReveal: function () {
+        for (var i = 0; i < window.mapmarkers.length; ++i) {
+          window.mapmarkers[i].setVisible(false);
+        }
+      },
+      afterReveal: function() {
+        for (var i = 0; i < window.mapmarkers.length; ++i) {
+          window.mapmarkers[i].setAnimation(google.maps.Animation.DROP);
+          window.mapmarkers[i].setVisible(true);
+        }
+      }
     });
     sr.reveal(".sr-left", {
       origin: "left",

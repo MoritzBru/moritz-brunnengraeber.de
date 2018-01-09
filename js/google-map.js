@@ -240,17 +240,17 @@ function initMap() {
     ];
 
   var icon_base = "../img/map/";
-  var map_markers = [
+  var map_markers_data = [
     {
       "name": "Technical University of Munich",
-      "description": "Where I work and study.",
+      "desc": "Where I work and study.",
       "pos": {lat: 48.1489, lng: 11.5675},
       "coords": "48°08'56\"N | 11°34'03\"E",
       "icon": icon_base + "tum_40.svg"
     },
     {
       "name": "Puchheim",
-      "description": "Where I live.",
+      "desc": "Where I live.",
       "pos": {lat: 48.1800, lng: 11.3736},
       "coords": "48°10'48\"N | 11°22'25\"E",
       "icon": icon_base + "home_40.svg"
@@ -278,21 +278,23 @@ function initMap() {
 
   map.fitBounds(bounds);
 
-  for (var i = 0; i < map_markers.length; ++i) {
-    var marker =  new google.maps.Marker({
-      position: map_markers[i].pos,
-      icon: map_markers[i].icon,
-      animation: google.maps.Animation.DROP,
+  window.mapmarkers = [];
+
+  for (var i = 0; i < map_markers_data.length; ++i) {
+    mapmarkers.push(new google.maps.Marker({
+      position: map_markers_data[i].pos,
+      icon: map_markers_data[i].icon,
       map: map
-    });
-    attachMessage(marker, map_markers[i].name, map_markers[i].coords, map_markers[i].description);
-  }
+    }));
+
+    attachMessage(mapmarkers[i], map_markers_data[i].name, map_markers_data[i].coords, map_markers_data[i].desc)
+
+  } // for map_markers_data
 
   function attachMessage(marker, MessageHead, MessageCoords, MessageBody) {
     var infowindow = new google.maps.InfoWindow({
-      content: "<h5 class='text-dark'>" + MessageHead + "</h5><p class='text-dark'>" + MessageCoords + "<br/>" + MessageBody + "</p>"
+      content: "<h5 class='text-dark'>" + MessageHead + "</h5><p class='text-dark text-monospace'>" + MessageCoords + "<br />" + MessageBody + "</p>"
     });
-
     marker.addListener("click", function() {
       infowindow.open(marker.get("map"), marker);
     });
