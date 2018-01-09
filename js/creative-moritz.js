@@ -55,7 +55,7 @@
     sr.reveal(".sr-cards", {
       duration: 500,
       scale: 0.5,
-      reset: true
+      reset: false
     }, delay);
     sr.reveal(".sr-buttons", {
       duration: 500
@@ -69,7 +69,7 @@
     sr.reveal(".sr-map", {
       duration: 500,
       scale: 0.9,
-      reset: true,
+      reset: false,
       beforeReveal: function () {
         try {
           window.mapmarkers.forEach(function(m) { m.setVisible(false); })
