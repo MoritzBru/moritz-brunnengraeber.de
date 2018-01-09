@@ -71,15 +71,15 @@
       scale: 0.9,
       reset: true,
       beforeReveal: function () {
-        for (var i = 0; i < window.mapmarkers.length; ++i) {
-          window.mapmarkers[i].setVisible(false);
-        }
+        try {
+          window.mapmarkers.forEach(function(m) { m.setVisible(false); })
+        } catch(err){}
       },
       afterReveal: function() {
-        for (var i = 0; i < window.mapmarkers.length; ++i) {
-          window.mapmarkers[i].setAnimation(google.maps.Animation.DROP);
-          window.mapmarkers[i].setVisible(true);
-        }
+        try {
+          window.mapmarkers.forEach(function(m) { m.setAnimation(google.maps.Animation.DROP); m.setVisible(true); })
+        } catch(err){}
+
       }
     });
     sr.reveal(".sr-left", {
