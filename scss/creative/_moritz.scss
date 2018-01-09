@@ -176,6 +176,9 @@ $text-area-border-radius: 1em;
   top: 50%;
   transform: translateY(-100%);
 }
+.textarea-text-vertcenter::before {
+  transform: translateY(-100%);
+}
 
 // =============================================================================
 // Background
@@ -266,7 +269,8 @@ $text-area-border-radius: 1em;
     top: 4px;
     margin-right: 2px;
 }
-.input-group-addon .mdi::before {
+.input-group-addon .mdi::before,
+.input-group-text .mdi::before {
     position: relative;
     top: 3px;
 }
