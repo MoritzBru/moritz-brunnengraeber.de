@@ -49,6 +49,31 @@
     gtag('config', 'UA-112171412-1');
   </script>
 
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#212529",
+          "text": "#ffffff"
+        },
+        "button": {
+          "background": "#ad1457"
+        }
+      },
+      "theme": "edgeless",
+      "content": {
+        "message": "We use cookies to ensure you get the best experience and to analyse the website usage. You can <a class='text-secondary' href='https://cookiesandyou.com/' target='_blank'>learn more about cookies</a> or <a class='text-secondary' href='#legal-notice'>read the legal notice</a>.",
+        "dismiss": "OK!",
+        "link": "",
+        "href": ""
+      },
+      "onPopupOpen": function() {document.querySelector(".cc-compliance").classList.add("compensate-for-scrollbar");} // fix fancybox
+    })});
+  </script>
 
 </head>
 
