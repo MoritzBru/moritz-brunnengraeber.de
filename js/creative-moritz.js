@@ -47,29 +47,35 @@
   var configScrollReveal = function() {
     var delay = isSmall() ? null : 200;
 
+    var dirs = ["left", "right", "top", "bottom"];
+    dirs.forEach(function(dir) {
+      sr.reveal(".sr-" + dir, {
+        origin: dir,
+        distance: "1rem",
+        duration: 800,
+        reset: true
+      });
+    });
+    sr.reveal(".sr-scroll-buttons", {
+      origin: "top",
+      distance: "1rem",
+      duration: 800,
+      reset: true
+    });
     sr.reveal(".sr-icons", {
       duration: 500,
       scale: 0.3,
       reset: true
     }, delay);
     sr.reveal(".sr-cards", {
-      duration: 500,
-      scale: 0.5,
-      reset: false
-    }, delay);
-    sr.reveal(".sr-buttons", {
-      duration: 500
-    }, delay);
-    sr.reveal(".sr-scroll-buttons", {
-      origin: "top",
-      distance: "1em",
-      duration: 800,
+      duration: 300,
+      scale: 0.7,
       reset: true
-    });
+    }, delay);
     sr.reveal(".sr-map", {
-      duration: 500,
-      scale: 0.9,
-      reset: false,
+      duration: 300,
+      scale: 0.7,
+      reset: true,
       beforeReveal: function () {
         try {
           window.mapmarkers.forEach(function(m) { m.setVisible(false); })
@@ -82,26 +88,10 @@
 
       }
     });
-    sr.reveal(".sr-left", {
-      origin: "left",
-      distance: "1em",
-      duration: 1000
-    });
-    sr.reveal(".sr-right", {
-      origin: "right",
-      distance: "1em",
-      duration: 1000
-    });
-    sr.reveal(".sr-top", {
-      origin: "top",
-      distance: "1em",
-      duration: 1000
-    });
-    sr.reveal(".sr-bottom", {
-      origin: "bottom",
-      distance: "1em",
-      duration: 1000
-    });
+    sr.reveal(".sr-buttons", {
+      duration: 500,
+      reset: true
+    }, delay);
   }
 
   // Configure ScrollReveal now
