@@ -45,7 +45,7 @@
   // Scroll reveal calls
   window.sr = ScrollReveal();
   var configScrollReveal = function() {
-    var delay = isSmall() ? 0 : 200;
+    var delay = isSmall() ? null : 200;
 
     sr.reveal(".sr-icons", {
       duration: 600,
@@ -82,7 +82,7 @@
       duration: 1000
     });
     sr.reveal(".sr-bottom", {
-      origin: "top",
+      origin: "bottom",
       distance: "1em",
       duration: 1000
     });
