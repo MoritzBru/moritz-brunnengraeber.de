@@ -264,7 +264,7 @@ function initMap() {
     west: 11.36
   };
 
-  var map = new google.maps.Map(document.getElementById('google_map'), {
+  var map = new google.maps.Map(document.getElementById("google_map"), {
     zoom: 10,
     center: {lat: 0, lng: 0},
     styles: dark_style,
@@ -293,8 +293,8 @@ function initMap() {
       content: "<h5 class='text-dark'>" + MessageHead + "</h5><p class='text-dark'>" + MessageCoords + "<br/>" + MessageBody + "</p>"
     });
 
-    marker.addListener('click', function() {
-      infowindow.open(marker.get('map'), marker);
+    marker.addListener("click", function() {
+      infowindow.open(marker.get("map"), marker);
     });
   }
 
