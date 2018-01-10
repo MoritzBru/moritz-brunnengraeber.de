@@ -78,12 +78,22 @@
       reset: true,
       beforeReveal: function () {
         try {
-          window.mapmarkers.forEach(function(m) { m.setVisible(false); })
+          window.mapmarkers.forEach(function(m) {
+            m.setVisible(false);
+          })
+          if (window.infowindow) {
+            window.infowindow.close();
+          }
         } catch(err){}
       },
       afterReveal: function() {
         try {
-          window.mapmarkers.forEach(function(m) { m.setAnimation(google.maps.Animation.DROP); m.setVisible(true); })
+          window.mapmarkers.forEach(function(m, idx) {
+            window.setTimeout(function() {
+              m.setAnimation(google.maps.Animation.DROP);
+              m.setVisible(true);
+            }, 200*idx);
+          })
         } catch(err){}
 
       }
