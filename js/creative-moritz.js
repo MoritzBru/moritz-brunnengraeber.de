@@ -136,15 +136,15 @@
 		protect: true,
 		buttons: ["close"],
     clickContent: false,
-    animationEffect : "zoom-in-out",
-    transitionEffect : "slide",
+    animationEffect: "zoom-in-out",
+    transitionEffect: "slide",
     btnTpl: {
-      arrowLeft : "<button data-fancybox-prev class='fancybox-button fancybox-button--arrow_left' title='{{PREV}}'>" +
+      arrowLeft: "<button data-fancybox-prev class='fancybox-button fancybox-button--arrow_left' title='{{PREV}}'>" +
                     "<svg viewBox='0 0 40 40'>" +
                       "<path d='M13,20,25,32,13,20,25,8,13,20'/>" +
                     "</svg>" +
                   "</button>",
-      arrowRight : "<button data-fancybox-next class='fancybox-button fancybox-button--arrow_right' title='{{NEXT}}'>" +
+      arrowRight: "<button data-fancybox-next class='fancybox-button fancybox-button--arrow_right' title='{{NEXT}}'>" +
                      "<svg viewBox='0 0 40 40'>" +
                       "<path d='M27,20,15,8,27,20,15,32,27,20'/>" +
                      "</svg>" +
@@ -155,13 +155,18 @@
     type: "iframe",
     toolbar: true,
     buttons: ["close"],
-    animationEffect : "zoom-in-out"
+    animationEffect: "zoom-in-out"
 	});
   $("[data-fancybox='fancybox-legal-notice']").fancybox({
     type: "iframe",
     toolbar: true,
     buttons: ["close"],
-    animationEffect : "zoom-in-out"
+    animationEffect: "zoom-in-out",
+    iframe: {
+      css: {
+        "max-width": "90%"
+      }
+  	}
 	});
 
 
