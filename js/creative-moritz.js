@@ -152,11 +152,13 @@
     }
 	});
   $("[data-fancybox='fancybox-panos']").fancybox({
+    type: "iframe",
     toolbar: true,
     buttons: ["close"],
     animationEffect : "zoom-in-out"
 	});
   $("[data-fancybox='fancybox-legal-notice']").fancybox({
+    type: "iframe",
     toolbar: true,
     buttons: ["close"],
     animationEffect : "zoom-in-out"
