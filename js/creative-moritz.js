@@ -164,7 +164,7 @@
     animationEffect: "zoom-in-out",
     iframe: {
       css: {
-        "max-width": "90%"
+        "max-width": "100%"
       }
   	}
 	});
