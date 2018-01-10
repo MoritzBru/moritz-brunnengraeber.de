@@ -130,13 +130,14 @@
 
 
   // Fancybox
-  $("[data-fancybox=fancybox-images]").fancybox({
+  $("[data-fancybox='fancybox-images']").fancybox({
 		loop: true,
 		toolbar: true,
 		protect: true,
 		buttons: ["close"],
     clickContent: false,
-    animationEffect : "zoom",
+    animationEffect : "zoom-in-out",
+    transitionEffect : "slide",
     btnTpl: {
       arrowLeft : "<button data-fancybox-prev class='fancybox-button fancybox-button--arrow_left' title='{{PREV}}'>" +
                     "<svg viewBox='0 0 40 40'>" +
@@ -150,13 +151,15 @@
                    "</button>",
     }
 	});
-  $("[data-fancybox=fancybox-panos]").fancybox({
+  $("[data-fancybox='fancybox-panos']").fancybox({
     toolbar: true,
-    buttons: ["close"]
+    buttons: ["close"],
+    animationEffect : "zoom-in-out"
 	});
-  $("[data-fancybox=fancybox-legal-notice]").fancybox({
+  $("[data-fancybox='fancybox-legal-notice']").fancybox({
     toolbar: true,
-    buttons: ["close"]
+    buttons: ["close"],
+    animationEffect : "zoom-in-out"
 	});
 
 
