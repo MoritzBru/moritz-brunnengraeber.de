@@ -124,7 +124,16 @@
   // Set up fullscreen mode, if supported.
   if (screenfull.enabled && data.settings.fullscreenButton) {
     document.body.classList.add('fullscreen-enabled');
-    fullscreenToggleElement.addEventListener('click', toggleFullscreen);
+    fullscreenToggleElement.addEventListener('click', function() {
+      screenfull.toggle();
+    });
+    screenfull.on('change', function() {
+      if (screenfull.isFullscreen) {
+        fullscreenToggleElement.classList.add('enabled');
+      } else {
+        fullscreenToggleElement.classList.remove('enabled');
+      }
+    });
   } else {
     document.body.classList.add('fullscreen-disabled');
   }
@@ -241,15 +250,6 @@
     } else {
       autorotateToggleElement.classList.add('enabled');
       startAutorotate();
-    }
-  }
-
-  function toggleFullscreen() {
-    screenfull.toggle();
-    if (!screenfull.isFullscreen) { //FIXME
-      fullscreenToggleElement.classList.add('enabled');
-    } else {
-      fullscreenToggleElement.classList.remove('enabled');
     }
   }
 
