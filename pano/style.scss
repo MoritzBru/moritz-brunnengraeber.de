@@ -6,6 +6,10 @@ $background-color-highlight-a: rgba($background-color-highlight, 0.8);
 
 $scenelist-width: 255px;
 
+// shadow used for coordinates
+$shadow-blur: 4px;
+$shadow-color: rgba(0,0,0,0.6);
+
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 $font-family: "Roboto Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -775,7 +779,7 @@ body.view-control-buttons .viewControlButton {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  text-shadow: 0 0 2px #000;
+  text-shadow: 0 1px $shadow-blur $shadow-color, 1px 0 $shadow-blur $shadow-color, 0 -1px $shadow-blur $shadow-color, -1px 0 $shadow-blur $shadow-color;
   font-size: 1em;
 }
 .mobile #coordinates {
