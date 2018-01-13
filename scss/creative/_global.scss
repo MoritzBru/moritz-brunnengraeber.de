@@ -64,3 +64,7 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+:-moz-focusring {
+  outline: 0;
+}
