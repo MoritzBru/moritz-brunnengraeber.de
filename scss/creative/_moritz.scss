@@ -50,7 +50,6 @@ img,
 // =============================================================================
 // Textarea
 
-$text-area-border-radius: 1em;
 .textarea {
   border-top-right-radius: $text-area-border-radius !important;
   border-bottom-right-radius: $text-area-border-radius !important;
@@ -61,14 +60,6 @@ $text-area-border-radius: 1em;
   border-bottom-left-radius: $text-area-border-radius !important;
 }
 
-.textarea-text-vertcenter {
-  position: relative;
-  top: 50%;
-  transform: translateY(-100%);
-}
-.textarea-text-vertcenter::before {
-  transform: translateY(-100%);
-}
 
 // =============================================================================
 // Background
