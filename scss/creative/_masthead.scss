@@ -39,4 +39,21 @@ header.masthead {
       font-size: 4rem;
     }
   }
+
+  .header-image {
+    width: 70%;
+    height: auto;
+    max-width: 300px;
+  }
+  .header-box-shadow {
+    box-shadow: 0 0 10px 5px $header-shadow-color;
+  }
+  .header-text-shadow {
+    text-shadow:
+      0 1px $header-text-shadow-blur $header-shadow-color,
+      0 -1px $header-text-shadow-blur $header-shadow-color,
+      1px 0 $header-text-shadow-blur $header-shadow-color,
+      -1px 0 $header-text-shadow-blur $header-shadow-color,
+  }
+
 }

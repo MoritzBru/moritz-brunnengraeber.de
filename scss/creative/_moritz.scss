@@ -37,30 +37,6 @@ img,
   background-image: linear-gradient(to bottom, $gray-700, $gray-900);
 }
 
-// =============================================================================
-// Masthead
-
-.header-image {
-  width: 70%;
-  height: auto;
-  max-width: 300px;
-}
-
-$header-shadow-color: rgba(0,0,0,0.5);
-$header-text-shadow-blur: 5px;
-
-.header-box-shadow {
-  box-shadow: 0 0 10px 5px $header-shadow-color;
-}
-
-.header-text-shadow {
-  text-shadow:
-    1px 1px $header-text-shadow-blur $header-shadow-color,
-    1px -1px $header-text-shadow-blur $header-shadow-color,
-    -1px 1px $header-text-shadow-blur $header-shadow-color,
-    -1px -1px $header-text-shadow-blur $header-shadow-color,
-}
-
 
 // =============================================================================
 // Google maps
