@@ -84,15 +84,12 @@
     display: inline-block;
     cursor: pointer;
     overflow: visible;
-
     &:hover, &:focus {
       outline: 0;
-
       .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
         background-color: $primary;
       }
     }
-
     .hamburger-box {
       width: 32px;
       height: 1em;
@@ -102,7 +99,6 @@
     .hamburger-inner {
       display: block;
       top: 50%;
-
       &, &::before, &::after {
         width: 32px;
         height: 4px;
@@ -124,7 +120,6 @@
         bottom: -0.5em;
       }
     }//hamburger-inner
-
     &:not(.collapsed) {
       .hamburger-inner {
         transform: rotate(45deg);
@@ -142,7 +137,6 @@
         }
       }
     }//not collapsed
-
     &.collapsed {
       .hamburger-inner {
         transition-duration: $navbar-toggle-timing;
