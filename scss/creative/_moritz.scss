@@ -1,4 +1,4 @@
-// Moe's Custom stuff
+// Moritz misc stuff
 
 // =============================================================================
 // Misc
@@ -6,12 +6,10 @@
 .load-invisible {
   display:none;
 }
-
 // hide every sr class (scroll reveal or screen reader)
 [class*='sr-'] {
   visibility: hidden;
 }
-
 img,
 .no-select {
   -moz-user-select: none;
@@ -19,7 +17,6 @@ img,
   user-select: none;
   pointer-events: none;
 }
-
 .text-monospace {
   font-family: $font-family-monospace;
 }
@@ -47,6 +44,7 @@ img,
   border: 0;
 }
 
+
 // =============================================================================
 // Textarea
 
@@ -67,7 +65,6 @@ img,
 .bg-0 {
   background: 0;
 }
-
 // background fixed gradient
 // @mixin bg-fixed-gradient($parent, $color) {
 //   #{$parent} {
@@ -92,16 +89,13 @@ img,
       top: #{$i}px;
     }
   }
-
 .mdi-donkey-fix::before {
   font-size: 29px !important;
   top: 3px !important;
 }
-
 .mdi-lh1.mdi::before {
   line-height: 1em;
 }
-
 .mdi::before {
     font-size: 24px;
     line-height: 14px;
@@ -196,6 +190,7 @@ img,
 
 // =============================================================================
 // Social Icons
+
 .social-icon{
   font-size: 2em;
   color: $gray-100;
@@ -218,13 +213,13 @@ img,
   }
 }
 
+
 // =============================================================================
 // Footer
 
 footer {
   padding: 5rem 0;
 }
-
 .list-footer {
   font-family: $font-family-monospace;
   font-size: 0.8em;
