@@ -285,8 +285,7 @@ function initMap() {
     mapmarkers.push(new google.maps.Marker({
       position: map_markers_data[i].pos,
       icon: map_markers_data[i].icon,
-      map: map,
-      optimized: false
+      map: map
     }));
 
     mapmarkers[i].infowindow = "<h5 class='text-dark'>" + map_markers_data[i].name + "</h5><p class='text-dark text-monospace'>" + map_markers_data[i].coords + "<br />" + map_markers_data[i].desc + "</p>";
