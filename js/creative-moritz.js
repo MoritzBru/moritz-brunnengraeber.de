@@ -166,22 +166,23 @@
   // Cookie Consent
   window.addEventListener("load", function(){
     window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#212529"
+      container: $("#cookie-consent-container")[0],
+      palette: {
+        popup: {
+          background: "#212529"
         },
-        "button": {
-          "background": "#ad1457"
+        button: {
+          background: "#ad1457"
         }
       },
-      "theme": "edgeless",
-      "content": {
-        "message": "We use cookies to ensure you get the best experience and to analyse the website usage. You can <a class='text-secondary' href='https://cookiesandyou.com/' target='_blank'>learn more about cookies</a> or <a class='text-secondary' href='#fancybox-legal-notice'>read the legal notice</a>.",
-        "dismiss": "OK!",
-        "link": "",
-        "href": ""
+      theme: "edgeless",
+      content: {
+        message: "We use cookies to ensure you get the best experience and to analyse the website usage. You can <a class='text-secondary' href='https://cookiesandyou.com/' target='_blank'>learn more about cookies</a> or <a class='text-secondary' href='#fancybox-legal-notice'>read the legal notice</a>.",
+        dismiss: "OK!"
       },
-      "onPopupOpen": function() {document.querySelector(".cc-compliance").classList.add("compensate-for-scrollbar");} // fix fancybox
+      showLink: false,
+      revokable: true,
+      onPopupOpen: function() {document.querySelector(".cc-compliance").classList.add("compensate-for-scrollbar");} // fix fancybox
     })
   });
 
