@@ -84,17 +84,13 @@ img,
         font-size: #{$i}em;
       }
     }
-    .mdi-top-#{$i}px {
-      position: relative;
-      top: #{$i}px;
-    }
   }
 .mdi-donkey-fix::before {
   font-size: 29px !important;
   top: 3px !important;
 }
-.mdi-lh1.mdi::before {
-  line-height: 1em;
+.mdi-lhi::before{
+  line-height: inherit !important;
 }
 .mdi::before {
     font-size: 24px;
@@ -102,7 +98,7 @@ img,
 }
 .btn .mdi::before {
     position: relative;
-    top: 2px;
+    top: 3px;
 }
 .btn-xs .mdi::before {
     font-size: 18px;

@@ -120,9 +120,9 @@
              In my free-time I like keeping fit, playing video games and hanging around with friends, especially with my girlfriend.</p>
         </div>
       </div>
-      <div class="row mt-4">
+      <div class="row mt-5">
         <div class="col text-center sr-scroll-buttons">
-          <a class="text-light js-scroll-trigger" href="#services" aria-label="Scroll down"><i class="fas fa-3x fa-angle-double-down"></i></a>
+          <a class="text-light js-scroll-trigger" href="#services" aria-label="Scroll down"><i class="mdi mdi-chevron-double-down mdi-4x"></i></a>
         </div>
       </div>
     </div>
@@ -139,41 +139,31 @@
       </div>
     </div>
     <div class="container">
-      <div class="row">
+      <div class="row mt-2">
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5 mx-auto">
-            <div class="sr-icons"><i class="fas fa-4x fa-laptop text-primary"></i></div>
-            <h3 class="my-3">Webdesign</h3>
-            <p class="text-muted">I like building modern and responsive websites with Wordpress or Bootstrap while improving my CSS and JS skills.</p>
-          </div>
+            <div class="sr-icons"><i class="mdi mdi-moe-laptop mdi-4x mdi-lhi text-primary"></i></div>
+            <h3>Webdesign</h3>
+            <p class="text-muted mt-3">I like building modern and responsive websites with Wordpress or Bootstrap while improving my CSS and JS skills.</p>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5 mx-auto">
-            <div class="sr-icons"><i class="fas fa-4x fa-camera text-primary"></i></div>
-            <h3 class="my-3">Photography</h3>
-            <p class="text-muted">I love photography: underwater, on the ground or in the air, night or day, long time exposure, time-lapse or just a normal shot.</p>
-          </div>
+            <div class="sr-icons"><i class="mdi mdi-camera mdi-4x mdi-lhi text-primary"></i></div>
+            <h3>Photography</h3>
+            <p class="text-muted mt-3">I love photography: underwater, on the ground or in the air, night or day, long time exposure, time-lapse or just a normal shot.</p>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5 mx-auto">
-            <div class="sr-icons text-primary load-invisible">
-              <?php include("img/quadcopter.svg"); ?>
-            </div>
-            <h3 class="my-3">Drones</h3>
-            <p class="text-muted">I enjoy flying with my drone making aerial photographies and especially fully spherical aerial panoramic images.</p>
-          </div>
+          <div class="sr-icons"><i class="mdi mdi-moe-quadcopter mdi-4x mdi-lhi text-primary"></i></div>
+          <h3>Drones</h3>
+          <p class="text-muted mt-3">I enjoy flying with my drone making aerial photographies and especially fully spherical aerial panoramic images.</p>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5 mx-auto">
-            <div class="sr-icons"><i class="mdi mdi-map mdi-4x mdi-lh1 text-primary"></i></div>
-            <h3 class="my-3">Maps</h3>
-            <p class="text-muted">Recently, I discovered how much fun it can be to design and build interactive web-based maps with frameworks like Mapbox.</p>
-          </div>
+          <div class="sr-icons"><i class="mdi mdi-map mdi-4x mdi-lhi text-primary"></i></div>
+          <h3>Maps</h3>
+          <p class="text-muted mt-3">Recently, I discovered how much fun it can be to design and build interactive web-based maps with frameworks like Mapbox.</p>
         </div>
       </div>
       <div class="row mt-5">
         <div class="col text-center sr-scroll-buttons">
-          <a class="text-dark js-scroll-trigger" href="#location" aria-label="Scroll down"><i class="fas fa-3x fa-angle-double-down"></i></a>
+          <a class="text-dark js-scroll-trigger" href="#location" aria-label="Scroll down"><i class="mdi mdi-chevron-double-down mdi-4x"></i></a>
         </div>
       </div>
     </div>
@@ -193,7 +183,7 @@
       </div>
       <div class="row mt-5">
         <div class="col text-center sr-scroll-buttons">
-          <a class="text-light js-scroll-trigger" href="#portfolio" aria-label="Scroll down"><i class="fas fa-3x fa-angle-double-down"></i></a>
+          <a class="text-light js-scroll-trigger" href="#portfolio" aria-label="Scroll down"><i class="mdi mdi-chevron-double-down mdi-4x"></i></a>
         </div>
       </div>
     </div>
@@ -312,7 +302,7 @@
       </div>
       <div class="row mt-5">
         <div class="col text-center sr-scroll-buttons">
-          <a class="text-light js-scroll-trigger" href="#contact" aria-label="Scroll down"><i class="fas fa-3x fa-angle-double-down"></i></a>
+          <a class="text-light js-scroll-trigger" href="#contact" aria-label="Scroll down"><i class="mdi mdi-chevron-double-down mdi-4x"></i></a>
         </div>
       </div>
     </div>
@@ -335,7 +325,7 @@
             <label for="contact_name" class="sr-only">Name</label>
             <div class="input-group">
               <div class="input-group-prepend">
-                <div class="input-group-text"><i class="mdi mdi-account-circle"></i><!--<i class="fas fa-user"></i>--></div>
+                <div class="input-group-text"><i class="mdi mdi-account-circle"></i></div>
               </div>
               <input type="text" name="name" class="form-control" id="contact_name" placeholder="Name" required>
               <div class="invalid-feedback ml-5">I want to know who wrote me.</div>
@@ -345,7 +335,7 @@
             <label for="contact_email" class="sr-only">Email</label>
             <div class="input-group">
               <div class="input-group-prepend">
-                <div class="input-group-text"><i class="mdi mdi-at"></i><!--<i class="fas fa-at"></i>--></div>
+                <div class="input-group-text"><i class="mdi mdi-at"></i></div>
               </div>
               <input type="email" name="email" class="form-control" id="contact_email" placeholder="Email" required>
               <div class="invalid-feedback ml-5">I need a valid email so that I can perhaps reply.</div>
@@ -356,7 +346,7 @@
           <label for="contact_textarea" class="sr-only">Message</label>
           <div class="input-group">
             <div class="input-group-prepend">
-              <div class="input-group-text textarea-prepend"><i class="mdi mdi-message-text textarea-text-vertcenter"></i><!--<i class="fas fa-comment-alt textarea-text-vertcenter"></i>--></div>
+              <div class="input-group-text textarea-prepend"><i class="mdi mdi-message-text textarea-text-vertcenter"></i></div>
             </div>
             <textarea name="message" class="form-control textarea" id="contact_textarea" rows="5" placeholder="Message…" required></textarea>
             <div class="invalid-feedback ml-5">I thought you were here to write me a message?!</div>
@@ -380,16 +370,16 @@
     <div class="container">
       <div class="row d-flex justify-content-center mb-4">
         <a href="https://plus.google.com/+MoritzBrunnengr%C3%A4ber" target="_blank" class="social-icon gp" data-toggle="tooltip" data-placement="top" title="Google+">
-          <i class="fab fa-google-plus"></i>
+          <i class="mdi mdi-moe-google-plus mdi-lhi mdi-48px"></i>
         </a>
         <a href="https://www.facebook.com/moritz.brunnengraeber" target="_blank" class="social-icon fb" data-toggle="tooltip" data-placement="top" title="Facebook">
-          <i class="fab fa-facebook-square"></i>
+          <i class="mdi mdi-facebook-box mdi-lhi mdi-48px"></i>
         </a>
         <a href="https://www.360cities.net/profile/moritzbrunnengraeber" target="_blank" class="social-icon tsc load-invisible" data-toggle="tooltip" data-placement="top" title="360cities">
-          <?php include("img/footer/360.svg"); ?>
+          <i class="mdi mdi-moe-360 mdi-lhi mdi-48px"></i>
         </a>
         <a href="mailto:mail@moritz-brunnengraeber.de" target="_blank" class="social-icon mail" data-toggle="tooltip" data-placement="top" title="Email">
-          <?php include("img/footer/email.svg"); ?>
+          <i class="mdi mdi-email mdi-lhi mdi-48px"></i>
         </a>
       </div>
       <div class="row text-center text-muted d-flex justify-content-center">
@@ -410,7 +400,6 @@
 
 
   <!-- JavaScript -->
-  <script src="https://use.fontawesome.com/releases/v5.0.2/js/all.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
