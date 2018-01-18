@@ -13,29 +13,29 @@ $shadow-color: rgba(0,0,0,0.6);
 $font-family: "Roboto Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $transition: all 0.3s ease-in-out;
-@mixin icon_animation($transform_val0, $transform_val1, $transform_val2) {
+@mixin icon_animation($transform_val_dis_off, $transform_val_dis_on, $transform_val_en_off, $transform_val_en_on) {
   .icon {
     transition: $transition;
     &.on {
       opacity: 0;
-      transform: #{$transform_val1};
+      transform: #{$transform_val_dis_on};
       // display: none;
     }
     &.off {
       opacity: 1;
-      transform: #{$transform_val0};
+      transform: #{$transform_val_dis_off};
       // display: block;
     }
   }
   &.enabled .icon {
     &.on {
       opacity: 1;
-      transform: #{$transform_val0};
+      transform: #{$transform_val_en_on};
       // display: block;
     }
     &.off {
       opacity: 0;
-      transform: #{$transform_val2};
+      transform: #{$transform_val_en_off};
       // display: none;
     }
   }
@@ -181,7 +181,7 @@ body.fullscreen-enabled #fullscreenToggle {
 }
 
 #fullscreenToggle {
-  @include icon_animation(scale(1), scale(0), scale(0));
+  @include icon_animation(scale(1), scale(0), scale(0), scale(1));
 }
 
 #autorotateToggle {
@@ -226,7 +226,7 @@ body.fullscreen-enabled {
 }
 
 #autorotateToggle {
-  @include icon_animation(rotate(0) scale(1), rotate(180deg) scale(0.5), rotate(-180deg) scale(0.5));
+  @include icon_animation(rotate(0) scale(1), rotate(180deg) scale(0), rotate(-180deg) scale(0), rotate(0) scale(1));
 }
 
 #sceneListToggle {
@@ -268,8 +268,7 @@ body.fullscreen-enabled {
 }
 
 #sceneListToggle {
-  // @include icon_animation(translateX(0), translateX(-100%), translateX(-100%));
-  @include icon_animation(rotateY(0) scale(1), rotateY(180deg) scale(0), rotateY(180deg) scale(0));
+  @include icon_animation(rotateY(0) scale(1), rotateY(180deg) scale(0), rotateY(-180deg) scale(0), rotateY(0) scale(1));
 }
 
 #sceneList {
