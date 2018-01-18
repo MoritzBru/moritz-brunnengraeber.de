@@ -190,7 +190,7 @@ img,
 .social-icon{
   font-size: 2rem;
   color: $gray-100;
-  margin: 0 0.25rem;
+  margin: 0 0.5rem;
   @include transition($transition-base);
   &:hover, &:focus, &:active {
     outline: 0;
