@@ -12,7 +12,7 @@
     font-family: $font-family-sans-serif;
     &:focus,
     &:hover {
-      color: darken($primary, .1);
+      color: darken($primary, 10%);
     }
   }
   .navbar-nav {
