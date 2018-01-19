@@ -257,7 +257,9 @@ function initMap() {
     }
   ];
 
-  var bounds = {
+  window.map_markers = [];
+  window.map_infowindow = null;
+  window.map_bounds = {
     north: 48.19,
     south: 48.14,
     east: 11.57,
@@ -276,31 +278,28 @@ function initMap() {
     rotateControl: false
   });
 
-  map.fitBounds(bounds);
-
-  window.mapmarkers = [];
-  window.infowindow = null;
+  map.fitBounds(map_bounds);
 
   for (var i = 0; i < map_markers_data.length; ++i) {
-    mapmarkers.push(new google.maps.Marker({
+    map_markers.push(new google.maps.Marker({
       position: map_markers_data[i].pos,
       icon: map_markers_data[i].icon,
       map: map
     }));
 
-    mapmarkers[i].infowindow = "<h5 class='text-dark'>" + map_markers_data[i].name + "</h5><p class='text-dark text-monospace'>" + map_markers_data[i].coords + "<br />" + map_markers_data[i].desc + "</p>";
+    map_markers[i].infowindow = "<h5 class='text-dark'>" + map_markers_data[i].name + "</h5><p class='text-dark text-monospace'>" + map_markers_data[i].coords + "<br />" + map_markers_data[i].desc + "</p>";
 
-    mapmarkers[i].addListener("click", function(e) {
-      if (infowindow) {
-        infowindow.close();
+    map_markers[i].addListener("click", function(e) {
+      if (map_infowindow) {
+        map_infowindow.close();
       }
-      infowindow = new google.maps.InfoWindow();
-      infowindow.setContent(this.infowindow);
-      infowindow.open(map, this);
+      map_infowindow = new google.maps.InfoWindow();
+      map_infowindow.setContent(this.infowindow);
+      map_infowindow.open(map, this);
     });
     map.addListener("click", function(e) {
-      if (infowindow) {
-        infowindow.close();
+      if (map_infowindow) {
+        map_infowindow.close();
       }
     });
 

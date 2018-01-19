@@ -78,17 +78,18 @@
       reset: true,
       beforeReveal: function () {
         try {
-          window.mapmarkers.forEach(function(m) {
+          window.map_markers[0].getMap().fitBounds(window.map_bounds)
+          window.map_markers.forEach(function(m) {
             m.setVisible(false);
           })
-          if (window.infowindow) {
-            window.infowindow.close();
+          if (window.map_infowindow) {
+            window.map_infowindow.close();
           }
         } catch(err){}
       },
       afterReveal: function() {
         try {
-          window.mapmarkers.forEach(function(m, idx) {
+          window.map_markers.forEach(function(m, idx) {
             window.setTimeout(function() {
               m.setAnimation(google.maps.Animation.DROP);
               m.setVisible(true);
