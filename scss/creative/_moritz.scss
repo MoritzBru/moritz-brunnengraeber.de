@@ -21,7 +21,6 @@ img,
   font-family: $font-family-monospace;
 }
 
-
 // =============================================================================
 // Particles
 
@@ -34,7 +33,6 @@ img,
   background-image: linear-gradient(to bottom, $gray-700, $gray-900);
 }
 
-
 // =============================================================================
 // Google maps
 
@@ -43,7 +41,6 @@ img,
   height: 450px;
   border: 0;
 }
-
 
 // =============================================================================
 // Textarea
@@ -57,7 +54,6 @@ img,
   border-top-left-radius: $text-area-border-radius !important;
   border-bottom-left-radius: $text-area-border-radius !important;
 }
-
 
 // =============================================================================
 // Background
@@ -156,9 +152,9 @@ img,
     left: -3px
 }
 
-
 // =============================================================================
 // Fancybox
+
 .fancybox-toolbar {
   top: 0.5rem;
   right: 0.5rem;
@@ -208,7 +204,6 @@ img,
     &.tsc { color: darken(#c33135, 10%);}
   }
 }
-
 
 // =============================================================================
 // Footer
