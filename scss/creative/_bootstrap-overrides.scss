@@ -24,12 +24,3 @@
 .close:focus, .close:hover, .close:active {
   outline: 0;
 }
-
-.input-group-prepend,
-.input-group-append {
-  align-items: none;
-}
-.input-group-text {
-  display: flex;
-  align-items: center;
-}
