@@ -5,6 +5,15 @@
   var _404_40 = document.getElementById("_404_40");
   var _404_404 = document.getElementById("_404_404");
 
+  var tl_4 = animate4(_404_4);
+  var tl_40 = animate0(_404_40);
+  var tl_404 = animate4(_404_404);
+
+  var tl = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:3});
+  tl.add(tl_4, 0);
+  tl.add(tl_40, "-=1.5");
+  tl.add(tl_404, "-=1.5");
+
   function animate4(el) {
     var top4 = el.getElementsByClassName("_4_top")[0];
     var hz4 = el.getElementsByClassName("_4_hz")[0];
@@ -27,14 +36,5 @@
     tl.fromTo(highlight0, 1, {scale: 0, transformOrigin: "right bottom"}, {scale: 1, transformOrigin: "right bottom"}, 1);
     return tl
   }
-
-  var tl_4 = animate4(_404_4);
-  var tl_40 = animate0(_404_40);
-  var tl_404 = animate4(_404_404);
-
-  var tl = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:3});
-  tl.add(tl_4, 0);
-  tl.add(tl_40, "-=1.5");
-  tl.add(tl_404, "-=1.5");
 
 })();
