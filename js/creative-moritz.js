@@ -29,13 +29,13 @@
 
 
   // Collapse Navbar
-  var navbarCollapse = function() {
+  function navbarCollapse() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
     } else {
       $("#mainNav").removeClass("navbar-shrink");
     }
-  };
+  }
   // Collapse now if page is not at top
   navbarCollapse();
   // Collapse the navbar when page is scrolled
@@ -43,8 +43,8 @@
 
 
   // Scroll reveal calls
-  window.sr = ScrollReveal();
-  var configScrollReveal = function() {
+  function configScrollReveal() {
+    var sr = ScrollReveal();
     var delay = isSmall() ? null : 200;
 
     var dirs = ["left", "right", "top", "bottom"];
@@ -106,7 +106,7 @@
   }
 
   // Configure ScrollReveal now
-  configScrollReveal()
+  configScrollReveal();
 
   //Function to check if browser id small/mobile (HACKY!!)
   function isSmall(){
