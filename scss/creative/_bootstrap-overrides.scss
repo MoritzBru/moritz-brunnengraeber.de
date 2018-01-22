@@ -16,11 +16,6 @@
   height: 100%
 }
 
-.input-group .form-control:not(:last-child), .input-group .custom-select:not(:last-child) {
-  border-top-right-radius: $input-border-radius;
-  border-bottom-right-radius: $input-border-radius;
-}
-
 .close:focus, .close:hover, .close:active {
   outline: 0;
 }
