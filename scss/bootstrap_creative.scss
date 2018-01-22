@@ -1,6 +1,5 @@
 /*!
- * Bootstrap
- * Adapted by Moritz Brunnengräber
+ * Customized by Moritz Brunnengräber
  */
 
 // Color
@@ -34,12 +33,11 @@ $input-border-radius-sm:      $round-border-radius;
 $text-area-border-radius:     2em;
 
 // Navbar toggle animation
-$navbar-toggle-timing: 0.2s;
+$navbar-toggle-timing:        0.2s;
 
 // Header shadow
-$header-shadow-color: rgba(0,0,0,0.4);
-$header-text-shadow-blur: 5px;
-
+$header-shadow-color:         rgba(0,0,0,0.4);
+$header-text-shadow-blur:     5px;
 
 // =============================================================================
 
