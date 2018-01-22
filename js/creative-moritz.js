@@ -45,7 +45,8 @@
   // Scroll reveal calls
   function configScrollReveal() {
     var sr = ScrollReveal();
-    var delay = isSmall() ? null : 200;
+    var isSmall = ($(".navbar-toggler").css("display") != "none");
+    var delay = isSmall ? null : 200;
 
     var dirs = ["left", "right", "top", "bottom"];
     dirs.forEach(function(dir) {
@@ -107,15 +108,6 @@
 
   // Configure ScrollReveal now
   configScrollReveal();
-
-  //Function to check if browser id small/mobile (HACKY!!)
-  function isSmall(){
-      if ($(".navbar-toggler").css("display") == "none" ){
-        return false
-      } else {
-        return true
-      }
-    }
 
 
   // Show elements that should load hidden
