@@ -1,6 +1,20 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  // Calculate age
+  function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+  }
+  $("#age").html(getAge("1991-02-20"));
+
+
   // Smooth scrolling using jQuery easing
   $("a.js-scroll-trigger[href*='#']:not([href='#'])").click(function() {
     if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
@@ -19,7 +33,6 @@
   $(".js-scroll-trigger").click(function() {
     $(".navbar-collapse").collapse("hide");
   });
-
 
   // Activate scrollspy to add active class to navbar items on scroll
   $("body").scrollspy({
