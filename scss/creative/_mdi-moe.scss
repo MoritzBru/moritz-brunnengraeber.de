@@ -1,0 +1,33 @@
+$font-path: "../fonts/";
+
+@font-face {
+  font-family: 'mdi-moe';
+  src:  url('#{$font-path}/mdi-moe.eot?ofuw2j');
+  src:  url('#{$font-path}/mdi-moe.eot?ofuw2j#iefix') format('embedded-opentype'),
+    url('#{$font-path}/mdi-moe.ttf?ofuw2j') format('truetype'),
+    url('#{$font-path}/mdi-moe.woff?ofuw2j') format('woff'),
+    url('#{$font-path}/mdi-moe.svg?ofuw2j#mdi-moe') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="mdi-moe-"]::before, [class*=" mdi-moe-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'mdi-moe' !important;
+}
+
+.mdi-moe-google-plus:before {
+  content: "\e900";
+}
+.mdi-moe-laptop:before {
+  content: "\e901";
+}
+.mdi-moe-quadcopter:before {
+  content: "\e902";
+}
+.mdi-moe-sketchfab:before {
+  content: "\e903";
+}
+.mdi-moe-360:before {
+  content: "\e904";
+}
