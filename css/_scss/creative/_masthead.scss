@@ -1,0 +1,24 @@
+$header-shadow-color:         rgba(0,0,0,0.4);
+$header-text-shadow-blur:     5px;
+
+.masthead {
+  height: 100vh;
+  min-height: 650px;
+  .header-image {
+    width: 70%;
+    height: auto;
+    max-width: 300px;
+    box-shadow: 0 0 10px 5px $header-shadow-color;
+  }
+  .header-text {
+    text-shadow:
+      0 1px $header-text-shadow-blur $header-shadow-color,
+      0 -1px $header-text-shadow-blur $header-shadow-color,
+      1px 0 $header-text-shadow-blur $header-shadow-color,
+      -1px 0 $header-text-shadow-blur $header-shadow-color;
+    @include media-breakpoint-up(md) {
+      font-size: 3.5rem;
+      line-height: 1.2;
+    }
+  }
+}

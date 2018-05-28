@@ -1,0 +1,12 @@
+.btn[disabled],
+input[disabled] + label {
+  cursor: not-allowed;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.btn {
+  white-space: normal;
+}

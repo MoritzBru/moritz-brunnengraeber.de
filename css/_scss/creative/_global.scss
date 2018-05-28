@@ -1,0 +1,47 @@
+body {
+  font-family: $font-family-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.btn {
+  font-family: $font-family-sans-serif;
+}
+
+hr {
+  max-width: 50px;
+  border-width: 3px;
+}
+@each $color, $value in $theme-colors {
+  .hr-#{$color} { border-color: $value !important; }
+}
+
+section {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+.section-heading {
+  margin-top: 0;
+}
+
+// highlighted text through selection styling
+::selection {
+  color: $white;
+  background: $gray-900;
+  text-shadow: none;
+}
+
+// make images non-selectable
+img {
+  user-select: none;
+}
+
+// hide highlighting on tap (touch) in webkit browsers(chrome, ssafari, opera)
+body {
+  -webkit-tap-highlight-color: rgba(0,0,0,0); // for Chrome
+}
+
+// hide standard dotted outline in firefox
+:-moz-focusring  {
+  outline: 0;
+}

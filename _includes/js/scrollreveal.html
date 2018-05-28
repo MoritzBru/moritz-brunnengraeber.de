@@ -1,0 +1,68 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.6/scrollreveal.min.js" integrity="sha256-SDKDHU0lE3Q1tYhe8x3nqrEl15dwjAM3sEIP0G50RBc=" crossorigin="anonymous"></script>
+
+<script>
+function configScrollReveal() {
+  var sr = ScrollReveal();
+  var isSmall = ($(".navbar-toggler").css("display") != "none");
+  var delay = isSmall ? null : 200;
+
+  var dirs = ["left", "right", "top", "bottom"];
+  dirs.forEach(function(dir) {
+    sr.reveal(".sr-" + dir, {
+      origin: dir,
+      distance: "1rem",
+      duration: 800,
+      reset: true
+    });
+  });
+  sr.reveal(".sr-scroll-buttons", {
+    origin: "top",
+    distance: "1rem",
+    duration: 800,
+    reset: true
+  });
+  sr.reveal(".sr-icons", {
+    duration: 500,
+    scale: 0.3,
+    reset: true
+  }, delay);
+  sr.reveal(".sr-cards", {
+    duration: 300,
+    scale: 0.7,
+    reset: true
+  }, delay);
+  sr.reveal(".sr-map", {
+    duration: 300,
+    scale: 0.7,
+    reset: true,
+    beforeReveal: function () {
+      try {
+        window.map_markers[0].getMap().fitBounds(window.map_bounds)
+        window.map_markers.forEach(function(m) {
+          m.setVisible(false);
+        })
+        if (window.map_infowindow) {
+          window.map_infowindow.close();
+        }
+      } catch(err){}
+    },
+    afterReveal: function() {
+      try {
+        window.map_markers.forEach(function(m, idx) {
+          window.setTimeout(function() {
+            m.setAnimation(google.maps.Animation.DROP);
+            m.setVisible(true);
+          }, 200*idx);
+        })
+      } catch(err){}
+
+    }
+  });
+  sr.reveal(".sr-buttons", {
+    duration: 500,
+    reset: true
+  }, delay);
+}
+
+configScrollReveal();
+</script>
