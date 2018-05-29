@@ -1,23 +1,10 @@
 // Moritz misc stuff
 
+// =============================================================================
+// max width grid $grid-breakpoints
+
 @each $breakpoint, $width in $grid-breakpoints {
   .maxwidth-#{$breakpoint} { max-width: $width; }
-}
-
-.text-faded {
-  //color: fade-out($white, .3);
-}
-
-.load-invisible {
-  // display: none;
-}
-// hide every sr class (scroll reveal or screen reader)
-[class*='sr-'] {
-  // visibility: hidden;
-}
-.no-select {
-  user-select: none;
-  pointer-events: none;
 }
 
 // =============================================================================
@@ -32,7 +19,6 @@
   top: 0;
   background-color: rgba(0,0,0, 0.6);
   overflow: hidden;
-
   .alert {
     position: relative;
     top: 50%;
@@ -68,7 +54,6 @@
   border-top-right-radius: $input-border-radius !important;
   border-bottom-right-radius: $input-border-radius !important;
 }
-
 .textarea {
   border-top-right-radius: $text-area-border-radius !important;
   border-bottom-right-radius: $text-area-border-radius !important;

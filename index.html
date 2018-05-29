@@ -6,15 +6,16 @@ foot_additional: >
   {% include js/google_maps.html %}
   {% include js/fancybox.html %}
   <script src="/contact/contact.js"></script>
+  {% include js/scrollreveal.html %}
 ---
 
 <div id="bg-particle"></div>
 
 <header class="masthead text-center text-light d-flex">
   <div class="container my-auto">
-    <img src="img/moritz.jpg" class="rounded-circle header-image mb-3" alt="Moritz">
-    <h1 class="header-text"><span class="font-weight-light d-inline-block">Hi I'm</span> <br class="d-block d-sm-none"/><span class="font-weight-bold d-inline-block">Moritz Brunnengräber</span></h1>
-    <a class="btn btn-secondary btn-lg mt-5 px-5 py-3 text-uppercase js-scroll-trigger" href="#about">Get to know me</a>
+    <img src="img/moritz.jpg" class="rounded-circle header-image mb-3 reveal-top" alt="Moritz">
+    <h1 class="header-text"><span class="font-weight-light d-inline-block reveal-left">Hi I'm</span> <br class="d-block d-sm-none"/><span class="font-weight-bold d-inline-block reveal-right">Moritz Brunnengräber</span></h1>
+    <a class="btn btn-secondary btn-lg mt-5 px-5 py-3 text-uppercase js-scroll-trigger reveal-bottom" href="#about">Get to know me</a>
   </div>
 </header>
 
@@ -37,22 +38,22 @@ foot_additional: >
     <hr class="hr-primary my-4">
     <div class="row">
       <div class="col-lg-3 col-md-6">
-        <i class="fas fa-laptop fa-4x text-primary my-3"></i>
+        <div class="reveal-icons"><i class="fas fa-laptop fa-4x text-primary my-3"></i></div>
         <h3>Webdesign</h3>
         <p class="text-muted mt-3">I like building modern and responsive websites with Wordpress or Bootstrap while improving my CSS and JS skills.</p>
       </div>
       <div class="col-lg-3 col-md-6">
-        <i class="fas fa-camera fa-4x text-primary my-3"></i>
+        <div class="reveal-icons"><i class="fas fa-camera fa-4x text-primary my-3"></i></div>
         <h3>Photography</h3>
         <p class="text-muted mt-3">I love photography: underwater, on the ground or in the air, night or day, long time exposure, time-lapse or just a normal shot.</p>
       </div>
       <div class="col-lg-3 col-md-6">
-        {% include svg/icon-quadcopter.svg class='svg-inline--fa fa-w-16 fa-4x text-primary my-3' %}
+        <div class="reveal-icons">{% include svg/icon-quadcopter.svg class='svg-inline--fa fa-w-16 fa-4x text-primary my-3' %}</div>
         <h3>Drones</h3>
         <p class="text-muted mt-3">I enjoy flying with my drone making aerial photographies and especially fully spherical aerial panoramic images.</p>
       </div>
       <div class="col-lg-3 col-md-6">
-        <i class="far fa-map fa-4x text-primary my-3"></i>
+        <div class="reveal-icons"><i class="far fa-map fa-4x text-primary my-3"></i></div>
         <h3>Maps</h3>
         <p class="text-muted mt-3">I have much fun designing and building interactive web-based maps with frameworks like Mapbox.</p>
       </div>
@@ -62,7 +63,7 @@ foot_additional: >
 </section>
 
 <section class="bg-dark text-light" id="location">
-  <div class="container-fluid px-0 text-center">
+  <div class="container-fluid px-0 text-center reveal-map">
     <h2 class="section-heading">Where I am</h2>
     <hr class="hr-secondary my-4">
     <div id="google_map"></div>
@@ -78,7 +79,7 @@ foot_additional: >
     <div class="row text-dark">
       {% for work in site.data.portfolio %}
       <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-        <div class="card flex-fill shadow my-3">
+        <div class="card flex-fill shadow my-3 {% cycle 'reveal-left', 'reveal-bottom', 'reveal-right' %}">
           <img class="card-img-top border-bottom" src="{{ work.title | slugify: 'latin' | prepend: '/img/portfolio/' | append: '.jpg' }}" alt="{{ work.title }}">
           <div class="card-body">
             <h4 class="card-title">{{ work.title }}</h4>
@@ -149,11 +150,11 @@ foot_additional: >
       </div>
       <div class="contact_response my-2"></div>
       <div class="form-row">
-        <div class="col-md-6 my-2 sr-buttons">
-          <button type="reset" class="btn btn-outline-secondary btn-block text-uppercase"><i class="fas fa-eraser mr-2"></i>Reset</button>
+        <div class="col-md-6 my-2">
+          <button type="reset" class="btn btn-outline-secondary btn-block text-uppercase reveal-left"><i class="fas fa-eraser mr-2"></i>Reset</button>
         </div>
-        <div class="col-md-6 my-2 sr-buttons">
-          <button type="submit" class="btn btn-outline-primary btn-block text-uppercase"><i class="fas fa-paper-plane mr-2"></i>Send</button>
+        <div class="col-md-6 my-2">
+          <button type="submit" class="btn btn-outline-primary btn-block text-uppercase reveal-right"><i class="fas fa-paper-plane mr-2"></i>Send</button>
         </div>
       </div>
     </form>
