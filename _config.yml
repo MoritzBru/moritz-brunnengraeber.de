@@ -3,7 +3,7 @@ title: Moritz Brunnengräber
 description: >- # this means to ignore newlines until "baseurl:"
   Get to know me! I am a master student in Geodesy and Geoinformation and I love modern technology.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.moritz-brunnengraeber.de/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.moritz-brunnengraeber.de" # the base hostname & protocol for your site, e.g. http://example.com
 
 social_googleplus: https://plus.google.com/+MoritzBrunnengr%C3%A4ber
 social_facebook: https://www.facebook.com/moritz.brunnengraeber
@@ -19,6 +19,8 @@ legal_mail: mail@moritz-brunnengraeber.de
 
 # Make all links pretty ( -> no file extension)
 permalink: pretty
+
+exclude: ["README.md", "Gemfile", "Gemfile.lock"]
 
 sass:
   style: compressed
