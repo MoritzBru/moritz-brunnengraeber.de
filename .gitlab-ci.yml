@@ -19,11 +19,12 @@ build:
   stage: build
   script:
   - bundle exec jekyll build -d _site
+  only:
+    - master
   artifacts:
     paths:
     - _site
-    only:
-    - master
+
 
 deploy:
   stage: deploy
