@@ -86,7 +86,7 @@ foot_additional: >
             <p class="card-text">{{ work.text }}</p>
           </div>
           <div class="card-footer border-top-0 bg-transparent">
-            <a href="{{ work.link | absolute_url }}"
+            <a href="{{ work.link }}"
             {% if work.fancybox %}
               data-fancybox="{{ work.fancybox }}"
             {% else %}
