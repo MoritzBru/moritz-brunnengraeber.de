@@ -1,4 +1,4 @@
-<footer id="footer" class="text-muted">
+<footer id="footer" class="{{ page.footerclass }} text-muted py-5">
   <div class="container text-center">
     <a href="{{ site.social_googleplus }}" target="_blank" class="social-icon googleplus" data-toggle="tooltip" data-placement="top" title="Google+">
       <i class="fab fa-google-plus"></i>
@@ -20,7 +20,7 @@
       <div class="list-footer d-none d-sm-inline-block no-select">|</div>
       <div class="list-footer">2017 - {{ 'now' | date: "%Y" }}</div>
       <div class="list-footer d-none d-sm-inline-block no-select">|</div>
-      <div class="list-footer"><a href="#" class="text-muted">Legal Notice</a></div>
+      <div class="list-footer"><a href="{{ 'legal-notice' | absolute_url }}" class="text-muted">Legal Notice</a></div>
     </div>
   </div>
 </footer>

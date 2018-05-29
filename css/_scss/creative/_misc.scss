@@ -4,12 +4,8 @@
   .maxwidth-#{$breakpoint} { max-width: $width; }
 }
 
-// =============================================================================
-// Misc
-
-
 .text-faded {
-  color: fade-out($white, .3);
+  //color: fade-out($white, .3);
 }
 
 .load-invisible {
@@ -20,29 +16,28 @@
   // visibility: hidden;
 }
 .no-select {
-  -moz-user-select: none;
-  -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
 }
 
-.noscript-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 2000;
-}
+// =============================================================================
+// noscript-overlay
+
 .noscript-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.7);
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0, 0.6);
   overflow: hidden;
-  z-index: 1999;
+
+  .alert {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 // =============================================================================
@@ -82,32 +77,4 @@
 .textarea-prepend {
   border-top-left-radius: $text-area-border-radius !important;
   border-bottom-left-radius: $text-area-border-radius !important;
-}
-
-// =============================================================================
-// Fancybox
-
-.fancybox-toolbar {
-  top: 0.5rem;
-  right: 0.5rem;
-}
-.fancybox-button:focus {
-  outline: 0;
-}
-.fancybox-button:focus, .fancybox-button:hover {
-    color: $primary;
-}
-.fancybox-navigation button::before,
-.fancybox-button {
-  border-radius: 10rem;
-}
-.fancybox-button--close:hover {
-  color: $danger;
-}
-.fancybox-infobar {
-  font-family: $font-family-monospace;
-  background: rgba(30,30,30,.6);
-  border-radius: 10rem;
-  top: 0.5rem;
-  left: 0.5rem;
 }

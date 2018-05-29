@@ -13,6 +13,10 @@ social_mail: mail@moritz-brunnengraeber.de
 
 google_maps_api: AIzaSyDeJbsLO30Ip1EaPqx9HuC363gT2r7WanA
 
+legal_name: Moritz Brunnengräber
+legal_address: Münchner Straße 45<br>82178 Puchheim<br>Germany
+legal_mail: mail@moritz-brunnengraeber.de
+
 # Make all links pretty ( -> no file extension)
 permalink: pretty
 

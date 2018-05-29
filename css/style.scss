@@ -31,6 +31,13 @@ $input-border-radius-sm:      $round-border-radius;
 
 $text-area-border-radius:     1.5rem;
 
+// Indicators for Checkboxes and Radios
+$custom-control-indicator-bg:                 #adb5bd; // bootstrap gray500
+$custom-control-indicator-size:               1.2rem;
+$custom-control-indicator-focus-box-shadow:   0 0 0 .2rem rgba($primary, .25); // $input-btn-focus-box-shadow (😞not yet defined)
+$custom-control-indicator-bg-size:            60% 60%;
+$custom-checkbox-indicator-border-radius:     .15rem;
+
 // =============================================================================
 
 // Import bootstrap

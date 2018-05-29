@@ -3,7 +3,7 @@
     <div class="container alert alert-danger text-center" role="alert">
       <h4 class="alert-heading">No Script Warning!</h4>
       <p>
-        Sorry, your browser does not support JavaScript or it is turned off! For full functionality of {{ site.url }} it is necessary to enable JavaScript.<br>
+        Sorry, your browser does not support JavaScript or it is turned off! For full functionality of {{ site.title}} | {{ site.url | prepend: site.baseurl }} it is necessary to enable JavaScript.<br>
         Here are the <a href="https://www.enable-javascript.com/" class="alert-link" target="_blank">instructions how to enable JavaScript in your web browser</a>.
       </p>
     </div>
@@ -13,6 +13,12 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha256-98vAGjEDGN79TjHkYWVD4s87rvWkdWLHPs5MC3FvFX4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha256-xaF9RpdtRxzwYMWg4ldJoyPWqyDPCRD0Cv7YEEe6Ie8=" crossorigin="anonymous"></script>
+
+<script>
+$(function () {
+  $("[data-toggle='tooltip']").tooltip()
+})
+</script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 

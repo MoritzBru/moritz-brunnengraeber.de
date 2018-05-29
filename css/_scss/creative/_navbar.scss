@@ -32,7 +32,7 @@
     }
   }
   @include media-breakpoint-up(lg) {
-    &.navbar-scroll-transparent {
+    &:not(fixednav).navbar-scroll-transparent {
       background-color: transparent;
       box-shadow: none;
       .navbar-brand {

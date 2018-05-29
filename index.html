@@ -1,26 +1,28 @@
 ---
 layout: default
 foot_additional: >
-  <script src="{{ '/js/index.js' | relative_url }}"></script>
+  {% include js/indexjs.html %}
   {% include js/particles.html %}
   {% include js/google_maps.html %}
+  {% include js/fancybox.html %}
+  <script src="/contact/contact.js"></script>
 ---
 
 <div id="bg-particle"></div>
 
-<header class="masthead text-center text-white d-flex">
+<header class="masthead text-center text-light d-flex">
   <div class="container my-auto">
     <img src="img/moritz.jpg" class="rounded-circle header-image mb-3" alt="Moritz">
     <h1 class="header-text"><span class="font-weight-light d-inline-block">Hi I'm</span> <br class="d-block d-sm-none"/><span class="font-weight-bold d-inline-block">Moritz Brunnengräber</span></h1>
-    <a class="btn btn-secondary btn-lg mt-5 px-4 py-3 text-uppercase js-scroll-trigger" href="#about">Get to know me</a>
+    <a class="btn btn-secondary btn-lg mt-5 px-5 py-3 text-uppercase js-scroll-trigger" href="#about">Get to know me</a>
   </div>
 </header>
 
 <section class="bg-primary" id="about">
   <div class="container text-center maxwidth-md">
-    <h2 class="section-heading text-white">Who I am</h2>
+    <h2 class="section-heading text-light">Who I am</h2>
     <hr class="hr-secondary my-4">
-    <p class="text-faded">
+    <p class="text-light">
       I am a <span id="age"></span> years old and live in Puchheim, a suburb of Munich.<br/>
       At the moment, I am a master student in Geodesy&nbsp;and&nbsp;Geoinformation at the Technical&nbsp;University&nbsp;of&nbsp;Munich.<br/>
       In my free-time I like to play squash, go hiking, play video games and hang around with friends, especially with my girlfriend.
@@ -55,12 +57,12 @@ foot_additional: >
         <p class="text-muted mt-3">I have much fun designing and building interactive web-based maps with frameworks like Mapbox.</p>
       </div>
     </div>
-    {% include scrolldown2id.html class='text-dark' id='#services' %}
+    {% include scrolldown2id.html class='text-dark' id='#location' %}
   </div>
 </section>
 
-<section class="bg-dark text-white" id="location">
-  <div class="container-fluid text-center">
+<section class="bg-dark text-light" id="location">
+  <div class="container-fluid px-0 text-center">
     <h2 class="section-heading">Where I am</h2>
     <hr class="hr-secondary my-4">
     <div id="google_map"></div>
@@ -68,115 +70,39 @@ foot_additional: >
   </div>
 </section>
 
-<section class="bg-secondary" id="portfolio">
+<section class="bg-secondary text-light" id="portfolio">
   <div class="container text-center">
     <h2 class="section-heading">Have a look at my work</h2>
     <hr class="hr-dark my-4">
-    <div class="row d-flex align-items-stretch">
-      <div class="col-lg-4 col-md-6 text-center d-flex flex-wrap">
-        <div class="card sr-cards my-3">
-          <a href="http://1zig-art.de/" target="_blank">
-            <img class="card-img-top" src="img/portfolio/min/1zig-art.de_page.jpg" alt="1zig-art.de">
-          </a>
+
+    <div class="row text-dark">
+      {% for work in site.data.portfolio %}
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="card flex-fill shadow my-3">
+          <img class="card-img-top border-bottom" src="{{ work.title | slugify: 'latin' | prepend: '/img/portfolio/' | append: '.jpg' }}" alt="{{ work.title }}">
           <div class="card-body">
-            <h4 class="card-title">1zig-ART</h4>
-            <p class="card-text">Homepage for my mother's cute and unique gift articles boutique.<br/>Realized with Wordpress.</p>
+            <h4 class="card-title">{{ work.title }}</h4>
+            <p class="card-text">{{ work.text }}</p>
           </div>
-          <div class="card-footer border-top-0 bg-0">
-            <a href="http://1zig-art.de/" target="_blank" class="btn btn-outline-primary btn-block"><i class="mdi mdi-gift mr-2"></i>1zig-art.de</a>
+          <div class="card-footer border-top-0 bg-transparent">
+            <a href="{{ work.link | absolute_url }}"
+            {% if work.fancybox %}
+              data-fancybox="{{ work.fancybox }}"
+            {% else %}
+              target="_blank"
+            {% endif %}
+             class="btn btn-outline-primary btn-block">{{ work.btn-text }}</a>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 text-center d-flex flex-wrap">
-        <div class="card sr-cards my-3">
-          <a href="http://beautycare-kosmetik.de/" target="_blank">
-            <img class="card-img-top" src="img/portfolio/min/beautycare-kosmetik.de_page.jpg" alt="beautycare-kosmetik.de">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">BeautyCare</h4>
-            <p class="card-text">Homepage for my aunt's beautiful and cordial beauty parlor.<br>Realized with Wordpress.</p>
-          </div>
-          <div class="card-footer border-top-0 bg-0">
-            <a href="http://beautycare-kosmetik.de/" target="_blank" class="btn btn-outline-primary btn-block"><i class="mdi mdi-face mr-2"></i>beautycare-kosmetik.de</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 text-center d-flex flex-wrap">
-        <div class="card sr-cards my-3">
-          <a href="http://www.gut-schwaig.de/" target="_blank">
-            <img class="card-img-top" src="img/portfolio/min/gut-schwaig.de_page.jpg" alt="gut-schwaig.de">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Gut Schwaig</h4>
-            <p class="card-text">Homepage for my girlfriend's former icelandic horse stable.<br>Realized with Wordpress.</p>
-          </div>
-          <div class="card-footer border-top-0 bg-0">
-            <a href="http://www.gut-schwaig.de/" target="_blank" class="btn btn-outline-primary btn-block"><i class="mdi mdi-donkey mdi-donkey-fix mr-2"></i>gut-schwaig.de</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 text-center d-flex flex-wrap">
-        <div class="card sr-cards my-3">
-          <a href="http://129.187.45.33/rollimap" target="_blank" >
-            <img class="card-img-top" src="img/portfolio/min/barrierefreie_wander_karte_page.jpg" alt="Rollimap">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Barrierefreie Wanderkarte</h4>
-            <p class="card-text">Interactive "take a stroll" map for people with mobility impairments in Olching.<br>Realized with Mapbox and Bootstrap.</p>
-          </div>
-          <div class="card-footer border-top-0 bg-0">
-            <a href="http://129.187.45.33/rollimap" target="_blank" class="btn btn-outline-primary btn-block"><i class="mdi mdi-wheelchair-accessibility mr-2"></i>explore map</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 text-center d-flex flex-wrap">
-        <div class="card sr-cards my-3 ">
-          <a href="#fancybox-panos">
-            <img class="card-img-top" src="img/portfolio/min/panoramen_placeholder.jpg" alt="Little Planet">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Panoramic images</h4>
-            <p class="card-text">Some, of my fascinating fully spherical (aerial) panoramic images showing cool places around the world.</p>
-          </div>
-          <div class="card-footer border-top-0 bg-0">
-            <a href="pano/pano.html" data-fancybox="fancybox-panos" class="btn btn-outline-primary btn-block"><i class="mdi mdi-web mr-2"></i>explore panoramen</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 text-center d-flex flex-wrap">
-        <div class="card sr-cards my-3">
-          <a href="#fancybox-images">
-            <img class="card-img-top" src="img/portfolio/min/images_placeholder.jpg" alt="Image">
-          </a>
-          <div class="card-body">
-            <h4 class="card-title">Photographies</h4>
-            <p class="card-text">A small selection of my various images.<br>Taken with Phone, Action-Cam, DSLM and Drone.</p>
-          </div>
-          <div class="card-footer border-top-0 bg-0">
-            <a href="img/portfolio/images/01.jpg" data-fancybox="fancybox-images" class="btn btn-outline-primary btn-block"><i class="mdi mdi-panorama mr-2"></i>explore images</a>
-            <div class="d-none">
-              <a href="img/portfolio/images/02.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/03.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/04.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/05.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/06.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/07.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/08.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/09.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/10.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/11.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/12.jpg" data-fancybox="fancybox-images"></a>
-              <a href="img/portfolio/images/13.jpg" data-fancybox="fancybox-images"></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
-    <div class="row mt-5">
-      <div class="col text-center sr-scroll-buttons">
-        <a class="text-light js-scroll-trigger" href="#contact" aria-label="Scroll down"><i class="mdi mdi-chevron-double-down mdi-4x"></i></a>
-      </div>
+    <div class="d-none">
+      {% for i in (2..13) %}
+        <a href="img/gallery/{{ i }}.jpg" data-fancybox="fancybox-images"></a>
+      {% endfor %}
     </div>
+    {% include scrolldown2id.html class='text-light' id='#contact' %}
   </div>
 </section>
 
@@ -184,7 +110,7 @@ foot_additional: >
   <div class="container text-center">
     <h2 class="section-heading">Drop me a message</h2>
     <hr class="hr-primary mt-4 mb-5">
-    <form id="contact_form" action="contact/contact.php" method="post" novalidate>
+    <form id="contact_form" action="/contact/contact.php" method="post" novalidate>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="contact_name" class="sr-only">Name</label>
@@ -216,6 +142,10 @@ foot_additional: >
           <textarea name="message" class="form-control textarea" id="contact_textarea" rows="4" placeholder="Message…" required></textarea>
           <div class="invalid-feedback ml-5">I thought you were here to write me a message?!</div>
         </div>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="contact_datacheck" required>
+        <label class="custom-control-label text-muted" for="contact_datacheck">Agreement that the data will be stored and processed only for the purpose of communication. The data will not be passed on to third parties!</label>
       </div>
       <div class="contact_response my-2"></div>
       <div class="form-row">
