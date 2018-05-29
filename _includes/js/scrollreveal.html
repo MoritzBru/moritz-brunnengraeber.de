@@ -1,0 +1,52 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js" integrity="sha256-/Qhln+DyD9FNz0w8Ws3eZN6WAoF09ZsLPcd2tivnibk=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+  var sr = ScrollReveal();
+  var isSmall = ($(".navbar-toggler").css("display") != "none");
+  var delay = isSmall ? null : 200;
+
+  var dirs = ["left", "right", "top", "bottom"];
+  dirs.forEach(function(dir) {
+    sr.reveal(".reveal-" + dir, {
+      origin: dir,
+      distance: "2rem",
+      duration: 800,
+      reset: true
+    });
+  });
+  sr.reveal(".reveal-icons", {
+    duration: 500,
+    scale: 0.3,
+    reset: true
+  }, delay);
+  sr.reveal(".reveal-map", {
+    distance: '0',
+    duration: 0,
+    opacity: 1,
+    scale: 1,
+    reset: true,
+    beforeReveal: function () {
+      try {
+        window.map_markers[0].getMap().fitBounds(window.map_bounds)
+        window.map_markers.forEach(function(m) {
+          m.setVisible(false);
+        })
+        if (window.map_infowindow) {
+          window.map_infowindow.close();
+        }
+      } catch(err){}
+    },
+    afterReveal: function() {
+      try {
+        window.map_markers.forEach(function(m, idx) {
+          window.setTimeout(function() {
+            m.setAnimation(google.maps.Animation.DROP);
+            m.setVisible(true);
+          }, 200*idx);
+        })
+      } catch(err){}
+    }
+  });
+})();
+</script>

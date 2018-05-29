@@ -1,0 +1,16 @@
+.btn[disabled],
+input[disabled] + label {
+  cursor: not-allowed;
+}
+
+.custom-range,
+.custom-control-label,
+.custom-select,
+.dropdown-item {
+  cursor: pointer;
+}
+
+.btn {
+  white-space: normal;
+  &:focus {outline: 0;}
+}

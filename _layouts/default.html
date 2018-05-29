@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body id="home" {{ page.bodyaddon }}>
+
+    {% include nav.html %}
+
+    <main role="main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+    {% include js/js.html %}
+    {% include js/cookieconsent.html %}
+
+  </body>
+
+</html>

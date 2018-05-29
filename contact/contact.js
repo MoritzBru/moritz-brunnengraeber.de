@@ -2,9 +2,6 @@
 
 $( document ).ready(function() {
 
-  // Autoresize Textarea
-  autosize($("textarea"));
-
   // Contact Form
   var form = $("#contact_form");
 
