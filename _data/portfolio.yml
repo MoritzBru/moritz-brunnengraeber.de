@@ -1,42 +1,50 @@
 - title: 1zig-ART
   text: Homepage for my mother's cute and unique gift articles boutique.<br/>Realized with Wordpress.
   btn-text: check out 1zig-art.de
+  btn-icon: fas fa-gift
   link: http://1zig-art.de/
 
 - title: BeautyCare
   text: Homepage for my aunt's beautiful and cordial beauty parlor.<br>Realized with Wordpress.
   btn-text: visit beautycare-kosmetik.de
+  btn-icon: fas fa-heart
   link: http://beautycare-kosmetik.de/
 
 - title: Gut Schwaig
   text: Homepage for my girlfriend's former icelandic horse stable.<br>Realized with Wordpress.
   btn-text: look at gut-schwaig.de
+  btn-icon: fab fa-sticker-mule
   link: http://www.gut-schwaig.de/
 
 - title: Pferd sein kann so schön sein
   text: Funny little video my girlfriend and I made for Gut Schwaig.
   btn-text: watch the video
+  btn-icon: fab fa-youtube
   fancybox: fancybox-video
   link: https://www.youtube.com/watch?v=LIioXXu7Xlc
 
 - title: Barrierefreie Wanderkarte
   text: Interactive "take a stroll" map for people with mobility impairments in Olching.<br>Realized with Mapbox and Bootstrap.
   btn-text: examine the map
+  btn-icon: fab fa-accessible-icon
   link: https://www.lfk.bgu.tum.de/en/service/rolli-mapproject-by-gug-students/
 
 - title: Panoramatour Kranzberg
   text: Streetview-like aerial panoramatour with additional informations of the Skiparadies Kranzberg.
   btn-text: fly around the skiparadies
+  btn-icon: fas fa-snowflake
   link: https://moritzbru.gitlab.io/skiparadies-kranzberg-panoramatour/
 
 - title: Cartography Playground
   text: Part of my master thesis about interactive, web-based applications for the explanation of cartographic issues.
   btn-text: play at the playgrounds
+  btn-icon: far fa-compass
   link: http://moritzbru.gitlab.io/cartography-playground/
 
 - title: Panoramic images
   text: Some, of my fascinating fully spherical (aerial) panoramic images showing cool places around the world.
   btn-text: explore the panoramas
+  btn-icon: fas fa-globe
   fancybox: fancybox-panos
   link: pano
   internal: true
@@ -44,6 +52,7 @@
 - title: Photographies
   text: A small selection of my various images.<br>Taken with Phone, Action-Cam, DSLM and Drone.
   btn-text: view the images
+  btn-icon: far fa-image
   fancybox: fancybox-images
   link: img/gallery/1.jpg
   internal: true
