@@ -1,25 +1,5 @@
-# Apache Server Configs v2.14.0 | MIT License
+# Apache Server Configs v3.0.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
-
-# (!) Using `.htaccess` files slows down Apache, therefore, if you have
-# access to the main server configuration file (which is usually called
-# `httpd.conf`), you should add this logic there.
-#
-# https://httpd.apache.org/docs/current/howto/htaccess.html.
-
-
-
-# ----------------------------------------------------------------------
-# | Character encodings                                                |
-# ----------------------------------------------------------------------
-
-# Serve all resources labeled as `text/html` or `text/plain`
-# with the media type `charset` parameter set to `UTF-8`.
-#
-# https://httpd.apache.org/docs/current/mod/core.html#adddefaultcharset
-
-AddDefaultCharset utf-8
-
 
 # ######################################################################
 # # ERRORS                                                             #
@@ -30,9 +10,10 @@ AddDefaultCharset utf-8
 # ----------------------------------------------------------------------
 
 # Customize what Apache returns to the client in case of an error.
+#
 # https://httpd.apache.org/docs/current/mod/core.html#errordocument
 
-ErrorDocument 404 /404.html
+# ErrorDocument 404 /404.html
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
@@ -46,7 +27,6 @@ ErrorDocument 404 /404.html
 # https://httpd.apache.org/docs/current/content-negotiation.html#multiviews
 
 Options -MultiViews
-
 
 # ######################################################################
 # # SECURITY                                                           #
@@ -99,7 +79,7 @@ Options -MultiViews
 # left by some text editors and can pose a security risk when anyone
 # has access to them.
 #
-# http://feross.org/cmsploit/
+# https://feross.org/cmsploit/
 #
 # (!) Update the `<FilesMatch>` regular expression from below to
 # include any files that might end up on your production server and
@@ -107,21 +87,11 @@ Options -MultiViews
 # include: configuration files, files that contain metadata about the
 # project (e.g.: project dependencies), build scripts, etc..
 
-<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
-
-    # Apache < 2.3
-    <IfModule !mod_authz_core.c>
-        Order allow,deny
-        Deny from all
-        Satisfy All
-    </IfModule>
-
-    # Apache ≥ 2.3
-    <IfModule mod_authz_core.c>
+<IfModule mod_authz_core.c>
+    <FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
         Require all denied
-    </IfModule>
-
-</FilesMatch>
+    </FilesMatch>
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Reducing MIME type security risks                                  |
@@ -134,9 +104,8 @@ Options -MultiViews
 # is serving user-uploaded content or content that could potentially be
 # treated as executable by the browser.
 #
-# http://www.slideshare.net/hasegawayosuke/owasp-hasegawa
-# http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx
-# https://msdn.microsoft.com/en-us/library/ie/gg622941.aspx
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+# https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/
 # https://mimesniff.spec.whatwg.org/
 
 <IfModule mod_headers.c>
@@ -153,9 +122,9 @@ Options -MultiViews
 #    (e.g.: ASP.NET, PHP), and its value contains information
 #    about them (e.g.: their name, version number)
 #
-#  * doesn't provide any value as far as users are concern,
-#    and in some cases, the information provided by it can
-#    be used by attackers
+#  * doesn't provide any value to users, contributes to header
+#    bloat, and in some cases, the information it provides can
+#    expose vulnerabilities
 #
 # (!) If you can, you should disable the `X-Powered-By` header from the
 # language / framework level (e.g.: for PHP, you can do that by setting
@@ -178,3 +147,16 @@ Options -MultiViews
 # https://httpd.apache.org/docs/current/mod/core.html#serversignature
 
 ServerSignature Off
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Prevent Apache from sending in the `Server` response header its
+# exact version number, the description of the generic OS-type or
+# information about its compiled-in modules.
+#
+# (!) The `ServerTokens` directive will only work in the main server
+# configuration file, so don't try to enable it in the `.htaccess` file!
+#
+# https://httpd.apache.org/docs/current/mod/core.html#servertokens
+
+#ServerTokens Prod
