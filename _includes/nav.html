@@ -1,6 +1,8 @@
 {% if page.fixednav %}
   {% assign navclass = "fixednav" %}
-  {% assign navlink = "/" %}
+  {% capture navlink %}
+    {{ '/' | absolute_url }}
+  {% endcapture %}
 {% else %}
   {% assign navclass = "navbar-scroll-transparent" %}
   {% assign navlink = "#home" %}

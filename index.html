@@ -6,7 +6,7 @@ foot_additional: >
   {% include js/googlemaps.html %}
   {% include js/fancybox.html %}
   {% include js/scrollreveal.html %}
-  <script src="/contact/contact.js"></script>
+  <script src="{{ '/contact/contact.js' | absolute_url }}"></script>
 ---
 
 <div id="bg-particle"></div>
@@ -80,13 +80,13 @@ foot_additional: >
       {% for work in site.data.portfolio %}
       <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
         <div class="card flex-fill shadow my-3 {% cycle 'reveal-left', 'reveal-bottom', 'reveal-right' %}">
-          <img class="card-img-top border-bottom" src="{{ work.title | slugify: 'latin' | prepend: '/img/portfolio/' | append: '.jpg' }}" alt="{{ work.title }}">
+          <img class="card-img-top border-bottom" src="{{ work.title | slugify: 'latin' | prepend: 'img/portfolio/' | append: '.jpg' | absolute_url }}" alt="{{ work.title }}">
           <div class="card-body">
             <h4 class="card-title">{{ work.title }}</h4>
             <p class="card-text">{{ work.text }}</p>
           </div>
           <div class="card-footer border-top-0 bg-transparent">
-            <a href="{{ work.link }}"
+            <a href="{% if work.internal %} {{ '/' | absolute_url }}{% endif %}{{ work.link }}"
             {% if work.fancybox %}
               data-fancybox="{{ work.fancybox }}"
             {% else %}
@@ -100,7 +100,7 @@ foot_additional: >
     </div>
     <div class="d-none">
       {% for i in (2..17) %}
-        <a href="img/gallery/{{ i }}.jpg" data-fancybox="fancybox-images"></a>
+        <a href="{{ i | prepend: 'img/gallery/' | append: '.jpg' | absolute_url }}" data-fancybox="fancybox-images"></a>
       {% endfor %}
     </div>
     {% include scrolldown2id.html class='text-light' id='#contact' %}
@@ -147,6 +147,7 @@ foot_additional: >
       <div class="custom-control custom-checkbox">
         <input type="checkbox" class="custom-control-input" id="contact_datacheck" required>
         <label class="custom-control-label text-muted" for="contact_datacheck">Agreement that the data will be stored and processed only for the purpose of communication. The data will not be passed on to third parties!</label>
+        <div class="invalid-feedback">Please check this. I promise, this data is only used for sending me an email with your issue.</div>
       </div>
       <div class="contact_response my-2"></div>
       <div class="form-row">

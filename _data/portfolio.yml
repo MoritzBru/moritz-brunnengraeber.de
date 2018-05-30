@@ -38,10 +38,12 @@
   text: Some, of my fascinating fully spherical (aerial) panoramic images showing cool places around the world.
   btn-text: explore the panoramas
   fancybox: fancybox-panos
-  link: /pano
+  link: pano
+  internal: true
 
 - title: Photographies
   text: A small selection of my various images.<br>Taken with Phone, Action-Cam, DSLM and Drone.
   btn-text: view the images
   fancybox: fancybox-images
-  link: /img/gallery/1.jpg
+  link: img/gallery/1.jpg
+  internal: true

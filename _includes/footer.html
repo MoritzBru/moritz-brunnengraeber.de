@@ -12,7 +12,7 @@
     <a href="{{ site.social_sketchfab }}" target="_blank" class="social-icon sketchfab" data-toggle="tooltip" data-placement="top" title="Sketchfab">
       {% include svg/icon-sketchfab.svg class='svg-inline--fa  fa-w-16' %}
     </a>
-    <a href="{{ site.social_email }}" target="_blank" class="social-icon email" data-toggle="tooltip" data-placement="top" title="Email">
+    <a href="mailto:{{ site.social_mail }}" target="_blank" class="social-icon email" data-toggle="tooltip" data-placement="top" title="Email">
       <i class="fas fa-envelope-square"></i>
     </a>
     <div class="d-flex flex-column flex-sm-row justify-content-center mt-3">
@@ -20,7 +20,7 @@
       <div class="list-footer d-none d-sm-inline-block border"></div>
       <div class="list-footer">2017 - {{ 'now' | date: "%Y" }}</div>
       <div class="list-footer d-none d-sm-inline-block border"></div>
-      <div class="list-footer"><a href="/legal-notice" class="text-muted">Legal Notice</a></div>
+      <div class="list-footer"><a href="{{ '/legal-notice' | absolute_url }}" class="text-muted">Legal Notice</a></div>
     </div>
   </div>
 </footer>

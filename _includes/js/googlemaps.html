@@ -242,21 +242,21 @@ function initMap() {
     }
   ];
 
-  var icon_base = "/img/map/";
+  var icon_base = "{{ '/img/map/' | absolute_url }}";
   var map_markers_data = [
     {
       "name": "Puchheim",
       "desc": "Where I live.",
       "pos": {lat: 48.1800, lng: 11.3736},
       "coords": "48°10'48\"N | 11°22'25\"E",
-      "icon": icon_base + "home_40.svg"
+      "icon": icon_base + "home.svg"
     },
     {
       "name": "Technical University of Munich",
       "desc": "Where I work and study.",
       "pos": {lat: 48.1489, lng: 11.5675},
       "coords": "48°08'56\"N | 11°34'03\"E",
-      "icon": icon_base + "tum_40.svg"
+      "icon": icon_base + "tum.svg"
     }
   ];
 
