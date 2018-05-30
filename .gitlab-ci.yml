@@ -1,9 +1,5 @@
 image: ruby:2.5
 
-stages:
-  - build
-  - deploy
-
 variables:
   JEKYLL_ENV: production
 
@@ -11,25 +7,17 @@ before_script:
   - export LC_ALL="C.UTF-8"
   - export LANG="en_US.UTF-8"
   - export LANGUAGE="en_US.UTF-8"
-
-build:
-  stage: build
-  script:
   - curl -sL https://deb.nodesource.com/setup_8.x | bash
   - apt-get install -y nodejs
+  - apt-get install -y lftp
+
+build_deploy:
+  script:
   - bundle install
   - bundle exec jekyll build -d _site
+  - lftp -c "set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rev _site/ /httpdocs/moritz-brunnengraeber/  --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/"
   only:
     - master
   artifacts:
     paths:
     - _site
-
-
-deploy:
-  stage: deploy
-  script:
-  - apt-get update -qq && apt-get install -y -qq lftp
-  - lftp -c "set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rev _site/ /httpdocs/moritz-brunnengraeber/  --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/"
-  only:
-  - master
