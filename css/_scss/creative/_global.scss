@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 hr {
-  max-width: 50px;
+  max-width: 100px;
   border-width: 3px;
 }
 @each $color, $value in $theme-colors {
