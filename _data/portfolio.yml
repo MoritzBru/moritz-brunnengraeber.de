@@ -1,7 +1,7 @@
 - title: 1zig-ART
   text: Homepage for my mother's cute and unique gift articles boutique.<br/>Realized with Wordpress.
   btn-text: check out 1zig-art.de
-  btn-icon: <i class="fas fa-gift fa-lg mr-2"></i>
+  btn-icon: "{% include svg/icon-gift.svg class='svg-inline--fa fa-w-16 fa-lg mr-2' %}"
   link: http://1zig-art.de/
 
 - title: BeautyCare
@@ -13,7 +13,7 @@
 - title: Gut Schwaig
   text: Homepage for my girlfriend's former icelandic horse stable.<br>Realized with Wordpress.
   btn-text: look at gut-schwaig.de
-  btn-icon: <i class="fas fa-chess-knight fa-lg mr-2" data-fa-transform="flip-h"></i>
+  btn-icon: "{% include svg/icon-horse.svg class='svg-inline--fa fa-w-14 fa-lg mr-2' %}"
   link: http://www.gut-schwaig.de/
 
 - title: Pferd sein kann so schön sein
