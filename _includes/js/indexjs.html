@@ -1,10 +1,9 @@
 <script>
 (function($) {
-  "use strict"; // Start of use strict
+  "use strict";
 
-  //==============================================================================
-  // Calculate age
-  
+  /*** Calculate age ***/
+
   function getAge(dateString) {
     var today = new Date();
     var birthDate = new Date(dateString);
@@ -17,15 +16,10 @@
   }
   $("#age").html(getAge("1991-02-20"));
 
-  //==============================================================================
-  // Smooth scrolling
+  /*** Smooth scrolling ***/
 
-  // define easing function (http://gsgd.co.uk/sandbox/jquery/easing/)
+  /* define easing function (http://gsgd.co.uk/sandbox/jquery/easing/) */
   jQuery.extend( jQuery.easing, {
-    easeInOutQuart: function (x, t, b, c, d) {
-      if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
-      return -c/2 * ((t-=2)*t*t*t - 2) + b;
-    },
     easeInOutQuint: function (x, t, b, c, d) {
       if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
       return c/2*((t-=2)*t*t*t*t + 2) + b;
@@ -38,7 +32,7 @@
     }
   });
 
-  // on link click -> scroll to position
+  /* on link click -> scroll to position */
   $("a.js-scroll-trigger[href*='#']:not([href='#'])").click(function(evt) {
     if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -53,21 +47,19 @@
     }
   });
 
-  // Closes responsive menu when a scroll trigger link is clicked
+  /* Closes responsive menu when a scroll trigger link is clicked */
   $("a.js-scroll-trigger").click(function() {
     $(".navbar-collapse").collapse("hide");
   });
 
-  //==============================================================================
-  // Activate scrollspy to add active class to navbar items on scroll
+  /*** Activate scrollspy to add active class to navbar items on scroll ***/
 
   $("body").scrollspy({
     target: "#mainNav",
     offset: 57
   });
 
-  //==============================================================================
-  // Collapse Navbar
+  /*** Collapse Navbar ***/
 
   function navbarCollapse() {
     if ($("#mainNav").offset().top > 100) {
@@ -76,10 +68,10 @@
       $("#mainNav").addClass("navbar-scroll-transparent");
     }
   }
-  // Collapse now if page is not at top
+  /* Collapse now if page is not at top */
   navbarCollapse();
-  // Collapse the navbar when page is scrolled
+  /* Collapse the navbar when page is scrolled */
   $(window).scroll(navbarCollapse);
 
-})(jQuery); // End of use strict
+})(jQuery);
 </script>
