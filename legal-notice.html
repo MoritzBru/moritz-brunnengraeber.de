@@ -34,10 +34,10 @@ company_name: <em>moritz-brunnengraeber.de</em>
       {% capture legal_info %}
       <address>
         <ul class="fa-ul">
-          <li><span class="fa-li"><i class="far fa-user text-secondary"></i></span><strong>{{ site.legal_name }}</strong></li>
+          <li><span class="fa-li"><i class="fas fa-user text-secondary"></i></span><strong>{{ site.legal_name }}</strong></li>
           <li><span class="fa-li"><i class="fas fa-map-marker-alt text-secondary"></i></span>{{ site.legal_address }}</li>
-          <li><span class="fa-li"><i class="far fa-envelope text-secondary"></i></span><a href="mailto:{{ site.legal_mail | replace: '.','&#46;' | replace:'@','&#64;' }}">{{ site.legal_mail | replace: '.','&#46;' | replace:'@','&#64;' }}</a></li>
-          <li><span class="fa-li">{% include svg/icon-web-globe.svg class='svg-inline--fa fa-w-16 text-secondary' %}</span><a href="{{ '/' | absolute_url }}">{{ '/' | absolute_url }}</a></li>
+          <li><span class="fa-li"><i class="fas fa-envelope text-secondary"></i></span><a href="mailto:{{ site.legal_mail | replace: '.','&#46;' | replace:'@','&#64;' }}">{{ site.legal_mail | replace: '.','&#46;' | replace:'@','&#64;' }}</a></li>
+          <li><span class="fa-li"><i class="fas fa-globe text-secondary"></i></span><a href="{{ '/' | absolute_url }}">{{ '/' | absolute_url }}</a></li>
         </ul>
       </address>
       {% endcapture %}
