@@ -28,3 +28,6 @@ sass:
 
 plugins:
 - jekyll-autoprefixer
+
+compress_html:
+  clippings: all
