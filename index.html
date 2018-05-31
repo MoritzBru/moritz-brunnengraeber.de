@@ -92,7 +92,7 @@ foot_additional: >
             {% else %}
               target="_blank"
             {% endif %}
-             class="btn btn-outline-primary btn-block"><i class="{{ work.btn-icon | append:' fa-lg mr-2'}}"></i>{{ work.btn-text }}</a>
+             class="btn btn-outline-primary btn-block">{{ work.btn-icon | flatify }}{{ work.btn-text }}</a>
           </div>
         </div>
       </div>
