@@ -28,10 +28,10 @@
     reset: true,
     beforeReveal: function () {
       try {
-        window.map_markers[0].getMap().fitBounds(window.map_bounds)
+        window.map_markers[0].getMap().fitBounds(window.map_bounds);
         window.map_markers.forEach(function(m) {
           m.setVisible(false);
-        })
+        });
         if (window.map_infowindow) {
           window.map_infowindow.close();
         }
@@ -44,7 +44,7 @@
             m.setAnimation(google.maps.Animation.DROP);
             m.setVisible(true);
           }, 200*idx);
-        })
+        });
       } catch(err){}
     }
   });
