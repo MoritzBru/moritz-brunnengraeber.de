@@ -26,8 +26,5 @@ sass:
   style: compressed
   sass_dir: css/_scss
 
-plugins:
-- jekyll-autoprefixer
-
 compress_html:
   clippings: all
