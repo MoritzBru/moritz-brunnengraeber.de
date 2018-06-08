@@ -5,7 +5,7 @@
 
 ## Dependencies
 
-[![jekyll gem](https://img.shields.io/gem/v/jekyll.svg?style=flat-square&label=jekyll+gem)](https://github.com/jekyll/jekyll/releases)
+[![jekyll gem](https://img.shields.io/gem/v/jekyll.svg?label=jekyll+gem)](https://github.com/jekyll/jekyll/releases)
 
 | Name                                                                    | Path                     | Version (in use) | Version (latest)                                                                                                                         |
 | ----------------------------------------------------------------------- | ------------------------ | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
