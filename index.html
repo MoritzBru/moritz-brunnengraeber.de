@@ -90,7 +90,7 @@ foot_additional: >
             {% if work.fancybox %}
               data-fancybox="{{ work.fancybox }}"
             {% else %}
-              target="_blank"
+              target="_blank" rel="noopener"
             {% endif %}
              class="btn btn-outline-primary btn-block">{{ work.btn-icon | flatify }}{{ work.btn-text }}</a>
           </div>
