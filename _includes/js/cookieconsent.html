@@ -2,24 +2,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js" integrity="sha256-bPOd70Y8ohKatGmjL6tszdveppYZCunsUfLOq7v8JBw=" crossorigin="anonymous"></script>
 
 <script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#343a40",
-      "text": "#f8f9fa"
+window.addEventListener("load", function () {
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#343a40",
+        "text": "#f8f9fa"
+      },
+      "button": {
+        "background": "#ad1457",
+        "text": "#f8f9fa"
+      }
     },
-    "button": {
-      "background": "#ad1457",
-      "text": "#f8f9fa"
+    "theme": "edgeless",
+    "content": {
+      "message": "We use cookies to analyse our website and to offer you the best possible experience with our website.",
+      "dismiss": "OK!",
+      "link": "Check out the legal notice",
+      "href": "{{ '/legal-notice/' | absolute_url }}"
     }
-  },
-  "theme": "edgeless",
-  "content": {
-    "message": "We use cookies to analyse our website and to offer you the best possible experience with our website.",
-    "dismiss": "OK!",
-    "link": "Check out the legal notice",
-    "href": "{{ '/legal-notice/' | absolute_url }}"
-  }
-})});
+  });
+});
 </script>
