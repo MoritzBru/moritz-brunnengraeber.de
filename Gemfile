@@ -14,5 +14,5 @@ group :jekyll_plugins do
   # vendor prefixing in stylesheet
   gem "jekyll-autoprefixer"
   # compress text files
-  gem "jekyll-gzip"
+  # gem "jekyll-gzip"
 end
