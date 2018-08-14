@@ -11,13 +11,13 @@
   link: http://beautycare-kosmetik.de/
 
 - title: Gut Schwaig
-  text: Homepage for my girlfriend's former icelandic horse stable.<br>Realized with Wordpress.
+  text: Homepage for an icelandic horse stable near the Osterseen.<br>Realized with Wordpress.
   btn-text: look at gut-schwaig.de
   btn-icon: "{% include svg/icon-horse.svg class='svg-inline--fa fa-w-14 fa-lg mr-2' %}"
   link: http://www.gut-schwaig.de/
 
 - title: Pferd sein kann so schön sein
-  text: Funny little video my girlfriend and I made for Gut Schwaig.
+  text: Funny little video for Gut Schwaig starring a Horse.
   btn-text: watch the video
   btn-icon: <i class="fab fa-youtube fa-lg mr-2"></i>
   fancybox: fancybox-video
