@@ -19,11 +19,11 @@ foot_additional: >
   </div>
 </header>
 
-<section class="bg-primary" id="about">
+<section class="bg-primary text-light pt-5 shadow-up" id="about">
   <div class="container text-center maxwidth-md">
-    <h2 class="section-heading text-light">Who I am</h2>
+    <h2 class="section-heading">Who I am</h2>
     <hr class="hr-secondary my-4">
-    <p class="text-light">
+    <p>
       I am <span id="age"></span> years old and live in Puchheim, a suburb of Munich.<br/>
       At the moment, I am a master student in Geodesy&nbsp;and&nbsp;Geoinformation (Specialisation: Photogrammetry, Remote Sensing, and Cartography) at the Technical&nbsp;University&nbsp;of&nbsp;Munich.<br/>
       In my free-time I like to play squash, go hiking, play video games and hang around with friends.
@@ -31,6 +31,8 @@ foot_additional: >
     {% include scrolldown2id.html class='text-light' id='#services' %}
   </div>
 </section>
+
+{% include sectiontriangle.html color='primary' background='light' %}
 
 <section class="bg-light" id="services">
   <div class="container text-center">
@@ -62,6 +64,8 @@ foot_additional: >
   </div>
 </section>
 
+{% include sectiontriangle.html color='light' background='dark' %}
+
 <section class="bg-dark text-light" id="location">
   <div class="container-fluid px-0 text-center reveal-map">
     <h2 class="section-heading">Where I am</h2>
@@ -70,6 +74,8 @@ foot_additional: >
     {% include scrolldown2id.html class='text-light' id='#portfolio' %}
   </div>
 </section>
+
+{% include sectiontriangle.html color='dark' background='secondary' %}
 
 <section class="bg-secondary text-light" id="portfolio">
   <div class="container text-center">
@@ -107,7 +113,9 @@ foot_additional: >
   </div>
 </section>
 
-<section class="bg-light" id="contact">
+{% include sectiontriangle.html color='secondary' background='light' %}
+
+<section class="bg-light pb-5 shadow-down" id="contact">
   <div class="container text-center">
     <h2 class="section-heading">Drop me a message</h2>
     <hr class="hr-primary mt-4 mb-5">
@@ -161,3 +169,5 @@ foot_additional: >
     </form>
   </div>
 </section>
+
+<!-- {% include sectiontriangle.html position='bottom' color='light' %} -->
