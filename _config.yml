@@ -24,9 +24,14 @@ permalink: pretty
 
 exclude: ["README.md", "Gemfile", "Gemfile.lock"]
 
+# compress html via compress liquid layout
+compress_html:
+  clippings: all
+  comments: all
+  ignore:
+    envs: development
+
+# compile sass in compressed mode
 sass:
   style: compressed
   sass_dir: css/_scss
-
-compress_html:
-  clippings: all
