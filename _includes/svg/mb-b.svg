@@ -3,5 +3,5 @@
   <circle cx="10" cy="10.5" r="4.5" fill="#ad1457"/>
   <circle cx="10" cy="3.5" r="2.5" fill="#ad1457"/>
   <path d="M1,1h9v14H1z" fill="#1a237e"/>
-  <path d="M1,1h9v5H1z" fill="#283593"/>
+  <path d="M1,1h9v5H1z" fill="#3F51B5"/>
 </svg>
