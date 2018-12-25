@@ -121,7 +121,7 @@ if(isset($_POST["g-recaptcha-response"]) && !empty($_POST["g-recaptcha-response"
 
 
   } else { // verification failed with error
-    $responseArray = array('type' => 'danger', 'message' => $errorMessage . "error-codes");
+    $responseArray = array('type' => 'danger', 'message' => $errorMessage . "<br/>reCAPTCHA Error");
     $encoded = json_encode($responseArray);
     header('Content-Type: application/json');
     echo $encoded;
