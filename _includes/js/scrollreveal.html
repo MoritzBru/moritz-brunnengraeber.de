@@ -1,4 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js" integrity="sha256-/Qhln+DyD9FNz0w8Ws3eZN6WAoF09ZsLPcd2tivnibk=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.5/scrollreveal.min.js" integrity="sha256-8VU/+18Z5eyYrv12HuV6lH74T2PFmP1ggKi+JkwYDHE=" crossorigin="anonymous"></script>
 
 <script>
 (function() {
@@ -10,16 +10,17 @@
   dirs.forEach(function(dir) {
     sr.reveal(".reveal-" + dir, {
       origin: dir,
-      distance: "2rem",
-      duration: 800,
+      distance: "2em",
+      duration: 1000,
       reset: true
     });
   });
   sr.reveal(".reveal-icons", {
-    duration: 500,
+    duration: 800,
     scale: 0.3,
-    reset: true
-  }, delay);
+    reset: true,
+    interval: delay
+  });
   sr.reveal(".reveal-map", {
     distance: "0",
     duration: 0,
