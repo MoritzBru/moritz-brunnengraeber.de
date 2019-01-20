@@ -16,10 +16,15 @@
     {% if page.fixednav %}
     <a href="{{ '/' | absolute_url }}" data-toggle="tooltip" data-placement="left" title="Home" aria-label="Home">{% include svg/icon-home.svg class='svg-inline--fa fa-w-16 fa-2x' %}</a>
     {% else %}
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
+    <button class="navbar-toggler hamburger collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <svg class="hamburger__base" viewBox="15 15 70 70">
+        <path class="hamburger__line hamburger__line--top"
+              d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+        <path class="hamburger__line"
+              d="m 70,50 h -40" />
+        <path class="hamburger__line hamburger__line--bottom"
+              d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+      </svg>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">

@@ -3,7 +3,7 @@
     height: 30px;
   }
   background-color: $white;
-  box-shadow: 0 -5px 10px 5px rgba(0,0,0,0.6);
+  box-shadow: 0 -5px 10px 5px rgba(0, 0, 0, 0.6);
   font-family: $font-family-sans-serif;
   @include transition($transition-base);
   transition-property: background-color, color, box-shadow;
@@ -11,6 +11,7 @@
     font-weight: bold;
     text-transform: uppercase;
     color: $primary;
+    @include transition($transition-base);
     @include hover-focus {
       color: darken($primary, 10%);
     }
@@ -36,104 +37,75 @@
       background-color: transparent;
       box-shadow: none;
       .navbar-brand {
-        color: rgba($white, .4);
+        color: rgba($white, 0.4);
         @include hover-focus {
-          color: rgba($white, .8);
+          color: rgba($white, 0.8);
         }
       }
       .navbar-nav .nav-item .nav-link {
-        color: rgba($white, .4);
+        color: rgba($white, 0.4);
         @include hover-focus {
-          color: rgba($white, .8);
+          color: rgba($white, 0.8);
         }
       }
     }
-  }//breakpoint
-}//mainNav
+  } //breakpoint
+} //mainNav
 
-
-// Hamburger Menu
-// Inspired by https://jonsuh.com/hamburgers
-
-$hamburger-width:           32px;
-$hamburger-height:          1rem;
-$hamburger-layer-height:    3px;
-$hamburger-color:           $gray-800;
-$hamburger-color-hover:     $primary;
-$hamburger-transition-time:  .2s;
+$_hamburger-color: $gray-800;
+$_hamburger-color-hover: $primary;
+$_hamburger-height: 40px;
+$_hamburger-transition-time: 0.3s;
 
 .navbar-toggler {
   border: 0;
   outline: 0;
-  display: inline-block;
-  overflow: visible;
-  padding: .5rem .25rem;
-  color: $hamburger-color;
+  padding: 0;
+  color: $_hamburger-color;
   @include transition($transition-base);
-  .hamburger-box {
-    width: $hamburger-width;
-    height: $hamburger-height;
-    display: inline-block;
-    position: relative;
-  }
-  .hamburger-inner {
-    &,
-    &::before,
-    &::after {
-      position: absolute;
-      display: block;
-      width: $hamburger-width;
-      height: $hamburger-layer-height;
-      background-color: currentColor;
-      border-radius: $hamburger-layer-height;
-      transform-style: preserve-3d;
-    }
-    &::before,
-    &::after {
-      content: "";
-    }
-    & {
-      top: 50%;
-    }
-    &::before {
-      top: -.55rem;
-    }
-    &::after {
-      bottom: -.55rem;
-    }
-  }
   @include hover-focus {
+    border: 0;
     outline: 0;
-    color: $hamburger-color-hover;
+    color: $_hamburger-color-hover;
+  }
+}
+
+.hamburger {
+  &__base {
+    height: $_hamburger-height;
+    cursor: pointer;
+    transition: transform $_hamburger-transition-time;
+    user-select: none;
   }
 
-  // ☰ (nav closed)
-  &.collapsed {
-    .hamburger-inner {
-      transition: transform $hamburger-transition-time;
-      &::before {
-        transition: opacity $hamburger-transition-time $hamburger-transition-time, top $hamburger-transition-time $hamburger-transition-time;
-      }
-      &::after {
-        transition: transform $hamburger-transition-time, bottom $hamburger-transition-time $hamburger-transition-time;
-      }
+  &__line {
+    fill: none;
+    transition: stroke-dasharray $_hamburger-transition-time,
+      stroke-dashoffset $_hamburger-transition-time;
+    stroke: currentColor;
+    stroke-width: 6;
+    stroke-linecap: round;
+
+    &--top {
+      stroke-dasharray: 40 121;
+    }
+
+    &--bottom {
+      stroke-dasharray: 40 121;
     }
   }
-  // X (nav opened)
+
   &:not(.collapsed) {
-    .hamburger-inner {
+    .hamburger__base {
       transform: rotate(45deg);
-      transition: transform $hamburger-transition-time $hamburger-transition-time;
-      &::before {
-        top: 0;
-        opacity: 0;
-        transition: top $hamburger-transition-time, opacity $hamburger-transition-time $hamburger-transition-time;
-      }
-      &::after {
-        bottom: 0;
-        transform: rotate(-90deg);
-        transition: bottom $hamburger-transition-time, transform $hamburger-transition-time $hamburger-transition-time;
-      }
+    }
+
+    .hamburger__line--top {
+      stroke-dashoffset: -68;
+    }
+
+    .hamburger__line--bottom {
+      stroke-dashoffset: -68;
     }
   }
-}//navbar-toggler
+}
