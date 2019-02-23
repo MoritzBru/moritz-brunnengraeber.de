@@ -39,7 +39,7 @@
   text: Part of my master thesis about interactive, web-based applications for the explanation of cartographic issues.
   btn-text: play at the playgrounds
   btn-icon: <i class="far fa-compass fa-lg mr-2"></i>
-  link: https://moritzbru.gitlab.io/cartography-playground/
+  link: https://cartography-playground.gitlab.io/
 
 - title: Panoramic images
   text: Some, of my fascinating fully spherical (aerial) panoramic images showing cool places around the world.
