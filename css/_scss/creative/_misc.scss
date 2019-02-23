@@ -71,3 +71,15 @@ div[class*='reveal-'], span[class*='reveal-'], img[class*='reveal-'] {
 .shadow-down {
   box-shadow: 0 8px 8px rgba(0,0,0,0.25);
 }
+
+// legal notice
+
+#legal-notice-container {
+  h1, h2 {
+    text-align: center;
+  }
+}
+
+.list__alpha {
+  list-style: lower-alpha;
+}
