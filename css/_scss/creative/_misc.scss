@@ -1,13 +1,9 @@
-// Moritz misc stuff
-
-// =============================================================================
 // max width grid $grid-breakpoints
 
 @each $breakpoint, $width in $grid-breakpoints {
   .maxwidth-#{$breakpoint} { max-width: $width; }
 }
 
-// =============================================================================
 // noscript-overlay
 
 .noscript-overlay {
@@ -26,14 +22,12 @@
   }
 }
 
-// =============================================================================
 // scroll reveal
 
 div[class*='reveal-'], span[class*='reveal-'], img[class*='reveal-'] {
   visibility: hidden;
 }
 
-// =============================================================================
 // Particles
 
 #bg-particle {
@@ -45,7 +39,6 @@ div[class*='reveal-'], span[class*='reveal-'], img[class*='reveal-'] {
   background-image: linear-gradient(to bottom, $gray-700, $gray-900);
 }
 
-// =============================================================================
 // Google maps
 
 #google_map {
@@ -54,7 +47,6 @@ div[class*='reveal-'], span[class*='reveal-'], img[class*='reveal-'] {
   border: 0;
 }
 
-// =============================================================================
 // Input & textarea
 
 .input-rounded-right {
@@ -71,7 +63,6 @@ div[class*='reveal-'], span[class*='reveal-'], img[class*='reveal-'] {
   border-bottom-left-radius: $text-area-border-radius !important;
 }
 
-// =============================================================================
 // section shadow
 
 .shadow-up {

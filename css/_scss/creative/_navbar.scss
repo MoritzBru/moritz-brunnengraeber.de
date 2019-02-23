@@ -7,6 +7,7 @@
   font-family: $font-family-sans-serif;
   @include transition($transition-base);
   transition-property: background-color, color, box-shadow;
+
   .navbar-brand {
     font-weight: bold;
     text-transform: uppercase;
@@ -16,8 +17,10 @@
       color: darken($primary, 10%);
     }
   }
+
   .navbar-nav {
     text-align: center;
+
     .nav-item .nav-link {
       font-weight: bold;
       text-transform: uppercase;
@@ -27,6 +30,7 @@
       @include hover-focus {
         color: $primary;
       }
+
       &.active {
         color: $primary;
       }
@@ -36,12 +40,14 @@
     &:not(fixednav).navbar-scroll-transparent {
       background-color: transparent;
       box-shadow: none;
+
       .navbar-brand {
         color: rgba($white, 0.4);
         @include hover-focus {
           color: rgba($white, 0.8);
         }
       }
+      
       .navbar-nav .nav-item .nav-link {
         color: rgba($white, 0.4);
         @include hover-focus {
@@ -49,8 +55,8 @@
         }
       }
     }
-  } //breakpoint
-} //mainNav
+  }
+}
 
 $_hamburger-color: $gray-800;
 $_hamburger-color-hover: $primary;
