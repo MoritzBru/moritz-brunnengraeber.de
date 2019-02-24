@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" integrity="sha256-9vPVPdIkAmHxV2la3zhqXAgBQpjBn2LM9jzRYploktA=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js" integrity="sha256-Tb4gdeCN/ACKmhKQ3BSfbuNgIVYQzBlEvbYlwK7juDw=" crossorigin="anonymous"></script>
+{{site.dep_fancybox}}
 
 <script>
 $("[data-fancybox='fancybox-images']").fancybox({
@@ -10,19 +9,7 @@ $("[data-fancybox='fancybox-images']").fancybox({
   clickContent: false,
   animationEffect: "zoom-in-out",
   transitionEffect: "slide",
-  baseClass: "fancy-moe",
-  btnTpl: {
-    arrowLeft: "<button data-fancybox-prev class='fancybox-button fancybox-button--arrow_left' title='{{PREV}}'>" +
-    "<svg viewBox='0 0 40 40'>" +
-    "<path d='M13,20,25,32,13,20,25,8,13,20'/>" +
-    "</svg>" +
-    "</button>",
-    arrowRight: "<button data-fancybox-next class='fancybox-button fancybox-button--arrow_right' title='{{NEXT}}'>" +
-    "<svg viewBox='0 0 40 40'>" +
-    "<path d='M27,20,15,8,27,20,15,32,27,20'/>" +
-    "</svg>" +
-    "</button>",
-  }
+  baseClass: "fancy-moe"
 });
 $("[data-fancybox='fancybox-panos'],[data-fancybox='fancybox-video']").fancybox({
   defaultType: "iframe",
@@ -36,27 +23,32 @@ $("[data-fancybox='fancybox-panos'],[data-fancybox='fancybox-video']").fancybox(
 <style>
 {% capture fancy-style %}
 .fancy-moe {
-  .fancybox-toolbar {
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-  .fancybox-button:focus {
-    outline: 0;
-  }
-  .fancybox-button:focus, .fancybox-button:hover {
-    color: var(--primary);
-  }
-  .fancybox-navigation button::before,
   .fancybox-button {
-    border-radius: 10rem;
+
+    &:hover,
+    &:focus {
+      color: var(--secondary);
+    }
+
+    &--close {
+      border-bottom-left-radius: 1.5em;
+    }
+
+    &--arrow_left,
+    &--arrow_right {
+      background: 0;
+    }
+
+    & div {
+      background: rgba(30,30,30,.6);
+      border-radius: 50%;
+    }
   }
-  .fancybox-button--close:hover {
-    color: var(--danger);
-  }
+
   .fancybox-infobar {
     font-family: var(--font-family-monospace);
     background-color: rgba(30,30,30,.6);
-    border-radius: 10rem;
+    border-radius: 2rem;
     top: 0.5rem;
     left: 0.5rem;
     height: 2rem;

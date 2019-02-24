@@ -16,9 +16,23 @@ social_linkedin: https://www.linkedin.com/in/moritz-brunnengr%C3%A4ber-319915177
 
 google_maps_api: AIzaSyDeJbsLO30Ip1EaPqx9HuC363gT2r7WanA
 
-legal_name: Moritz Brunnengräber
-legal_address: Münchner Straße 45<br>82178 Puchheim<br>Germany
-legal_mail: mail@moritz-brunnengraeber.de
+dep_jquery: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+dep_popper: <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha256-ZvOgfh+ptkpoa2Y4HkRY28ir89u/+VRyDE7sB7hEEcI=" crossorigin="anonymous"></script>
+dep_bootstrap: <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+dep_fontawesome: <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+dep_cookieconsent: |
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" integrity="sha256-ebN46PPB/s45oUcqLn2SCrgOtYgVJaFiLZ26qVSqI8M=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js" integrity="sha256-y0EpKQP2vZljM73+b7xY4dvbYQkHRQXuPqRjc7sjvnA=" crossorigin="anonymous"></script>
+dep_particles: <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha256-+u54FaX9J+k40eAcg5K2YzICSQjrEYBI9gju5nE3HfY=" crossorigin="anonymous"></script>
+dep_fancybox: |
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js" integrity="sha256-x4elcEZhSRoId3IcqTS2aqJqxw+KjquMzEjIbIakFVY=" crossorigin="anonymous"></script>
+dep_scrollreveal: <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.5/scrollreveal.min.js" integrity="sha256-8VU/+18Z5eyYrv12HuV6lH74T2PFmP1ggKi+JkwYDHE=" crossorigin="anonymous"></script>
+dep_gsap: |
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js" integrity="sha256-fFYlrqS4jJVsrsjb84rmHUVy5coKuimPew0icjwL/Zk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TimelineMax.min.js" integrity="sha256-A5G+Ns+SAA9ikqggoV8keS7UVCe8+XHedJDtmE2/pN4=" crossorigin="anonymous"></script>
+dep_screenfull: <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/4.0.1/screenfull.min.js" integrity="sha256-ubex/lYvSZ/P7pFBMO2LgZtBqVjNdpFrsT7oOZPXxus=" crossorigin="anonymous"></script>
+dep_bowser: <script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js" integrity="sha256-tS9rYBF0HnbO+ivkEWS7ybM7ujNLmtFbA6utN7YJ2YM=" crossorigin="anonymous"></script>
 
 # Make all links pretty ( -> no file extension)
 permalink: pretty
