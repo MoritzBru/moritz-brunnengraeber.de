@@ -45,7 +45,6 @@
   text: Some, of my fascinating fully spherical (aerial) panoramic images showing cool places around the world.
   btn-text: explore the panoramas
   btn-icon: "{% include svg/icon-web-globe.svg class='svg-inline--fa fa-w-16 fa-lg mr-2' %}"
-  fancybox: fancybox-panos
   link: pano
   internal: true
 
