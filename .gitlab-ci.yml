@@ -1,4 +1,4 @@
-image: ruby:2.5
+image: ruby:2.6
 
 variables:
   JEKYLL_ENV: production
@@ -7,7 +7,7 @@ before_script:
   - export LC_ALL="C.UTF-8"
   - export LANG="en_US.UTF-8"
   - export LANGUAGE="en_US.UTF-8"
-  - curl -sL https://deb.nodesource.com/setup_8.x | bash
+  - curl -sL https://deb.nodesource.com/setup_10.x | bash
   - apt-get install -y nodejs
   - apt-get install -y lftp
 

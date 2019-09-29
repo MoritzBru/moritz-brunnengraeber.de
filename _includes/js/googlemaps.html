@@ -161,32 +161,32 @@ function initMap() {
 
   var icon_base = "{{ '/img/map/' | absolute_url }}";
   var map_markers_data = [{
-    "name": "Puchheim",
+    "name": "Home",
     "desc": "Where I live.",
-    "pos": { lat: 48.1800, lng: 11.3736 },
-    "coords": "48°10'48\"N | 11°22'25\"E",
+    "pos": { lat: 48.1352, lng: 11.5094 },
+    "coords": "48°08'07\"N 11°30'34\"E",
     "icon": icon_base + "home.svg"
   }, {
     "name": "Technical University of Munich",
     "desc": "Where I worked and studied a lot.",
     "pos": { lat: 48.1489, lng: 11.5675 },
-    "coords": "48°08'56\"N | 11°34'03\"E",
+    "coords": "48°08'56\"N 11°34'03\"E",
     "icon": icon_base + "tum.svg"
   }, {
     "name": "Netcentric Deutschland",
     "desc": "Where I work at the moment.",
     "pos": { lat: 48.1406, lng: 11.5353 },
-    "coords": "48°08'26\"N | 11°32'07\"E",
+    "coords": "48°08'26\"N 11°32'07\"E",
     "icon": icon_base + "netcentric.svg"
   }];
 
   window.map_markers = [];
   window.map_infowindow = null;
   window.map_bounds = {
-    north: 48.19,
-    south: 48.14,
-    east: 11.57,
-    west: 11.36
+    north: 48.17,
+    south: 48.12,
+    east: 11.65,
+    west: 11.44
   };
 
   var map = new google.maps.Map(document.getElementById("google_map"), {

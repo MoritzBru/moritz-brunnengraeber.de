@@ -6,7 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.moritz-brunnengraeber.de" # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: "#3f51b5"
 
-social_googleplus: https://plus.google.com/+MoritzBrunnengr%C3%A4ber
+social_twitter: https://twitter.com/moritz_bru
 social_facebook: https://www.facebook.com/moritz.brunnengraeber
 social_360cities: https://www.360cities.net/profile/moritzbrunnengraeber
 social_sketchfab: https://sketchfab.com/MoritzB
@@ -35,7 +35,8 @@ dep_gsap: |
 # Make all links pretty ( -> no file extension)
 permalink: pretty
 
-exclude: ["README.md", "Gemfile", "Gemfile.lock"]
+exclude: 
+  - README.md
 
 # compress html via compress liquid layout
 compress_html:
