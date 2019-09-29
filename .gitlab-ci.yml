@@ -1,4 +1,4 @@
-image: ruby:2.5
+image: ruby:2.6
 
 variables:
   JEKYLL_ENV: production
@@ -13,6 +13,7 @@ before_script:
 
 build_deploy:
   script:
+  - bundle update --bundler
   - bundle install
   - bundle exec jekyll build -d _site
   - lftp -c "set ftp:ssl-allow no; open -u $USERNAME,$PASSWORD $HOST; mirror -Rev _site/ /httpdocs/moritz-brunnengraeber/  --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/"
