@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="{{ include.class }}" role="presentation">
-  <path d="M15,0l-.8.3L8,6.5,1.8.3,1,0,.3.3,0,1V15l.3.7L1,16H15l.7-.3L16,15V1L15.7.3Z" fill="#fff"/>
-  <path d="M15,15H1V1Z" fill="#ad1457"/>
-  <path d="M1,15H15V1Z" fill="#3F51B5"/>
-  <path d="M8,8L1,15H15Z" fill="#1a237e"/>
-</svg>
