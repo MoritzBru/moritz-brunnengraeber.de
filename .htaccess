@@ -1,0 +1,240 @@
+# Apache Server Configs v3.0.0 | MIT License
+# https://github.com/h5bp/server-configs-apache
+
+# ######################################################################
+# # ERRORS                                                             #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Custom error messages/pages                                        |
+# ----------------------------------------------------------------------
+
+# Customize what Apache returns to the client in case of an error.
+#
+# https://httpd.apache.org/docs/current/mod/core.html#errordocument
+
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------------
+# | Error prevention                                                   |
+# ----------------------------------------------------------------------
+
+# Disable the pattern matching based on filenames.
+#
+# This setting prevents Apache from returning a 404 error as the result
+# of a rewrite when the directory with the same name does not exist.
+#
+# https://httpd.apache.org/docs/current/content-negotiation.html#multiviews
+
+Options -MultiViews
+
+# ######################################################################
+# # MEDIA TYPES AND CHARACTER ENCODINGS                                #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Character encodings                                                |
+# ----------------------------------------------------------------------
+
+# Serve all resources labeled as `text/html` or `text/plain`
+# with the media type `charset` parameter set to `UTF-8`.
+#
+# https://httpd.apache.org/docs/current/mod/core.html#adddefaultcharset
+
+AddDefaultCharset utf-8
+
+# ######################################################################
+# # SECURITY                                                           #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | File access                                                        |
+# ----------------------------------------------------------------------
+
+# Block access to directories without a default document.
+#
+# You should leave the following uncommented, as you shouldn't allow
+# anyone to surf through every directory on your server (which may
+# includes rather private places such as the CMS's directories).
+
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to all hidden files and directories with the exception of
+# the visible content from within the `/.well-known/` hidden directory.
+#
+# These types of files usually contain user preferences or the preserved
+# state of an utility, and can include rather private places like, for
+# example, the `.git` or `.svn` directories.
+#
+# The `/.well-known/` directory represents the standard (RFC 5785) path
+# prefix for "well-known locations" (e.g.: `/.well-known/manifest.json`,
+# `/.well-known/keybase.txt`), and therefore, access to its visible
+# content should not be blocked.
+#
+# https://www.mnot.net/blog/2010/04/07/well-known
+# https://tools.ietf.org/html/rfc5785
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to files that can expose sensitive information.
+#
+# By default, block access to backup and source files that may be
+# left by some text editors and can pose a security risk when anyone
+# has access to them.
+#
+# https://feross.org/cmsploit/
+#
+# (!) Update the `<FilesMatch>` regular expression from below to
+# include any files that might end up on your production server and
+# can expose sensitive information about your website. These files may
+# include: configuration files, files that contain metadata about the
+# project (e.g.: project dependencies), build scripts, etc..
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Reducing MIME type security risks                                  |
+# ----------------------------------------------------------------------
+
+# Prevent some browsers from MIME-sniffing the response.
+#
+# This reduces exposure to drive-by download attacks and cross-origin
+# data leaks, and should be left uncommented, especially if the server
+# is serving user-uploaded content or content that could potentially be
+# treated as executable by the browser.
+#
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+# https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/
+# https://mimesniff.spec.whatwg.org/
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Server-side technology information                                 |
+# ----------------------------------------------------------------------
+
+# Remove the `X-Powered-By` response header that:
+#
+#  * is set by some frameworks and server-side languages
+#    (e.g.: ASP.NET, PHP), and its value contains information
+#    about them (e.g.: their name, version number)
+#
+#  * doesn't provide any value to users, contributes to header
+#    bloat, and in some cases, the information it provides can
+#    expose vulnerabilities
+#
+# (!) If you can, you should disable the `X-Powered-By` header from the
+# language / framework level (e.g.: for PHP, you can do that by setting
+# `expose_php = off` in `php.ini`)
+#
+# https://php.net/manual/en/ini.core.php#ini.expose-php
+
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Server software information                                        |
+# ----------------------------------------------------------------------
+
+# Prevent Apache from adding a trailing footer line containing
+# information about the server to the server-generated documents
+# (e.g.: error messages, directory listings, etc.)
+#
+# https://httpd.apache.org/docs/current/mod/core.html#serversignature
+
+ServerSignature Off
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Prevent Apache from sending in the `Server` response header its
+# exact version number, the description of the generic OS-type or
+# information about its compiled-in modules.
+#
+# (!) The `ServerTokens` directive will only work in the main server
+# configuration file, so don't try to enable it in the `.htaccess` file!
+#
+# https://httpd.apache.org/docs/current/mod/core.html#servertokens
+
+#ServerTokens Prod
+
+# ######################################################################
+# # WEB PERFORMANCE                                                    #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | GZip pre-compressed content                                        |
+# ----------------------------------------------------------------------
+
+# Serve gzip compressed CSS, JS, HTML, SVG, ICS and JSON files
+# if they exist and if the client accepts gzip encoding.
+#
+# (!) To make this part relevant, you need to generate encoded
+# files by your own. Enabling this part will not auto-generate
+# gziped files.
+#
+# https://httpd.apache.org/docs/current/mod/mod_deflate.html#precompressed
+#
+# (1)
+# Removing default MIME Type for .gz files allowing to add custom
+# sub-types.
+# You may prefer using less generic extensions such as .html_gz in
+# order to keep default behavior regarding .gz files.
+# https://httpd.apache.org/docs/current/mod/mod_mime.html#removetype
+
+<IfModule mod_headers.c>
+
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -f
+    RewriteRule \.(css|ics|js|json|html|svg)$ %{REQUEST_URI}.gz [L]
+
+    # Prevent mod_deflate double gzip
+    RewriteRule \.gz$ - [E=no-gzip:1]
+
+    <FilesMatch "\.gz$">
+
+        # Serve correct content types
+        <IfModule mod_mime.c>
+            # (1)
+            RemoveType gz
+
+            # Serve correct content types
+            AddType text/css              css.gz
+            AddType text/javascript       js.gz
+            AddType application/json      json.gz
+            AddType text/html             html.gz
+            AddType image/svg+xml         svg.gz
+
+            # Serve correct content charset
+            AddCharset utf-8 .css.gz \
+                             .js.gz \
+                             .json.gz
+        </IfModule>
+
+        # Force proxies to cache gzipped and non-gzipped files separately
+        Header append Vary Accept-Encoding
+
+    </FilesMatch>
+
+    # Serve correct encoding type
+    AddEncoding gzip .gz
+
+</IfModule>
