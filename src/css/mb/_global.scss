@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    overflow-x: hidden; // body can grow larger if we animate in from the side
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // hide highlighting on tap (touch) in webkit browsers
 }
 

@@ -3,11 +3,11 @@
     <mj-preview>📧 New message from contact form on moritz-brunnengraeber.de</mj-preview>
   </mj-head>
 
-  <mj-body>
+  <mj-body background-color="#ffffff">
 
     <mj-section>
       <mj-column>
-        <mj-image title="Moritz Brunnengräber" alt="Moritz Brunnengräber" src="https://www.moritz-brunnengraeber.de/assests/email/logo-full-name.png"></mj-image>
+        <mj-image title="Moritz Brunnengräber" alt="Moritz Brunnengräber" src="https://www.moritz-brunnengraeber.de/assets/email/logo-full-name.png"></mj-image>
         <mj-divider border-color="#3f51b5"></mj-divider>
         <mj-text color="#212529" font-size="20px">Hi 👋</mj-text>
         <mj-text color="#212529">There is a new message from the contact form on <a href="https://www.moritz-brunnengraeber.de" target="_blank" style="color: #3f51b5;">moritz-brunnengraeber.de</a></mj-text>
@@ -35,12 +35,12 @@
     <mj-section>
       <mj-column>
         <mj-divider border-color="#3f51b5"></mj-divider>
-        <mj-social icon-size="32px" border-radius="32px" icon-padding="4px">
-          <mj-social-element alt="Web" title="Web" background-color="#ad1457" href="https://www.moritz-brunnengraeber.de" src="https://www.moritz-brunnengraeber.de/assests/email/web.png"></mj-social-element>
-          <mj-social-element alt="Twitter" title="Twitter" background-color="#1da1f2" href="https://twitter.com/moritz_bru" src="https://www.moritz-brunnengraeber.de/assests/email/twitter.png"></mj-social-element>
-          <mj-social-element alt="Facebook" title="Facebook" background-color="#3b5998" href="https://www.facebook.com/moritz.brunnengraeber" src="https://www.moritz-brunnengraeber.de/assests/email/facebook.png"></mj-social-element>
-          <mj-social-element alt="XING" title="XING" background-color="#006567" href="https://www.xing.com/profile/Moritz_Brunnengraeber" src="https://www.moritz-brunnengraeber.de/assests/email/xing.png"></mj-social-element>
-          <mj-social-element alt="LinkedIn" title="LinkedIn" background-color="#0077b5" href="https://www.linkedin.com/in/moritz-brunnengr%C3%A4ber-319915177/" src="https://www.moritz-brunnengraeber.de/assests/email/linkedin.png"></mj-social-element>
+        <mj-social icon-size="32px" border-radius="32px" icon-padding="8px">
+          <mj-social-element alt="Web" title="Web" background-color="#ad1457" href="https://www.moritz-brunnengraeber.de" src="https://www.moritz-brunnengraeber.de/assets/email/web.png"></mj-social-element>
+          <mj-social-element alt="Twitter" title="Twitter" background-color="#1da1f2" href="https://twitter.com/moritz_bru" src="https://www.moritz-brunnengraeber.de/assets/email/twitter.png"></mj-social-element>
+          <mj-social-element alt="Facebook" title="Facebook" background-color="#3b5998" href="https://www.facebook.com/moritz.brunnengraeber" src="https://www.moritz-brunnengraeber.de/assets/email/facebook.png"></mj-social-element>
+          <mj-social-element alt="XING" title="XING" background-color="#006567" href="https://www.xing.com/profile/Moritz_Brunnengraeber" src="https://www.moritz-brunnengraeber.de/assets/email/xing.png"></mj-social-element>
+          <mj-social-element alt="LinkedIn" title="LinkedIn" background-color="#0077b5" href="https://www.linkedin.com/in/moritz-brunnengr%C3%A4ber-319915177/" src="https://www.moritz-brunnengraeber.de/assets/email/linkedin.png"></mj-social-element>
         </mj-social>
       </mj-column>
     </mj-section>
