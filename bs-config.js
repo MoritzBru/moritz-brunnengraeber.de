@@ -10,7 +10,7 @@ module.exports = {
         ignoreInitial: true,
     },
     server: 'build',
-    port: 3000,
-    https: true,
+    port: 4000,
+    https: false,
     notify: false,
 };

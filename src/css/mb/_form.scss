@@ -1,0 +1,17 @@
+.mb-form {
+    &__input {
+        border-bottom-right-radius: $input-border-radius !important;
+        border-top-right-radius: $input-border-radius !important;
+    }
+
+    &__textarea {
+        overflow: hidden;
+        border-bottom-right-radius: $text-area-border-radius !important;
+        border-top-right-radius: $text-area-border-radius !important;
+    }
+
+    &__textarea-prepend {
+        border-bottom-left-radius: $text-area-border-radius !important;
+        border-top-left-radius: $text-area-border-radius !important;
+    }
+}

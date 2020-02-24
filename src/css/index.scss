@@ -1,8 +1,15 @@
-$col: green;
-
-body {
-    color: $col;
-    font-family: Arial, Helvetica, sans-serif;
-    //text-shadow: 0 0 5px black;
-    user-select: none;
-}
+@import "variables";
+@import "bootstrap";
+// mb styles
+@import "mb/global";
+@import "mb/navbar";
+@import "mb/hamburger";
+@import "mb/particles";
+@import "mb/header";
+@import "mb/section";
+@import "mb/hr";
+@import "mb/map";
+// @import "mb/form";
+@import "mb/footer";
+@import "mb/404";
+@import "mb/legal-notice";

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg fixed-top compensate-for-scrollbar mb-nav">
+    <div class="container">
+        <a class="navbar-brand mb-nav__brand" href="{{ '/' | append: '#home' | url }}" title="Moritz Brunnengräber" aria-label="Moritz Brunnengräber">
+            {% include svg/mb-m.svg, class: "mb-nav__svg" %}<span class="d-none d-sm-inline ml-1" aria-hidden="true">oritz</span>
+            {% include svg/mb-b.svg, class: "mb-nav__svg ml-sm-3" %}<span class="d-none d-sm-inline ml-1" aria-hidden="true">runnengräber</span>
+        </a>
+        {% if fixednav %}
+            <a href="{{ '/' | url }}" data-toggle="tooltip" data-placement="left" title="Home" aria-label="Home">{% include svg/icon-home.svg, class: "svg-inline--fa fa-w-16 fa-2x" %}</a>
+        {% else %}
+            <button class="navbar-toggler mb-hamburger collapsed" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <svg class="mb-hamburger__base" viewBox="15 15 70 70">
+                    <path class="mb-hamburger__line mb-hamburger__line--top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                    <path class="mb-hamburger__line" d="m 70,50 h -40" />
+                    <path class="mb-hamburger__line mb-hamburger__line--bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto mb-nav__list">
+                    <li class="nav-item d-none">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-nav__list-link" href="#about">Who</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-nav__list-link" href="#services">What</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-nav__list-link" href="#location">Where</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-nav__list-link" href="#portfolio">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-nav__list-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</nav>

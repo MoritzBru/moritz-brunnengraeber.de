@@ -1,0 +1,15 @@
+<footer class="mb-footer py-5">
+    <div class="container text-center">
+        <a href="{{ site.social.twitter }}" target="_blank" rel="noopener" class="mb-footer__social mb-footer__social--twitter" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" class="mb-footer__social mb-footer__social--facebook" data-toggle="tooltip" data-placement="top" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="{{ site.social.360cities }}" target="_blank" rel="noopener" class="mb-footer__social mb-footer__social--threesixtycities" data-toggle="tooltip" data-placement="top" title="360cities" aria-label="360cities">{% include svg/icon-360cities.svg, class: "svg-inline--fa fa-w-16" %}</a>
+        <a href="{{ site.social.sketchfab }}" target="_blank" rel="noopener" class="mb-footer__social mb-footer__social--sketchfab" data-toggle="tooltip" data-placement="top" title="Sketchfab" aria-label="Sketchfab">{% include svg/icon-sketchfab.svg, class: "svg-inline--fa  fa-w-16" %}</a>
+        <a href="{{ site.social.xing }}" target="_blank" rel="noopener" class="mb-footer__social mb-footer__social--xing" data-toggle="tooltip" data-placement="top" title="XING" aria-label="XING"><i class="fab fa-xing"></i></a>
+        <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" class="mb-footer__social mb-footer__social--linkedin" data-toggle="tooltip" data-placement="top" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <div class="d-flex flex-column flex-sm-row justify-content-center mt-3">
+            <div class="mb-footer__text">{{ site.title }}</div>
+            <div class="mb-footer__text">2017 - {{ 'now' | date: "%Y" }}</div>
+            <div class="mb-footer__text"><a href="{{ '/legal-notice' | url }}">Legal Notice</a></div>
+        </div>
+    </div>
+</footer>

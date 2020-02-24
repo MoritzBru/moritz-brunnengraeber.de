@@ -1,0 +1,12 @@
+<svg class="_0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" id="{{ id }}">
+    <defs>
+        <circle id="_0__circle-template" cx="64" cy="64" r="64"/>
+        <clipPath id="_0__clip">
+            <use xlink:href="#_0__circle-template"/>
+        </clipPath>
+    </defs>
+    <use class="_0__circle" xlink:href="#_0__circle-template"/>
+    <g clip-path="url(#_0__clip)">
+        <polygon class="_0__highlight" points="0 128 128 128 128 0 0 128"/>
+    </g>
+</svg>

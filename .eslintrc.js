@@ -9,4 +9,7 @@ module.exports = {
         "max-len": 0,
         "comma-dangle": ["error", "always-multiline"],
     },
+    "env": {
+        "browser": true,
+    }
 };
