@@ -35,7 +35,7 @@
     <mj-section>
       <mj-column>
         <mj-divider border-color="#3f51b5"></mj-divider>
-        <mj-social icon-size="32px" border-radius="32px" icon-padding="8px">
+        <mj-social icon-size="24px" inner-padding="8px" icon-padding="8px">
           <mj-social-element alt="Web" title="Web" background-color="#ad1457" href="https://www.moritz-brunnengraeber.de" src="https://www.moritz-brunnengraeber.de/assets/email/web.png"></mj-social-element>
           <mj-social-element alt="Twitter" title="Twitter" background-color="#1da1f2" href="https://twitter.com/moritz_bru" src="https://www.moritz-brunnengraeber.de/assets/email/twitter.png"></mj-social-element>
           <mj-social-element alt="Facebook" title="Facebook" background-color="#3b5998" href="https://www.facebook.com/moritz.brunnengraeber" src="https://www.moritz-brunnengraeber.de/assets/email/facebook.png"></mj-social-element>

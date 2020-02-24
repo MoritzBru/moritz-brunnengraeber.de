@@ -8,7 +8,7 @@
         "dev:serve": "browser-sync start --config bs-config.js",
         "prod:eleventy": "eleventy",
         "prod:webpack": "webpack --config='webpack.config.js' --mode='production' --display-error-details --progress",
-        "mjml": "mjml ./src/contact/mail.mjml -o ./src/contact/mail.html --config.minify=true",
+        "mjml": "mjml -w ./src/contact/mail.mjml -o ./src/contact/mail.html --config.minify=true",
         "clean": "rimraf build",
         "start": "npm run clean && concurrently 'npm:dev*'",
         "build": "npm run clean && npm run prod:eleventy && npm run prod:webpack"
