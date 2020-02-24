@@ -1,0 +1,12 @@
+//overwrite tobi styles
+$moduleName: tobi;
+
+.#{$moduleName} {
+    background-color: rgba(30, 37, 43, 0.96);
+    font-family: $font-family-monospace;
+
+    & > button:focus {
+        box-shadow: 0 0 0 0.2rem rgba($secondary, 0.3);
+        outline: none;
+    }
+}

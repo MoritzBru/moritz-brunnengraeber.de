@@ -2,66 +2,65 @@
     {
         "title": "1zig-ART",
         "text": "Homepage for my mother's cute and unique gift articles boutique.<br/>Realized with Wordpress.",
-        "btn-text": "check out 1zig-art.de",
-        "btn-icon": "<i class='fas fa-gift fa-lg mr-2'></i>",
+        "btnText": "check out 1zig-art.de",
+        "btnIcon": "fas fa-gift",
         "link": "http://1zig-art.de/"
     },
     {
         "title": "BeautyCare",
         "text": "Homepage for my aunt's beautiful and cordial beauty parlor.<br/>Realized with Wordpress.",
-        "btn-text": "visit beautycare-kosmetik.de",
-        "btn-icon": "<i class='fas fa-hand-holding-heart fa-lg mr-2'></i>",
+        "btnText": "visit beautycare-kosmetik.de",
+        "btnIcon": "fas fa-hand-holding-heart",
         "link": "http://beautycare-kosmetik.de/"
     },
     {
         "title": "Gut Schwaig",
         "text": "Homepage for an icelandic horse stable near the Osterseen.<br/>Realized with Wordpress.",
-        "btn-text": "look at gut-schwaig.de",
-        "btn-icon": "<i class='fas fa-horse fa-lg mr-2'></i>",
+        "btnText": "look at gut-schwaig.de",
+        "btnIcon": "fas fa-horse",
         "link": "http://www.gut-schwaig.de/"
     },
     {
         "title": "Pferd sein kann so schön sein",
         "text": "Funny little video for Gut Schwaig starring a Horse.",
-        "btn-text": "watch the video",
-        "btn-icon": "<i class='fab fa-youtube fa-lg mr-2'></i>",
-        "fancybox": "fancybox-video",
+        "btnText": "watch the video",
+        "btnIcon": "fab fa-youtube",
         "link": "https://www.youtube.com/watch?v=LIioXXu7Xlc"
     },
     {
         "title": "Barrierefreie Wanderkarte",
         "text": "Interactive 'take a stroll' map for people with mobility impairments in Olching.<br/>Realized with Mapbox and Bootstrap.",
-        "btn-text": "examine the map",
-        "btn-icon": "<i class='fab fa-accessible-icon fa-lg mr-2'></i>",
+        "btnText": "examine the map",
+        "btnIcon": "fab fa-accessible-icon",
         "link": "https://www.lfk.bgu.tum.de/en/service/rolli-mapproject-by-gug-students/"
     },
     {
         "title": "Panoramatour Kranzberg",
         "text": "Streetview-like aerial panoramatour with additional informations of the Skiparadies Kranzberg.",
-        "btn-text": "fly around the skiparadies",
-        "btn-icon": "<i class='fas fa-snowflake fa-lg mr-2'></i>",
+        "btnText": "fly around the skiparadies",
+        "btnIcon": "fas fa-snowflake",
         "link": "https://moritzbru.gitlab.io/skiparadies-kranzberg-panoramatour/"
     },
     {
         "title": "Cartography Playground",
         "text": "Part of my master thesis about interactive, web-based applications for the explanation of cartographic issues.",
-        "btn-text": "play at the playgrounds",
-        "btn-icon": "<i class='far fa-compass fa-lg mr-2'></i>",
+        "btnText": "play at the playgrounds",
+        "btnIcon": "far fa-compass",
         "link": "https://cartography-playground.gitlab.io/"
     },
     {
         "title": "Panoramic images",
         "text": "Some, of my fascinating fully spherical (aerial) panoramic images showing cool places around the world.",
-        "btn-text": "explore the panoramas",
-        "btn-icon": "<i class='fas fa-globe fa-lg mr-2'></i>",
+        "btnText": "explore the panoramas",
+        "btnIcon": "fas fa-globe",
         "link": "/pano"
     },
     {
         "title": "Photographies",
         "text": "A small selection of my various images.<br/>Taken with Phone, Action-Cam, DSLM and Drone.",
-        "btn-text": "view the images",
-        "btn-icon": "<i class='far fa-image fa-lg mr-2'></i>",
-        "fancybox": "fancybox-images",
+        "btnText": "view the images",
+        "btnIcon": "far fa-image",
+        "lightbox": "mb-lightbox-images",
         "link": "assets/gallery/mb-1.jpg"
     }
 ]

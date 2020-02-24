@@ -1,10 +1,10 @@
 // Color
 $primary:       #3f51b5; // Indigo500
 $secondary:     #ad1457; // Pink800
-$success:       #4caf50; // Green500
-$info:          #607d8b; // BlueGrey500
-$warning:       #ffeb3b; // Yellow500
-$danger:        #f44336; // Red500
+$success:       #2e7d32; // Green800
+$info:          #546e7a; // BlueGrey600
+$warning:       #fdd835; // Yellow600
+$danger:        #c62828; // Red800
 
 // Font
 // $font-family-sans-serif:      "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -17,16 +17,9 @@ $link-hover-decoration:       underline;
 
 // Border radius
 $round-border-radius:         10rem;
-
 $btn-border-radius:           $round-border-radius;
 $btn-border-radius-lg:        $round-border-radius;
 $btn-border-radius-sm:        $round-border-radius;
-
-// $input-border-radius:         $round-border-radius;
-// $input-border-radius-lg:      $round-border-radius;
-// $input-border-radius-sm:      $round-border-radius;
-
-// $text-area-border-radius:     1.5rem;
 
 // Indicators for Checkboxes and Radios
 $custom-control-indicator-bg:                 #adb5bd; // bootstrap gray500

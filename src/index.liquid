@@ -99,12 +99,12 @@ importlibs: index
                     </div>
                     <div class="card-footer border-top-0 bg-transparent">
                         <a href="{{ work.link | url }}"
-                        {% if work.fancybox %}
-                            data-fancybox="{{ work.fancybox }}"
+                        {% if work.lightbox %}
+                            data-lightbox data-group="{{ work.lightbox }}"
                         {% else %}
                             target="_blank" rel="noopener"
                         {% endif %}
-                        class="btn btn-outline-primary btn-block">{{ work.btn-icon }}{{ work.btn-text }}</a>
+                        class="btn btn-outline-primary btn-block"><i class='{{ work.btnIcon }} fa-lg mr-2'></i>{{ work.btnText }}</a>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@ importlibs: index
         </div>
         <div class="d-none">
         {% for imgIdx in (2..17) %}
-            <a href="{{ imgIdx | prepend: 'assets/gallery/mb-' | append: '.jpg' | url }}" data-fancybox="fancybox-images"></a>
+            <a href="{{ imgIdx | prepend: 'assets/gallery/mb-' | append: '.jpg' | url }}" data-lightbox data-group="mb-lightbox-images"></a>
         {% endfor %}
         </div>
         {% comment %} {% include scrolldown-to-id, class: "text-light", id: "#contact" %} {% endcomment %}

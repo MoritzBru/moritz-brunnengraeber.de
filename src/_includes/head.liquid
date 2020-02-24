@@ -27,12 +27,4 @@
 <meta property="og:url" content="{{ '/' | url }}">
 <meta property="og:type" content="website">
 
-{% for css in dependencies.css.all %}
-    {{ css }}
-{% endfor %}
-{% if importlibs %}
-    {% for css in dependencies.css[importlibs] %}
-        {{ css }}
-    {% endfor %}
-{% endif %}
 <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
