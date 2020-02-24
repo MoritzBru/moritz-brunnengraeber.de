@@ -1,0 +1,23 @@
+$shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
+
+.mb-header {
+    height: 100vh;
+    min-height: 650px;
+
+    &__image {
+        width: 70%;
+        max-width: 320px;
+        height: auto;
+        box-shadow: $shadow;
+    }
+
+    &__text {
+        text-shadow: $shadow;
+    }
+
+    &__btn-wrapper {
+        display: inline-block;
+        border-radius: $round-border-radius;
+        box-shadow: $shadow;
+    }
+}

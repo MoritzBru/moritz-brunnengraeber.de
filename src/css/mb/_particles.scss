@@ -1,0 +1,8 @@
+.mb-particles {
+    position: fixed;
+    z-index: -10;
+    width: 100vw;
+    height: 100vh;
+    background-color: $gray-800;
+    background-image: linear-gradient(to bottom, $gray-700, $gray-900);
+}

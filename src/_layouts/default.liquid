@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include head %}
+    </head>
+
+    <body id="home" class="{{ bodyClass }}">
+
+        {% include nav %}
+
+        <main>
+            {{ content }}
+        </main>
+
+        {% include footer %}
+        {% for js in dependencies.js.all %}
+            {{ js }}
+        {% endfor %}
+        {% if importlibs %}
+            {% for js in dependencies.js[importlibs] %}
+                {{ js }}
+            {% endfor %}
+        {% endif %}
+        <script src="{{ '/js/script.js' | url }}" defer></script>
+
+    </body>
+
+</html>

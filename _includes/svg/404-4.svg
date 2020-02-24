@@ -1,6 +1,0 @@
-<svg class="_4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" id="{{ include.id }}">
-  <rect class="_4_bottom" x="64" y="96" width="64" height="32"/>
-  <polygon class="_4_slant" points="64 0 64 64 0 64 64 0"/>
-  <rect class="_4_hz" y="64" width="128" height="32"/>
-  <rect class="_4_top" x="64" width="64" height="64"/>
-</svg>
