@@ -1,7 +1,7 @@
 image: node:lts
 
 before_script:
-  - apt-get install -y lftp
+  - apt-get update && apt-get install -y lftp
 
 build_and_deploy:
   script:
