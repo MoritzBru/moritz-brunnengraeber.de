@@ -4,13 +4,13 @@
     "description": "",
     "scripts": {
         "dev:eleventy": "eleventy --watch",
-        "dev:webpack": "webpack --config='webpack.common.js' --mode='development' --display-error-details --progress --watch",
+        "dev:webpack": "webpack --config='webpack.config.js' --mode='development' --display-error-details --progress --watch",
         "dev:serve": "browser-sync start --config bs-config.js",
         "prod:eleventy": "eleventy",
-        "prod:webpack": "webpack --config='webpack.common.js' --mode='production' --display-error-details --progress",
+        "prod:webpack": "webpack --config='webpack.config.js' --mode='production' --display-error-details --progress",
         "clean": "rimraf build",
         "start": "npm run clean && concurrently 'npm:dev*'",
-        "build": "npm run clean && concurrently 'npm:prod:*'"
+        "build": "npm run clean && npm run prod:eleventy && npm run prod:webpack"
     },
     "author": "Moritz Brunnengräber",
     "private": true,

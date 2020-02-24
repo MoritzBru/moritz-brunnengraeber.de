@@ -1,0 +1,15 @@
+image: node:lts
+
+pages:
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - build
+  cache:
+    paths:
+      - node_modules
+    key: "$CI_COMMIT_REF_SLUG"
+  only:
+    - master
