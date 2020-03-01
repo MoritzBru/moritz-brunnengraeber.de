@@ -9,9 +9,10 @@
         "prod:eleventy": "eleventy",
         "prod:webpack": "webpack --config='webpack.config.js' --mode='production' --display-error-details --progress",
         "mjml": "mjml -w ./src/contact/mail.mjml -o ./src/contact/mail.html --config.minify=true",
+        "compress": "gzipper --include html,css,js,svg --brotli ./build",
         "clean": "rimraf build",
         "start": "npm run clean && concurrently 'npm:dev*'",
-        "build": "npm run clean && npm run prod:eleventy && npm run prod:webpack"
+        "build": "npm run clean && npm run prod:eleventy && npm run prod:webpack && npm run compress"
     },
     "author": "Moritz Brunnengräber",
     "private": true,
@@ -27,6 +28,7 @@
         "eslint": "^6.8.0",
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-plugin-import": "^2.20.1",
+        "gzipper": "^3.5.0",
         "html-minifier": "^4.0.0",
         "mini-css-extract-plugin": "^0.9.0",
         "mjml": "^4.5.1",
