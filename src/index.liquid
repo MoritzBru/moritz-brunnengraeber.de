@@ -41,7 +41,6 @@ bodyClass: "bg-dark"
             At the moment I work as a Frontend Software Engineer at Netcentric.<br/>
             In my free-time and besides coding I like to play squash, go hiking, play video games and hang around with friends.
         </p>
-        {% comment %} {% include scrolldown-to-id, class: "text-light", id: "#services" %} {% endcomment %}
     </div>
 </section>
 
@@ -51,27 +50,26 @@ bodyClass: "bg-dark"
         <hr class="mb-hr text-primary">
         <div class="row">
             <div class="col-lg-3 col-md-6">
-                <div class="mb-js-reveal-icons"><i class="fas fa-laptop fa-4x text-primary my-3"></i></div>
+                <div class="mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-laptop"></use></svg></div>
                 <h3>Webdevelopment</h3>
                 <p class="mt-3">I like building modern and responsive websites while improving my CSS and JS skills.</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="mb-js-reveal-icons"><i class="fas fa-camera fa-4x text-primary my-3"></i></div>
+                <div class="mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-camera"></use></svg></div>
                 <h3>Photography</h3>
                 <p class="mt-3">I have fun at photography: on the ground or in the air, night or day, long time exposure or time-lapse.</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="mb-js-reveal-icons">{% include svg/icon-quadcopter.svg, class: "svg-inline--fa fa-w-16 fa-4x text-primary my-3" %}</div>
+                <div class="mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-drone"></use></svg></div>
                 <h3>Drones</h3>
                 <p class="mt-3">I enjoy flying with my drone making aerial photographies and especially fully spherical aerial panoramic images.</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="mb-js-reveal-icons"><i class="far fa-map fa-4x text-primary my-3"></i></div>
+                <div class="mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-map"></use></svg></div>
                 <h3>Maps</h3>
                 <p class="mt-3">I fancy designing and building interactive web-based maps with frameworks like Mapbox.</p>
             </div>
         </div>
-        {% comment %} {% include scrolldown-to-id, class:"text-dark", id: "#location" %} {% endcomment %}
     </div>
 </section>
 
@@ -80,7 +78,6 @@ bodyClass: "bg-dark"
         <h2>Where I am</h2>
         <hr class="mb-hr text-secondary">
         <div class="mb-map mt-5"></div>
-        {% comment %} {% include scrolldown-to-id class: "text-light", id: "#portfolio" %} {% endcomment %}
     </div>
 </section>
 
@@ -105,7 +102,7 @@ bodyClass: "bg-dark"
                         {% else %}
                             target="_blank" rel="noopener"
                         {% endif %}
-                        class="btn btn-outline-primary btn-block"><i class='{{ work.btnIcon }} fa-lg mr-2'></i>{{ work.btnText }}</a>
+                        class="btn btn-outline-primary btn-block"><svg class="mb-icon mb-icon--lg mr-2"><use xlink:href="/assets/icon-defs.svg#mb-icon-{{ work.btnIcon }}"></use></svg>{{ work.btnText }}</a>
                     </div>
                 </div>
             </div>
@@ -124,7 +121,6 @@ bodyClass: "bg-dark"
             <a href="{{ imgIdx | prepend: 'assets/gallery/mb-' | append: '.jpg' | url }}" data-lightbox data-group="mb-lightbox-images"></a>
         {% endfor %}
         </div>
-        {% comment %} {% include scrolldown-to-id, class: "text-light", id: "#contact" %} {% endcomment %}
     </div>
 </section>
 
@@ -139,7 +135,7 @@ bodyClass: "bg-dark"
                     <label for="mb-contact-form__name" class="sr-only">Name</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="far fa-user fa-lg fa-fw"></i></div>
+                            <div class="input-group-text"><svg class="mb-icon mb-icon--lg"><use xlink:href="/assets/icon-defs.svg#mb-icon-user"></use></svg></div>
                         </div>
                         <input type="text" name="name" class="form-control rounded-right" id="mb-contact-form__name" placeholder="Your Name" required>
                         <div class="invalid-feedback ml-5">I want to know who wrote me.</div>
@@ -149,7 +145,7 @@ bodyClass: "bg-dark"
                     <label for="mb-contact-form__email" class="sr-only">Email</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="far fa-envelope fa-lg fa-fw"></i></div>
+                            <div class="input-group-text"><svg class="mb-icon mb-icon--lg"><use xlink:href="/assets/icon-defs.svg#mb-icon-mail"></use></svg></div>
                         </div>
                         <input type="email" name="email" class="form-control rounded-right" id="mb-contact-form__email" placeholder="Your Email" required>
                         <div class="invalid-feedback ml-5">I need a valid email so that I can perhaps reply.</div>
@@ -160,7 +156,7 @@ bodyClass: "bg-dark"
                 <label for="mb-contact-form__text" class="sr-only">Message</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="far fa-comment-alt fa-lg fa-fw"></i></div>
+                        <div class="input-group-text"><svg class="mb-icon mb-icon--lg"><use xlink:href="/assets/icon-defs.svg#mb-icon-comment"></use></svg></div>
                     </div>
                     <textarea name="message" class="form-control rounded-right" id="mb-contact-form__text" rows="4" placeholder="The Message…" required></textarea>
                     <div class="invalid-feedback ml-5">I thought you were here to write me a message?!</div>
@@ -181,10 +177,10 @@ bodyClass: "bg-dark"
             <div class="mb-js-contact__feedback my-3"></div>
             <div class="form-row">
                 <div class="col-md-6 my-2">
-                    <div class="mb-js-reveal-left"><button type="reset" class="btn btn-outline-secondary btn-block text-uppercase"><i class="fas fa-eraser mr-2"></i>Reset</button></div>
+                    <div class="mb-js-reveal-left"><button type="reset" class="btn btn-outline-secondary btn-block text-uppercase"><svg class="mb-icon mb-icon--lg mr-2"><use xlink:href="/assets/icon-defs.svg#mb-icon-backspace"></use></svg>Reset</button></div>
                 </div>
                 <div class="col-md-6 my-2">
-                    <div class="mb-js-reveal-right"><button type="submit" class="btn btn-outline-primary btn-block text-uppercase"><i class="fas fa-paper-plane mr-2"></i>Send</button></div>
+                    <div class="mb-js-reveal-right"><button type="submit" class="btn btn-outline-primary btn-block text-uppercase"><svg class="mb-icon mb-icon--lg mr-2"><use xlink:href="/assets/icon-defs.svg#mb-icon-send"></use></svg>Send</button></div>
                 </div>
             </div>
         </form>

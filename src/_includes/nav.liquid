@@ -5,7 +5,7 @@
             {% include svg/mb-b.svg, class: "mb-nav__svg ml-sm-3" %}<span class="d-none d-sm-inline ml-1" aria-hidden="true">runnengräber</span>
         </a>
         {% if fixednav %}
-            <a href="{{ '/' | url }}" data-toggle="tooltip" data-placement="left" title="Home" aria-label="Home">{% include svg/icon-home.svg, class: "svg-inline--fa fa-w-16 fa-2x" %}</a>
+            <a href="{{ '/' | url }}" data-toggle="tooltip" data-placement="left" title="Home" aria-label="Home"><svg class="mb-icon mb-icon--lg mr-2"><use xlink:href="/assets/icon-defs.svg#mb-icon-home"></use></svg></a>
         {% else %}
             <button class="navbar-toggler mb-hamburger collapsed" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <svg class="mb-hamburger__base" viewBox="15 15 70 70">

@@ -16,7 +16,6 @@
 | ---------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [jQuery](https://code.jquery.com)                                | 3.4.1          | [![CDNJS](https://img.shields.io/cdnjs/v/jquery.svg)](https://cdnjs.com/libraries/jquery/)                         |
 | [Bootstrap](https://getbootstrap.com/)                           | 4.4.1          | [![CDNJS](https://img.shields.io/cdnjs/v/twitter-bootstrap.svg)](https://cdnjs.com/libraries/twitter-bootstrap)    |
-| [Font Awesome](https://fontawesome.com/)                         | 5.7.2          | [![CDNJS](https://img.shields.io/cdnjs/v/font-awesome.svg)](https://cdnjs.com/libraries/font-awesome)              |
 | [Creepyface](https://creepyface.io/)                             | 7.1.6          | [![npm](https://img.shields.io/npm/v/creepyface)](https://www.jsdelivr.com/package/npm/creepyface)                 |
 | [particles.js](https://github.com/VincentGarreau/particles.js/)  | 2.0.0          | [![CDNJS](https://img.shields.io/cdnjs/v/particles.js.svg)](https://cdnjs.com/libraries/particles.js)              |
 | [Tobi lightbox](https://github.com/rqrauhvmra/Tobi)              | 1.9.0          | [![npm](https://img.shields.io/npm/v/@rqrauhvmra/tobi.svg)](https://www.jsdelivr.com/package/npm/@rqrauhvmra/tobi) |

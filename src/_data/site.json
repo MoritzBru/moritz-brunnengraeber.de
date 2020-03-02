@@ -14,6 +14,7 @@
     },
     "api": {
         "googleMaps": "AIzaSyDeJbsLO30Ip1EaPqx9HuC363gT2r7WanA",
-        "recaptcha": "6LceuoQUAAAAAJ2rNyoQm6iAEYVSMJH0l8mE1EXS"
+        "recaptcha": "6LceuoQUAAAAAJ2rNyoQm6iAEYVSMJH0l8mE1EXS",
+        "emailjs": "user_VBLpCUz3kaZKJLYSgywB6"
     }
 }
