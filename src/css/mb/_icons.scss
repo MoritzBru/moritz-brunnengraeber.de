@@ -1,4 +1,6 @@
 .mb-icon {
+    --mb-icon-opacity: 0.5;
+
     display: inline-block;
     width: 1em;
     height: 1em;
@@ -6,13 +8,9 @@
     stroke: currentColor;
     stroke-width: 0;
 
-    &--secondary {
-        opacity: 0.5;
-    }
-
     &--lg {
-        width: 1.33333em;
-        height: 1.33333em;
+        width: (4em / 3); // 1.333...
+        height: (4em / 3); // 1.333...
         vertical-align: -0.3em;
     }
 
