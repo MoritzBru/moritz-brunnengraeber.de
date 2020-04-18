@@ -5,4 +5,5 @@ $transition-height: 3rem;
     padding-bottom: 1.5 * $transition-height;
     margin-top: -$transition-height;
     clip-path: polygon(0 0, 50% $transition-height, 100% 0, 100% 100%, 0 100%);
+    overflow-x: hidden; // can grow larger if we animate in from the side (scrollReveal)
 }
