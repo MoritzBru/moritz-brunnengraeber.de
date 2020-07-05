@@ -1,12 +1,12 @@
-function initScrollReveal() {
-    const { ScrollReveal } = window;
-    if (!ScrollReveal) { return; }
+import ScrollReveal from 'scrollreveal';
 
+function initScrollReveal() {
     const selectors = {
         bpMd: '--breakpoint-md',
         revealPrefix: '.mb-js-reveal-',
         directions: ['left', 'right', 'top', 'bottom'],
         icon: 'icons',
+        btn: 'btn',
     };
 
     selectors.directions.forEach((direction) => {
@@ -15,7 +15,10 @@ function initScrollReveal() {
             origin: direction,
             distance: '2em',
             duration: 1000,
-            reset: true,
+            viewOffset: {
+                top: 32,
+                bottom: 32,
+            },
         };
         ScrollReveal().reveal(selector, options);
     });

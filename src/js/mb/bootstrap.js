@@ -1,6 +1,14 @@
-function initBootstrap() {
-    const $ = window.jQuery;
+/* eslint-disable import/first */
+import $ from 'jquery';
 
+window.jQuery = $;
+window.$ = $;
+global.jQuery = $;
+
+import 'popper.js';
+import 'bootstrap';
+
+function initBootstrap() {
     const selectors = {
         scrollspy: {
             spy: 'body',

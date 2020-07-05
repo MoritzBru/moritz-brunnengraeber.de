@@ -1,7 +1,6 @@
-function init404() {
-    const { gsap } = window;
-    if (!gsap) { return; }
+import gsap from 'gsap';
 
+function init404() {
     const selectors = {
         id4: '#_404__4',
         id40: '#_404__40',

@@ -1,3 +1,5 @@
+import 'creepyface';
+
 import init404 from './mb/404';
 import initBootstrap from './mb/bootstrap';
 import initMap from './mb/maps';
@@ -8,12 +10,12 @@ import initContact from './mb/contact';
 
 function init() {
     initBootstrap();
-    initMap();
     initContact();
     initParticles();
     initScrollReveal();
     initLightbox();
+    window.initMap = initMap; // will be called once google maps is loaded
     init404();
 }
 
-document.addEventListener('DOMContentLoaded', init);
+init();

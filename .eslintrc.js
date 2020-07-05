@@ -3,6 +3,7 @@ module.exports = {
     "ignorePatterns": [
         "node_modules/",
         "build/",
+        "pano/",
     ],
     "rules": {
         "indent": [2, 4],

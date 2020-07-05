@@ -11,7 +11,7 @@
         "mjml": "mjml -w ./src/contact/mail.mjml -o ./src/contact/mail.html --config.minify=true",
         "compress": "gzipper --include html,css,js,svg --brotli ./build",
         "clean": "rimraf build",
-        "start": "npm run clean && concurrently 'npm:dev*'",
+        "start": "npm run clean && concurrently -n '11ty,WEBPACK,SERVE' -c 'bgBlue.bold,bgMagenta.bold,bgCyan.bold' 'npm:dev:eleventy' 'npm:dev:webpack' 'npm:dev:serve'",
         "build": "npm run clean && npm run prod:eleventy && npm run prod:webpack && npm run compress"
     },
     "author": "Moritz Brunnengräber",
@@ -47,6 +47,11 @@
     },
     "dependencies": {
         "@rqrauhvmra/tobi": "^1.9.1",
-        "bootstrap": "^4.4.1"
+        "bootstrap": "^4.4.1",
+        "creepyface": "^7.4.2",
+        "gsap": "^3.3.4",
+        "jquery": "^3.5.1",
+        "popper.js": "^1.16.1",
+        "scrollreveal": "^4.0.6"
     }
 }

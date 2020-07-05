@@ -1,6 +1,5 @@
 ---
 layout: default
-importlibs: index
 bodyClass: "bg-dark"
 ---
 
@@ -50,22 +49,22 @@ bodyClass: "bg-dark"
         <hr class="mb-hr text-primary">
         <div class="row">
             <div class="col-lg-3 col-md-6">
-                <div class="mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-laptop"></use></svg></div>
+                <div class="mb-js-reveal mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-laptop"></use></svg></div>
                 <h3>Webdevelopment</h3>
                 <p class="mt-3">I like building modern and responsive websites while improving my CSS and JS skills.</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-camera"></use></svg></div>
+                <div class="mb-js-reveal mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-camera"></use></svg></div>
                 <h3>Photography</h3>
                 <p class="mt-3">I have fun at photography: on the ground or in the air, night or day, long time exposure or time-lapse.</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-drone"></use></svg></div>
+                <div class="mb-js-reveal mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-drone"></use></svg></div>
                 <h3>Drones</h3>
                 <p class="mt-3">I enjoy flying with my drone making aerial photographies and especially fully spherical aerial panoramic images.</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-map"></use></svg></div>
+                <div class="mb-js-reveal mb-js-reveal-icons"><svg class="mb-icon mb-icon--4x text-primary my-3"><use xlink:href="/assets/icon-defs.svg#mb-icon-map"></use></svg></div>
                 <h3>Maps</h3>
                 <p class="mt-3">I fancy designing and building interactive web-based maps with frameworks like Mapbox.</p>
             </div>
@@ -77,6 +76,7 @@ bodyClass: "bg-dark"
     <div class="container-fluid px-0 text-center">
         <h2>Where I am</h2>
         <hr class="mb-hr text-secondary">
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ site.api.googleMaps }}&callback=initMap" async defer></script>
         <div class="mb-map mt-5"></div>
     </div>
 </section>
@@ -89,7 +89,7 @@ bodyClass: "bg-dark"
         <div class="row text-dark">
         {% for work in portfolio %}
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="card flex-fill shadow my-3 {% cycle 'mb-js-reveal-left', 'mb-js-reveal-bottom', 'mb-js-reveal-right' %}">
+                <div class="card flex-fill shadow my-3 mb-js-reveal mb-js-reveal-{% cycle 'left', 'bottom', 'right' %}">
                     <img class="card-img-top border-bottom" src="{{ work.title | slug | prepend: '/assets/portfolio/' | append: '.jpg' | url }}" alt="{{ work.title }}" loading="lazy">
                     <div class="card-body">
                         <h3 class="card-title">{{ work.title }}</h3>
@@ -108,7 +108,7 @@ bodyClass: "bg-dark"
             </div>
         {% endfor %}
             <div class="col-md-6 d-none d-md-flex d-lg-none align-items-stretch">
-                <div class="card flex-fill shadow my-3 mb-js-reveal-bottom">
+                <div class="card flex-fill shadow my-3 mb-js-reveal mb-js-reveal-bottom">
                     <img class="card-img-top border-bottom" src="{{ '/assets/portfolio/shrug.jpg' | url }}" alt="Shrug" loading="lazy">
                     <div class="card-body">
                         <h3 class="card-title">More coming soon...</h3>
@@ -171,16 +171,17 @@ bodyClass: "bg-dark"
                     </div>
                 </div>
                 <div class="col-md-6">
+                <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
                     <div class="g-recaptcha d-inline-block" data-sitekey="{{ site.api.recaptcha }}" data-theme="light"></div>
                 </div>
             </div>
             <div class="mb-js-contact__feedback my-3"></div>
             <div class="form-row">
                 <div class="col-md-6 my-2">
-                    <div class="mb-js-reveal-left"><button type="reset" class="btn btn-outline-secondary btn-block text-uppercase"><svg class="mb-icon mb-icon--lg mr-2"><use xlink:href="/assets/icon-defs.svg#mb-icon-backspace"></use></svg>Reset</button></div>
+                    <div class=""><button type="reset" class="btn btn-outline-secondary btn-block text-uppercase"><svg class="mb-icon mb-icon--lg mr-2"><use xlink:href="/assets/icon-defs.svg#mb-icon-backspace"></use></svg>Reset</button></div>
                 </div>
                 <div class="col-md-6 my-2">
-                    <div class="mb-js-reveal-right"><button type="submit" class="btn btn-outline-primary btn-block text-uppercase"><svg class="mb-icon mb-icon--lg mr-2"><use xlink:href="/assets/icon-defs.svg#mb-icon-send"></use></svg>Send</button></div>
+                    <div class=""><button type="submit" class="btn btn-outline-primary btn-block text-uppercase"><svg class="mb-icon mb-icon--lg mr-2"><use xlink:href="/assets/icon-defs.svg#mb-icon-send"></use></svg>Send</button></div>
                 </div>
             </div>
         </form>

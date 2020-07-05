@@ -1,7 +1,7 @@
+import Tobi from '@rqrauhvmra/tobi';
+
 function initLightbox() {
-    const { Tobi } = window;
-    if (!Tobi) { return; }
-    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-unused-vars, no-undef
     const tobi = new Tobi({
         selector: '[data-lightbox]',
         docClose: false,
