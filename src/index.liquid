@@ -78,8 +78,8 @@ bodyClass: "bg-dark"
     <div class="container-fluid px-0 text-center">
         <h2>Where I am</h2>
         <hr class="mb-hr text-secondary">
-        <script src="https://maps.googleapis.com/maps/api/js?key={{ site.api.googleMaps }}&callback=initMap" async></script>
-        <div class="mb-map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ site.api.googleMaps }}&callback=initMap" async defer></script>
+        <div class="mb-map mb-map--form"></div>
     </div>
 </section>
 

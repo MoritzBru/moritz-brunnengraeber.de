@@ -1,4 +1,4 @@
-$shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
+$header-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
 
 .mb-header {
     height: 100vh;
@@ -8,16 +8,16 @@ $shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
         width: 70%;
         max-width: 320px;
         height: auto;
-        box-shadow: $shadow;
+        box-shadow: $header-shadow;
     }
 
     &__text {
-        text-shadow: $shadow;
+        text-shadow: $header-shadow;
     }
 
     &__btn-wrapper {
         display: inline-block;
         border-radius: $round-border-radius;
-        box-shadow: $shadow;
+        box-shadow: $header-shadow;
     }
 }

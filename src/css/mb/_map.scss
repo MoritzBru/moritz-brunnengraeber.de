@@ -1,5 +1,4 @@
-$transition-height: 3*16px; // 3rem
-$map-height: 450px;
+$map-height: 32rem;
 
 .mb-map {
     width: 100%;
@@ -7,7 +6,9 @@ $map-height: 450px;
     border: 0;
 
     &--form {
-        padding-top: 2 * $transition-height;
-        clip-path: polygon(0 0, 50% $transition-height, 100% 0, 100% ($map-height - $transition-height), 50% 100%, 0 ($map-height - $transition-height));
+        // c.f. section scss
+        padding-top: 2 * $mb-transition-height;
+        margin-bottom: -1.5 * $mb-transition-height;
+        clip-path: polygon(0 0, 50% $mb-transition-height, 100% 0, 100% ($map-height - $mb-transition-height), 50% 100%, 0 ($map-height - $mb-transition-height));
     }
 }

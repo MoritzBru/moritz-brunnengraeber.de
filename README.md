@@ -24,14 +24,14 @@
 
 ## TODOs
 
-* replace particles js with static svg
 * check global styles and revise focus styles in nav
 * map bg
 * add user timings
 * setup multiple entrypoints
-* setup Google Analytics
 * setup cache busting
+* setup Google Analytics
 * refactor Pano
+* replace particles js with static svg
 * check a11y (Pa11y?, Lighthouse CI?)
 * check Performance (Lighthouse CI?)
 * support prefers-reduced-motion
