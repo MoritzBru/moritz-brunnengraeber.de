@@ -5,8 +5,8 @@
 {% capture fullTitle %}{% if title %}{{ title }} | {% endif %}{{ site.title }}{% endcapture %}
 <title>{{ fullTitle }}</title>
 
-<meta name="description" content="{{ site.description }}">
-<link rel="canonical" href="{{ site.url | url }}">
+<script src="{{ '/js/script.js' | url }}" defer></script>
+<link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | url }}">
@@ -27,4 +27,5 @@
 <meta property="og:url" content="{{ '/' | url }}">
 <meta property="og:type" content="website">
 
-<link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+<meta name="description" content="{{ site.description }}">
+<link rel="canonical" href="{{ site.url | url }}">
