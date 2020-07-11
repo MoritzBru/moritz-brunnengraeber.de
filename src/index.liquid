@@ -9,6 +9,8 @@ bodyClass: "bg-dark"
     <div class="container my-auto">
         <img
             class="mb-header__image rounded-circle mb-3"
+            width="400"
+            height="400"
             alt="Moritz Portrait"
             data-creepyface
             src="assets/creepyface/normal.jpg"
@@ -76,8 +78,8 @@ bodyClass: "bg-dark"
     <div class="container-fluid px-0 text-center">
         <h2>Where I am</h2>
         <hr class="mb-hr text-secondary">
-        <script src="https://maps.googleapis.com/maps/api/js?key={{ site.api.googleMaps }}&callback=initMap" async defer></script>
-        <div class="mb-map mt-5"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ site.api.googleMaps }}&callback=initMap" async></script>
+        <div class="mb-map"></div>
     </div>
 </section>
 
@@ -90,7 +92,7 @@ bodyClass: "bg-dark"
         {% for work in portfolio %}
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="card flex-fill shadow my-3 mb-js-reveal mb-js-reveal-{% cycle 'left', 'bottom', 'right' %}">
-                    <img class="card-img-top border-bottom" src="{{ work.title | slug | prepend: '/assets/portfolio/' | append: '.jpg' | url }}" alt="{{ work.title }}" loading="lazy">
+                    <img class="card-img-top border-bottom h-auto" src="{{ work.title | slug | prepend: '/assets/portfolio/' | append: '.jpg' | url }}" width="540" height="352" alt="{{ work.title }}" loading="lazy">
                     <div class="card-body">
                         <h3 class="card-title">{{ work.title }}</h3>
                         <p class="card-text">{{ work.text }}</p>
@@ -109,7 +111,7 @@ bodyClass: "bg-dark"
         {% endfor %}
             <div class="col-md-6 d-none d-md-flex d-lg-none align-items-stretch">
                 <div class="card flex-fill shadow my-3 mb-js-reveal mb-js-reveal-bottom">
-                    <img class="card-img-top border-bottom" src="{{ '/assets/portfolio/shrug.jpg' | url }}" alt="Shrug" loading="lazy">
+                    <img class="card-img-top border-bottom h-auto" src="{{ '/assets/portfolio/shrug.jpg' | url }}" width="540" height="352" alt="Shrug" loading="lazy">
                     <div class="card-body">
                         <h3 class="card-title">More coming soon...</h3>
                     </div>

@@ -25,6 +25,8 @@
 ## TODOs
 
 * replace particles js with static svg
+* check global styles and revise focus styles in nav
+* map bg
 * add user timings
 * setup multiple entrypoints
 * setup Google Analytics

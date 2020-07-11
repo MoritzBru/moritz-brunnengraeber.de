@@ -1,7 +1,6 @@
-function initParticles() {
-    const { particlesJS } = window;
-    if (!particlesJS) { return; }
+import 'particles.js';
 
+function initParticles() {
     const selectorId = 'mb-particles-id';
     const particlesConfig = {
         particles: {
@@ -106,7 +105,7 @@ function initParticles() {
         retina_detect: true,
     };
 
-    particlesJS(selectorId, particlesConfig);
+    window.particlesJS(selectorId, particlesConfig);
 }
 
 export default initParticles;
