@@ -1,7 +1,4 @@
-function initMap() {
-    const googleMaps = window.google && window.google.maps;
-    if (!googleMaps) { return; }
-
+function initGmaps() {
     const selectors = {
         map: '.mb-map',
     };
@@ -147,40 +144,46 @@ function initMap() {
         },
     ];
 
-    const gmap = new googleMaps.Map(mapDomEl, {
-        zoom: 10,
-        center: { lat: 0, lng: 0 },
-        styles: darkStyle,
-        disableDefaultUI: true,
-        // fullscreenControl: false,
-        // zoomControl: false,
-        // scaleControl: true,
-        // mapTypeControl: false,
-        // streetViewControl: false,
-        // rotateControl: false,
-    });
+    function initMap() {
+        const googleMaps = window.google && window.google.maps;
+        if (!googleMaps) { return; }
 
-    gmap.fitBounds(mapBounds);
-
-    const mapInfoWindow = new googleMaps.InfoWindow();
-
-    mapMarkersData.forEach((marker) => {
-        const newMarker = new googleMaps.Marker({
-            position: marker.pos,
-            icon: marker.icon,
-            map: gmap,
+        const gmap = new googleMaps.Map(mapDomEl, {
+            zoom: 10,
+            center: { lat: 0, lng: 0 },
+            styles: darkStyle,
+            disableDefaultUI: true,
+            // fullscreenControl: false,
+            // zoomControl: false,
+            // scaleControl: true,
+            // mapTypeControl: false,
+            // streetViewControl: false,
+            // rotateControl: false,
         });
-        const newInfoWindowContent = getInfoWindowContent(marker.name, marker.coords, marker.desc);
 
-        newMarker.addListener('click', () => {
-            mapInfoWindow.close();
-            mapInfoWindow.setContent(newInfoWindowContent);
-            mapInfoWindow.open(gmap, newMarker);
+        gmap.fitBounds(mapBounds);
+
+        const mapInfoWindow = new googleMaps.InfoWindow();
+
+        mapMarkersData.forEach((marker) => {
+            const newMarker = new googleMaps.Marker({
+                position: marker.pos,
+                icon: marker.icon,
+                map: gmap,
+            });
+            const newInfoWindowContent = getInfoWindowContent(marker.name, marker.coords, marker.desc);
+
+            newMarker.addListener('click', () => {
+                mapInfoWindow.close();
+                mapInfoWindow.setContent(newInfoWindowContent);
+                mapInfoWindow.open(gmap, newMarker);
+            });
+            gmap.addListener('click', () => {
+                mapInfoWindow.close();
+            });
         });
-        gmap.addListener('click', () => {
-            mapInfoWindow.close();
-        });
-    });
+    }
+    window.initMap = initMap;
 }
 
-export default initMap;
+export default initGmaps;

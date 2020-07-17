@@ -1,6 +1,9 @@
 ---
 layout: default
 bodyClass: "bg-dark"
+preconnectOrigins:
+    - https://maps.googleapis.com
+    - https://www.google.com
 ---
 
 <div class="mb-particles" id="mb-particles-id"></div>
@@ -78,7 +81,7 @@ bodyClass: "bg-dark"
     <div class="container-fluid px-0 text-center">
         <h2>Where I am</h2>
         <hr class="mb-hr text-secondary">
-        <script src="https://maps.googleapis.com/maps/api/js?key={{ site.api.googleMaps }}&callback=initMap" async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ site.api.googleMaps }}&callback=initMap" defer></script>
         <div class="mb-map mb-map--form"></div>
     </div>
 </section>
@@ -168,12 +171,12 @@ bodyClass: "bg-dark"
                 <div class="col-md-6 pl-sm-5">
                     <div class="custom-control custom-checkbox text-left mb-3">
                         <input type="checkbox" class="custom-control-input" id="mb-contact-form__data" required>
-                        <label class="custom-control-label text-muted" for="mb-contact-form__data">Agreement that the data will be stored and processed only for the purpose of communication. The data will not be passed on to third parties!</label>
+                        <label class="custom-control-label" for="mb-contact-form__data">Agreement that the data will be stored and processed only for the purpose of communication. The data will not be passed on to third parties!</label>
                         <div class="invalid-feedback">Please check this. I promise, this data is only used for sending me an email with your issue.</div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
+                    <script src="https://www.google.com/recaptcha/api.js?hl=en" defer></script>
                     <div class="g-recaptcha d-inline-block" data-sitekey="{{ site.api.recaptcha }}" data-theme="light"></div>
                 </div>
             </div>

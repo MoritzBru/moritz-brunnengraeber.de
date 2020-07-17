@@ -1,7 +1,7 @@
 import 'creepyface';
 
 import initBootstrap from './mb/bootstrap';
-import initMap from './mb/maps';
+import initGmaps from './mb/maps';
 import initParticles from './mb/particles';
 import initScrollReveal from './mb/scrollReveal';
 import initLightbox from './mb/lightbox';
@@ -13,7 +13,7 @@ function init() {
     initParticles();
     initScrollReveal();
     initLightbox();
-    window.initMap = initMap; // will be called once google maps is loaded
+    initGmaps();
 }
 
 init();

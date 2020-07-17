@@ -5,9 +5,15 @@
 {% capture fullTitle %}{% if title %}{{ title }} | {% endif %}{{ site.title }}{% endcapture %}
 <title>{{ fullTitle }}</title>
 
+{% if preconnectOrigins %}
+    {% for href in preconnectOrigins %}
+        <link rel="preconnect" href="{{ href }}">
+    {% endfor %}
+{% endif %}
+
 <script src="{% webpackAsset 'main.js' %}" defer></script>
 {% if scriptInclude %}
-<script src="{% webpackAsset scriptInclude %}" defer></script>
+    <script src="{% webpackAsset scriptInclude %}" defer></script>
 {% endif %}
 
 <link rel="stylesheet" href="{% webpackAsset 'main.css' %}">
