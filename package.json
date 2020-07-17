@@ -3,16 +3,17 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "dev:eleventy": "eleventy --watch",
-        "dev:webpack": "webpack --config='webpack.config.js' --mode='development' --display-error-details --progress --watch",
-        "dev:serve": "browser-sync start --config bs-config.js",
-        "prod:eleventy": "eleventy",
-        "prod:webpack": "webpack --config='webpack.config.js' --mode='production' --display-error-details --progress",
+        "dev:webpack": "webpack --config webpack.config.js --env.dev --display-error-details",
+        "dev:eleventy": "wait-on build/assets/manifest.json && eleventy --watch",
+        "dev:serve": "wait-on build/index.html && browser-sync start --config bs-config.js",
+        "prod:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
+        "prod:webpack": "webpack --config webpack.config.js --env.prod --display-error-details",
         "mjml": "mjml -w ./src/contact/mail.mjml -o ./src/contact/mail.html --config.minify=true",
         "compress": "gzipper --include html,css,js,svg --brotli ./build",
         "clean": "rimraf build",
-        "start": "npm run clean && concurrently -n '11ty,WEBPACK,SERVE' -c 'bgBlue.bold,bgMagenta.bold,bgCyan.bold' 'npm:dev:eleventy' 'npm:dev:webpack' 'npm:dev:serve'",
-        "build": "npm run clean && npm run prod:eleventy && npm run prod:webpack && npm run compress"
+        "dev": "concurrently -k -c 'bgBlue,bgMagenta,bgCyan' 'npm:dev:webpack' 'npm:dev:eleventy' 'npm:dev:serve'",
+        "start": "npm run clean && npm run dev",
+        "build": "npm run clean && npm run prod:webpack && npm run prod:eleventy && npm run compress"
     },
     "author": "Moritz Brunnengräber",
     "private": true,
@@ -24,6 +25,7 @@
         "babel-loader": "^8.1.0",
         "browser-sync": "^2.26.7",
         "concurrently": "^5.1.0",
+        "cross-env": "^7.0.2",
         "css-loader": "^3.5.2",
         "eslint": "^6.8.0",
         "eslint-config-airbnb-base": "^14.1.0",
@@ -42,8 +44,10 @@
         "stylelint-config-recommended-scss": "^4.2.0",
         "stylelint-config-standard": "^20.0.0",
         "stylelint-scss": "^3.17.0",
+        "wait-on": "^5.1.0",
         "webpack": "^4.42.1",
-        "webpack-cli": "^3.3.11"
+        "webpack-cli": "^3.3.11",
+        "webpack-manifest-plugin": "^2.2.0"
     },
     "dependencies": {
         "@rqrauhvmra/tobi": "^1.9.1",

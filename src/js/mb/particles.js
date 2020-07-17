@@ -105,7 +105,9 @@ function initParticles() {
         retina_detect: true,
     };
 
-    window.particlesJS(selectorId, particlesConfig);
+    if (document.querySelector(`#${selectorId}`)) {
+        window.particlesJS(selectorId, particlesConfig);
+    }
 }
 
 export default initParticles;

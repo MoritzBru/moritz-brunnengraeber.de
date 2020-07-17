@@ -1,6 +1,5 @@
 import 'creepyface';
 
-import init404 from './mb/404';
 import initBootstrap from './mb/bootstrap';
 import initMap from './mb/maps';
 import initParticles from './mb/particles';
@@ -15,7 +14,6 @@ function init() {
     initScrollReveal();
     initLightbox();
     window.initMap = initMap; // will be called once google maps is loaded
-    init404();
 }
 
 init();

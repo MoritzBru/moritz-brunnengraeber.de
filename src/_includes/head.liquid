@@ -5,8 +5,12 @@
 {% capture fullTitle %}{% if title %}{{ title }} | {% endif %}{{ site.title }}{% endcapture %}
 <title>{{ fullTitle }}</title>
 
-<script src="{{ '/js/script.js' | url }}" defer></script>
-<link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+<script src="{% webpackAsset 'main.js' %}" defer></script>
+{% if scriptInclude %}
+<script src="{% webpackAsset scriptInclude %}" defer></script>
+{% endif %}
+
+<link rel="stylesheet" href="{% webpackAsset 'main.css' %}">
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | url }}">
@@ -27,5 +31,5 @@
 <meta property="og:url" content="{{ '/' | url }}">
 <meta property="og:type" content="website">
 
-<meta name="description" content="{{ site.description }}">
+<meta name="description" content="{{scriptInclude}} | {{ site.description }}">
 <link rel="canonical" href="{{ site.url | url }}">

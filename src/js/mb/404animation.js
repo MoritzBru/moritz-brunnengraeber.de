@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 
-function init404() {
+function init404animation() {
     const selectors = {
         id4: '#_404__4',
         id40: '#_404__40',
@@ -56,4 +56,4 @@ function init404() {
         .add(tl404, '<0.5');
 }
 
-export default init404;
+export default init404animation;
