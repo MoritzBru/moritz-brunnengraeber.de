@@ -6,6 +6,7 @@ import initParticles from './mb/particles';
 import initScrollReveal from './mb/scrollReveal';
 import initLightbox from './mb/lightbox';
 import initContact from './mb/contact';
+import initUserTimings from './mb/userTimings';
 
 function init() {
     initBootstrap();
@@ -14,6 +15,7 @@ function init() {
     initScrollReveal();
     initLightbox();
     initGmaps();
+    initUserTimings();
 }
 
 init();

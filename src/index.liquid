@@ -26,7 +26,12 @@ preconnectOrigins:
             data-src-look-225="assets/creepyface/down-left.jpg"
             data-src-look-270="assets/creepyface/left.jpg"
             data-src-look-315="assets/creepyface/up-left.jpg"
+            onload="performance.clearMarks('heroimg:displayed'); performance.mark('heroimg:displayed');"
         />
+        <script>
+            performance.clearMarks("heroimg:displayed");
+            performance.mark("heroimg:displayed");
+        </script>
         <h1 class="mb-header__text"><span class="font-weight-light">Hi I'm </span><span class="font-weight-bold">Moritz Brunnengräber</span></h1>
         <div class="mb-header__btn-wrapper mt-5">
             <a class="btn btn-secondary btn-lg px-4 text-uppercase" href="#about">Get to know me</a>

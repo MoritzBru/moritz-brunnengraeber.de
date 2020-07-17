@@ -1,3 +1,6 @@
+<script>
+    performance.mark('head:start');
+</script>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,12 +14,26 @@
     {% endfor %}
 {% endif %}
 
+<script>
+    performance.mark('head/js:start');
+</script>
 <script src="{% webpackAsset 'main.js' %}" defer></script>
 {% if scriptInclude %}
     <script src="{% webpackAsset scriptInclude %}" defer></script>
 {% endif %}
+<script>
+    performance.mark('head/js:end');
+    performance.measure('head/js:time', 'head/js:start', 'head/js:end');
+</script>
 
+<script>
+    performance.mark('head/css:start');
+</script>
 <link rel="stylesheet" href="{% webpackAsset 'main.css' %}">
+<script>
+    performance.mark('head/css:end');
+    performance.measure('head/css:time', 'head/css:start', 'head/css:end');
+</script>
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | url }}">
@@ -39,3 +56,7 @@
 
 <meta name="description" content="{{scriptInclude}} | {{ site.description }}">
 <link rel="canonical" href="{{ site.url | url }}">
+<script>
+    performance.mark('head:end');
+    performance.measure('head:time', 'head:start', 'head:end');
+</script>
