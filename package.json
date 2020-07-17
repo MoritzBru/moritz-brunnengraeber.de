@@ -13,7 +13,7 @@
         "clean": "rimraf build",
         "dev": "concurrently -k -c 'bgBlue,bgMagenta,bgCyan' 'npm:dev:webpack' 'npm:dev:eleventy' 'npm:dev:serve'",
         "start": "npm run clean && npm run dev",
-        "prod": "npm run clean && npm run prod:webpack && npm run prod:eleventy && npm run compress"
+        "build": "npm run clean && npm run prod:webpack && npm run prod:eleventy && npm run compress"
     },
     "author": "Moritz Brunnengräber",
     "private": true,
