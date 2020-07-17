@@ -25,10 +25,8 @@
 ## TODOs
 
 * check global styles and revise focus styles in nav
-* map bg
+* map bg ?
 * add user timings
-* setup multiple entrypoints
-* setup cache busting
 * setup Google Analytics
 * refactor Pano
 * replace particles js with static svg
