@@ -38,3 +38,4 @@
 * adjust scrollbar style
 * use :focus-visible (after it is fully supported)
 * fade in nav bar bg
+* fix form: https://documentation.formspark.io/dashboard/ or https://www.emailjs.com/docs/ or https://formsubmit.co/services
