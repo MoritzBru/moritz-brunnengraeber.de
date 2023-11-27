@@ -1,0 +1,99 @@
+---
+import IconTwitter from '~icons/ph/twitter-logo-duotone';
+import IconGithub from '~icons/ph/github-logo-duotone';
+import IconLinkedin from '~icons/ph/linkedin-logo-duotone';
+import IconM from '~icons/mb/m';
+import IconB from '~icons/mb/b';
+
+const socialLinks = [
+  {
+    label: 'twitter',
+    url: 'https://twitter.com/moritz_bru',
+    Icon: IconTwitter,
+    activeClass: 'hover:text-[#1da1f2] focus:text-[#1da1f2]',
+  },
+  {
+    label: 'github',
+    url: 'https://github.com/MoritzBru',
+    Icon: IconGithub,
+    activeClass: 'hover:text-[#000000] focus:text-[#000000]',
+  },
+  {
+    label: 'linkedin',
+    url: 'https://www.linkedin.com/in/moritz-brunnengraeber/',
+    Icon: IconLinkedin,
+    activeClass: 'hover:text-[#0a66c2] focus:text-[#0a66c2]',
+  },
+];
+---
+
+<footer class="dui-footer flex flex-col sm:flex-row justify-around items-center bg-neutral text-neutral-content px-8 py-12">
+  <aside class="text-center text-lg gap-px">
+    <div class="flex gap-1 mb-4"><IconM class="h-8 w-8" /><IconB class="h-8 w-8" /></div>
+    <p>Moritz Brunnengräber</p>
+    <p>2017 - {new Date().getFullYear()}</p>
+    <a
+      href="/legal-notice"
+      class="dui-link"
+    >
+      Legal Notice
+    </a>
+  </aside>
+  <ul class="grid grid-flow-col gap-4">
+    {
+      socialLinks.map((item) => (
+        <li>
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener"
+            class:list={['text-gray-500 transition-colors', item.activeClass]}
+            title={item.label}
+          >
+            <span class="sr-only">{item.label}</span>
+            <item.Icon
+              is:raw
+              aria-hidden="true"
+              class="h-10 w-10"
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>
+
+<footer class="flex flex-col items-center gap-4 py-5">
+  <ul class="flex gap-4">
+    {
+      socialLinks.map((item) => (
+        <li>
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener"
+            class:list={['text-gray-500 transition-colors', item.activeClass]}
+            title={item.label}
+          >
+            <span class="sr-only">{item.label}</span>
+            <item.Icon
+              is:raw
+              aria-hidden="true"
+              class="h-10 w-10"
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="flex flex-col items-center justify-center gap-2">
+    <p>Moritz Brunnengräber</p>
+    <p>2017 - {new Date().getFullYear()}</p>
+    <a
+      href="/legal-notice"
+      class="font-medium hover:underline"
+    >
+      Legal Notice
+    </a>
+  </div>
+</footer>

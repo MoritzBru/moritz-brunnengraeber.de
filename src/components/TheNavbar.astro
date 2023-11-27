@@ -1,0 +1,71 @@
+---
+import Hamburger from '@/components/Hamburger.astro';
+import IconM from '~icons/mb/m';
+import IconB from '~icons/mb/b';
+import IconMoon from '~icons/ph/moon-stars-duotone';
+import IconSun from '~icons/ph/sun-duotone';
+
+const navLinks = [
+  {
+    label: 'Who',
+    url: '/#about',
+  },
+  {
+    label: 'What',
+    url: '/#work',
+  },
+  {
+    label: 'Contact',
+    url: '/#contact',
+  },
+];
+---
+
+<nav class="dui-navbar bg-base-100">
+  <div class="dui-navbar-start">
+    <a
+      class="dui-btn dui-btn-ghost dui-btn-lg gap-px text-xl font-semibold tracking-wide"
+      href="/#home"
+    >
+      <IconM
+        class="h-10 w-10"
+        aria-hidden="true"
+      /><span
+        class=""
+        aria-hidden="true"
+        >oritz</span
+      >
+      <IconB
+        class="ml-4 h-10 w-10"
+        aria-hidden="true"
+      /><span
+        class=""
+        aria-hidden="true"
+        >runnengräber</span
+      >
+    </a>
+  </div>
+  <div class="dui-navbar-end">
+    <label class="dui-btn dui-btn-ghost dui-btn-circle dui-btn-lg dui-swap dui-swap-rotate">
+      <input
+        type="checkbox"
+        class="theme-controller"
+        value=""
+      />
+      <IconMoon data-theme-dark class="h-10 w-10" />
+      <IconSun data-theme-light class="h-10 w-10" />
+    </label>
+    <script>
+      const themeController: HTMLInputElement | null = document.querySelector('.theme-controller');
+      const iconLight: SVGElement | null = document.querySelector('[data-theme-light]');
+      const iconDark: SVGElement | null = document.querySelector('[data-theme-dark]');
+      const preferredDark = window?.matchMedia('(prefers-color-scheme: dark)').matches
+
+      if (themeController) {
+        themeController.value = preferredDark ? 'light' : 'dark';
+        iconLight?.classList.add(preferredDark ? 'dui-swap-off': 'dui-swap-on');
+        iconDark?.classList.add(preferredDark ? 'dui-swap-on': 'dui-swap-off');
+      }
+    </script>
+  </div>
+</nav>

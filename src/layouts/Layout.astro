@@ -1,6 +1,10 @@
 ---
+import '@/style/base.css';
+import Navbar from '@/components/TheNavbar.astro';
+import Footer from '@/components/TheFooter.astro';
+
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,44 +12,89 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{title} ⸱ Moritz Brunnengräber</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={new URL('/favicon/apple-touch-icon.png?v=3.0.0', Astro.url)}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href={new URL('/favicon/favicon-32x32.png?v=3.0.0', Astro.url)}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href={new URL('/favicon/favicon-16x16.png?v=3.0.0', Astro.url)}
+    />
+    <link
+      rel="manifest"
+      href={new URL('/favicon/site.webmanifest?v=3.0.0', Astro.url)}
+    />
+    <link
+      rel="mask-icon"
+      href={new URL('/favicon/safari-pinned-tab.svg?v=3.0.0', Astro.url)}
+      color="#3f51b5"
+    />
+    <link
+      rel="shortcut icon"
+      href={new URL('/favicon/favicon.ico?v=3.0.0', Astro.url)}
+    />
+    <meta
+      name="msapplication-TileColor"
+      content="#3f51b5"
+    />
+    <meta
+      name="msapplication-config"
+      content={new URL('/favicon/browserconfig.xml?v=3.0.0', Astro.url)}
+    />
+    <meta
+      name="theme-color"
+      content="#3f51b5"
+    />
+
+    <meta
+      property="og:image"
+      content={new URL('/og/og-image.jpg', Astro.url)}
+    />
+    <meta
+      property="og:image:width"
+      content="320"
+    />
+    <meta
+      property="og:image:height"
+      content="320"
+    />
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta
+      property="og:url"
+      content={Astro.site}
+    />
+    <meta
+      property="og:type"
+      content="website"
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
