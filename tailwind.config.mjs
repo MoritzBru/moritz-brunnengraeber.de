@@ -7,7 +7,24 @@ export default {
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   darkMode: ['class', '[data-theme="dark"]'],
   daisyui: {
-    themes: ['light', 'dark'],
+    themes: [
+      {
+        light: {
+          ...require('daisyui/src/theming/themes')['light'],
+          primary: '#3F51B5',
+          secondary: '#AD1457',
+          accent: '#1A237E',
+          '--rounded-btn': '1rem',
+        },
+        dark: {
+          ...require('daisyui/src/theming/themes')['dark'],
+          primary: '#3F51B5',
+          secondary: '#AD1457',
+          accent: '#1A237E',
+          '--rounded-btn': '1rem',
+        },
+      },
+    ],
     darkTheme: 'dark',
     base: true,
     styled: true,
