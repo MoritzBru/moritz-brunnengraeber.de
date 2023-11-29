@@ -24,48 +24,47 @@ const navLinks = [
 <nav class="dui-navbar bg-base-100">
   <div class="dui-navbar-start">
     <a
-      class="dui-btn dui-btn-ghost dui-btn-lg gap-px text-xl font-semibold tracking-wide"
-      href="/#home"
+      class="dui-btn dui-btn-ghost dui-btn-lg gap-1 text-xl font-semibold tracking-wide"
+      href="/"
+      aria-label="Moritz Brunnengräber"
     >
       <IconM
         class="h-10 w-10"
         aria-hidden="true"
-      /><span
-        class=""
+      />
+      <span
+        class="hidden sm:block"
         aria-hidden="true"
-        >oritz</span
       >
+        oritz
+      </span>
       <IconB
-        class="ml-4 h-10 w-10"
+        class="h-10 w-10 sm:ml-4"
         aria-hidden="true"
-      /><span
-        class=""
+      />
+      <span
+        class="hidden sm:block"
         aria-hidden="true"
-        >runnengräber</span
       >
+        runnengräber
+      </span>
     </a>
   </div>
   <div class="dui-navbar-end">
-    <label class="dui-btn dui-btn-ghost dui-btn-circle dui-btn-lg dui-swap dui-swap-rotate">
-      <input
-        type="checkbox"
-        class="theme-controller"
-        value=""
+    <button
+      class="dui-btn dui-btn-circle dui-btn-ghost dui-swap dui-swap-rotate dui-btn-lg"
+      x-bind:class="{ 'dui-swap-active': theme === 'dark' }"
+      x-on:click="toggleTheme"
+    >
+      <span class="sr-only">Toggle Theme</span>
+      <IconMoon
+        aria-hidden="true"
+        class="dui-swap-off h-10 w-10"
       />
-      <IconMoon data-theme-dark class="h-10 w-10" />
-      <IconSun data-theme-light class="h-10 w-10" />
-    </label>
-    <script>
-      const themeController: HTMLInputElement | null = document.querySelector('.theme-controller');
-      const iconLight: SVGElement | null = document.querySelector('[data-theme-light]');
-      const iconDark: SVGElement | null = document.querySelector('[data-theme-dark]');
-      const preferredDark = window?.matchMedia('(prefers-color-scheme: dark)').matches
-
-      if (themeController) {
-        themeController.value = preferredDark ? 'light' : 'dark';
-        iconLight?.classList.add(preferredDark ? 'dui-swap-off': 'dui-swap-on');
-        iconDark?.classList.add(preferredDark ? 'dui-swap-on': 'dui-swap-off');
-      }
-    </script>
+      <IconSun
+        aria-hidden="true"
+        class="dui-swap-on h-10 w-10"
+      />
+    </button>
   </div>
 </nav>

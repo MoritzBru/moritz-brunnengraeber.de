@@ -11,7 +11,11 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  x-data="theme"
+  x-bind:data-theme="theme"
+>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -91,6 +95,26 @@ const { title } = Astro.props;
       property="og:type"
       content="website"
     />
+
+    <script>
+      document.addEventListener('alpine:init', () => {
+        const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+        Alpine.data('theme', () => ({
+          init() {
+            if (!localStorage.getItem('theme')) {
+              localStorage.setItem('theme', preferredTheme);
+            }
+          },
+          theme: localStorage.getItem('theme') ?? preferredTheme,
+          toggleTheme() {
+            this.theme = (this.theme === 'light') ? 'dark' : 'light';
+            localStorage.setItem('theme', this.theme);
+          },
+        }));
+      });
+    </script>
   </head>
   <body>
     <Navbar />
