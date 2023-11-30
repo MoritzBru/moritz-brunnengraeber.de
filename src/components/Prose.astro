@@ -6,7 +6,7 @@ const { class: className, ...attrs } = Astro.props;
 ---
 
 <div
-  class="prose dark:prose-invert prose-a:text-primary prose-a:break-words prose-p:text-justify"
+  class="prose dark:prose-invert prose-a:text-primary prose-a:break-words prose-p:text-justify prose-hr:border-t-4 prose-hr:border-secondary prose-hr:max-w-[10ch]"
   class:list={[className]}
 >
   <slot />

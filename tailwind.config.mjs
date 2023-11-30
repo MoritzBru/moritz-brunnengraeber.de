@@ -2,7 +2,17 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            'ol ol': {
+              listStyle: 'lower-alpha',
+            },
+          },
+        },
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   darkMode: ['class', '[data-theme="dark"]'],
