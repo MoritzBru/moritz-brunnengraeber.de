@@ -1,6 +1,23 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '@/layouts/Layout.astro';
+import imgMoritz from '@/assets/images/moritz.jpg';
+import ImageBlob from '@/components/ImageBlob.astro';
 ---
 
 <Layout title="Home">
+  <div class="dui-hero min-h-[80svh] bg-base-300">
+    <div class="dui-hero-content flex max-w-prose flex-col gap-8 text-center">
+      <ImageBlob imgPath={imgMoritz}  class="saturate-[.8]"/>
+      <!-- <Image
+        src={imgNormal}
+        alt="Moritz Brunnengräber"
+        class="dui-mask dui-mask-squircle mx-auto"
+      /> -->
+      <h1 class="text-4xl font-thin">
+        Hi there, I'm <span class="font-bold">Moritz Brunnengräber</span>
+      </h1>
+      <button class="dui-btn dui-btn-primary dui-btn-lg rounded-full">Get to know me</button>
+    </div>
+  </div>
 </Layout>
