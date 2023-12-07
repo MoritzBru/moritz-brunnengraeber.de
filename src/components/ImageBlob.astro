@@ -1,11 +1,11 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-import type { ImageMetadata } from 'astro';
-import { getImage } from 'astro:assets';
-import { svgPath } from 'blobs/v2';
-import { getId } from '@/utils/id';
+import type { HTMLAttributes } from "astro/types";
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+import { svgPath } from "blobs/v2";
+import { getId } from "@/utils/id";
 
-interface Props extends HTMLAttributes<'svg'> {
+interface Props extends HTMLAttributes<"svg"> {
   imgPath: ImageMetadata;
   seed?: number;
   extraPoints?: number;
@@ -21,11 +21,15 @@ const {
   extraPoints = 6,
   randomness = 6,
   size = 256,
-  dur = '12s',
+  dur = "12s",
   ...attrs
 } = Astro.props;
 
-const optimizedImage = await getImage({ src: imgPath });
+const optimizedImage = await getImage({
+  src: imgPath,
+  width: 1024,
+  height: 1024,
+});
 
 const paths = [
   svgPath({ seed: seed, extraPoints, randomness, size }),
@@ -60,13 +64,13 @@ const id = getId();
     <path>
       <animate
         attributeName="d"
-        values={paths.join(';')}
+        values={paths.join(";")}
         dur={dur}
         repeatCount="indefinite"
         calcMode="spline"
-        keySplines={[...new Array(paths.length - 1)].map(() => '.15 0 .85 1').join(';')}
-      ></animate>
+        keySplines={[...new Array(paths.length - 1)]
+          .map(() => ".15 0 .85 1")
+          .join(";")}></animate>
     </path>
   </clipPath>
 </svg>
-

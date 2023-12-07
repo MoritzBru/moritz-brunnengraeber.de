@@ -1,44 +1,43 @@
 ---
-import IconTwitter from '~icons/ph/twitter-logo-duotone';
-import IconGithub from '~icons/ph/github-logo-duotone';
-import IconLinkedin from '~icons/ph/linkedin-logo-duotone';
-import IconM from '~icons/mb/m';
-import IconB from '~icons/mb/b';
+import IconTwitter from "~icons/ph/twitter-logo-duotone";
+import IconGithub from "~icons/ph/github-logo-duotone";
+import IconLinkedin from "~icons/ph/linkedin-logo-duotone";
+import IconM from "~icons/mb/m";
+import IconB from "~icons/mb/b";
 
 const socialLinks = [
   {
-    label: 'twitter',
-    url: 'https://twitter.com/moritz_bru',
+    label: "twitter",
+    url: "https://twitter.com/moritz_bru",
     Icon: IconTwitter,
-    activeClass: 'hover:text-[#1da1f2] focus:text-[#1da1f2]',
+    activeClass: "hover:text-[#1da1f2] focus:text-[#1da1f2]",
   },
   {
-    label: 'github',
-    url: 'https://github.com/MoritzBru',
+    label: "github",
+    url: "https://github.com/MoritzBru",
     Icon: IconGithub,
-    activeClass: 'hover:text-[#000000] focus:text-[#000000]',
+    activeClass: "hover:text-[#000000] focus:text-[#000000]",
   },
   {
-    label: 'linkedin',
-    url: 'https://www.linkedin.com/in/moritz-brunnengraeber/',
+    label: "linkedin",
+    url: "https://www.linkedin.com/in/moritz-brunnengraeber/",
     Icon: IconLinkedin,
-    activeClass: 'hover:text-[#0a66c2] focus:text-[#0a66c2]',
+    activeClass: "hover:text-[#0a66c2] focus:text-[#0a66c2]",
   },
 ];
 ---
 
-<footer class="bg-base-200 px-8 py-12 text-base-content">
-  <div class="container mx-auto flex flex-col items-center justify-around gap-8 sm:flex-row">
+<footer class="bg-base-200 px-8 pt-32 pb-12 text-base-content">
+  <div
+    class="container flex flex-col items-center justify-around gap-8 sm:flex-row"
+  >
     <aside class="gap-px text-lg">
-      <div class="mb-4 flex gap-1"><IconM class="h-8 w-8" /><IconB class="h-8 w-8" /></div>
+      <div class="mb-4 flex gap-1">
+        <IconM class="h-8 w-8" /><IconB class="h-8 w-8" />
+      </div>
       <p>Moritz Brunnengräber</p>
       <p>2017 - {new Date().getFullYear()}</p>
-      <a
-        href="/legal-notice"
-        class="dui-link"
-      >
-        Legal Notice
-      </a>
+      <a href="/legal-notice" class="dui-link"> Legal Notice</a>
     </aside>
     <ul class="flex gap-4">
       {
@@ -48,15 +47,14 @@ const socialLinks = [
               href={item.url}
               target="_blank"
               rel="noopener"
-              class:list={['dui-btn dui-btn-circle dui-btn-ghost', item.activeClass]}
+              class:list={[
+                "dui-btn dui-btn-circle dui-btn-ghost",
+                item.activeClass,
+              ]}
               title={item.label}
             >
               <span class="sr-only">{item.label}</span>
-              <item.Icon
-                is:raw
-                aria-hidden="true"
-                class="h-8 w-8"
-              />
+              <item.Icon is:raw aria-hidden="true" class="h-8 w-8" />
             </a>
           </li>
         ))

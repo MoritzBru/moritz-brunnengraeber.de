@@ -1,19 +1,15 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<'svg'>;
+type Props = HTMLAttributes<"svg">;
 
 const { class: className, ...attrs } = Astro.props;
 ---
 
-<canvas
-  data-particles
-  class:list={[className]}
-  {...attrs}
-></canvas>
+<canvas data-particles class:list={[className]} {...attrs}></canvas>
 
 <script>
-  import Particles from './Particles.astro';
+  import Particles from "./Particles.astro";
 
   type Dot = {
     x: number;
@@ -32,22 +28,21 @@ const { class: className, ...attrs } = Astro.props;
       if (canvas instanceof HTMLCanvasElement) {
         this.canvas = canvas;
       } else {
-        throw new Error('querySelector is not a canvas element');
+        throw new Error("querySelector is not a canvas element");
       }
-      const ctx = this.canvas.getContext('2d');
+      const ctx = this.canvas.getContext("2d");
       if (ctx instanceof CanvasRenderingContext2D) {
         this.ctx = ctx;
       } else {
-        throw new Error('could not get drawing context');
+        throw new Error("could not get drawing context");
       }
 
       const numberOfDots = Math.floor(Math.max(this.w, this.h) / 10);
       this.dots = [...Array(numberOfDots)].map(() => this.makeDot());
-      console.log('🟣 ~ ParticleCanvas ~ constructor ~ this.dots:', this.dots);
 
       this.setupSize();
-      window.addEventListener('resize', this.setupSize.bind(this));
-      this.canvas.addEventListener('mousemove', (evt) => {
+      window.addEventListener("resize", this.setupSize.bind(this));
+      this.canvas.addEventListener("mousemove", (evt) => {
         this.mouse = {
           x: evt.offsetX,
           y: evt.offsetY,
@@ -85,8 +80,12 @@ const { class: className, ...attrs } = Astro.props;
       return {
         x: Math.random() * this.w,
         y: Math.random() * this.h,
-        vx: Math.floor((Math.random() * this.h) / 12 - (Math.random() * this.h) / 15),
-        vy: Math.floor((Math.random() * this.h) / 12 - (Math.random() * this.h) / 15),
+        vx: Math.floor(
+          (Math.random() * this.h) / 12 - (Math.random() * this.h) / 15
+        ),
+        vy: Math.floor(
+          (Math.random() * this.h) / 12 - (Math.random() * this.h) / 15
+        ),
       };
     }
 
@@ -119,7 +118,10 @@ const { class: className, ...attrs } = Astro.props;
 
       this.dots.forEach((dot1, idx) => {
         this.drawDot(dot1);
-        if (this.mouse && this.distance(this.mouse, dot1) < this.maxLineLength * 2) {
+        if (
+          this.mouse &&
+          this.distance(this.mouse, dot1) < this.maxLineLength * 2
+        ) {
           this.drawLine(this.mouse, dot1, this.maxLineLength * 2);
         }
         this.dots.slice(0, idx).forEach((dot2) => {
@@ -150,5 +152,7 @@ const { class: className, ...attrs } = Astro.props;
     }
   }
 
-  document.querySelectorAll('[data-particles]').forEach((el) => new ParticleCanvas(el));
+  document
+    .querySelectorAll("[data-particles]")
+    .forEach((el) => new ParticleCanvas(el));
 </script>

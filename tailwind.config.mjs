@@ -2,6 +2,9 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       typography: {
         DEFAULT: {
@@ -12,6 +15,12 @@ export default {
           },
         },
       },
+      // backgroundImage: {
+      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      // },
+      // transitionTimingFunction: {
+      //   'in-out-back': 'cubic-bezier(0.68, -0.6, 0.32, 1.6)',
+      // },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
