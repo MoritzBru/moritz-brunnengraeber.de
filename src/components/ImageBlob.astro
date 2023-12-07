@@ -2,8 +2,11 @@
 import type { HTMLAttributes } from "astro/types";
 import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
-import { svgPath } from "blobs/v2";
+import * as _blobs2 from "blobs/v2";
 import { getId } from "@/utils/id";
+
+// @ts-expect-error: blobs2 is not published properly
+const { svgPath } = _blobs2.default as typeof import('blobs/v2');
 
 interface Props extends HTMLAttributes<"svg"> {
   imgPath: ImageMetadata;
@@ -17,7 +20,7 @@ interface Props extends HTMLAttributes<"svg"> {
 const {
   class: className,
   imgPath,
-  seed = Math.random(),
+  seed = Date.now(),
   extraPoints = 6,
   randomness = 6,
   size = 256,
