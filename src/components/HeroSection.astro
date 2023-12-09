@@ -1,11 +1,15 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-type Props = HTMLAttributes<"section">;
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'section'>;
 
 const { class: className, ...attrs } = Astro.props;
 ---
 
-<section class:list={["dui-hero min-h-[60vh]", className]} {...attrs}>
+<section
+  class:list={['dui-hero min-h-[60vh]', className]}
+  {...attrs}
+>
   <div class="dui-hero-content max-w-prose flex flex-col">
     <slot />
   </div>

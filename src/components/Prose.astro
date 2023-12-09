@@ -1,13 +1,16 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-type Props = HTMLAttributes<"svg">;
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'svg'>;
 
 const { class: className, ...attrs } = Astro.props;
 ---
 
 <div
-  class="prose dark:prose-invert prose-a:text-primary prose-a:break-words prose-p:text-justify prose-hr:border-t-4 prose-hr:border-secondary prose-hr:max-w-[10ch]"
-  class:list={[className]}
+  class:list={[
+    'prose dark:prose-invert prose-a:text-primary prose-a:break-words prose-p:text-justify prose-hr:border-t-4 prose-hr:border-secondary prose-hr:max-w-[10ch]',
+    className,
+  ]}
 >
   <slot />
 </div>
