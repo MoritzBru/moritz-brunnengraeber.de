@@ -1,0 +1,112 @@
+---
+import IconUser from '~icons/ph/user-duotone';
+import IconMail from '~icons/ph/envelope-duotone';
+import IconMessage from '~icons/ph/chat-dots-duotone';
+---
+
+<form
+  class="w-full"
+  action="https://api.web3forms.com/submit"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="56c27341-a6f4-4f96-a28b-69093b842c8d"
+  />
+  <input
+    type="hidden"
+    name="redirect"
+    value={new URL('form-success', Astro.site).toString()}
+  />
+  <input
+    type="checkbox"
+    name="botcheck"
+    id=""
+    class="hidden"
+  />
+  <div class="grid grid-cols-2 gap-x-4 gap-y-8">
+    <div class="floating-label">
+      <input
+        id="form-name"
+        name="name"
+        type="text"
+        class="dui-input dui-input-bordered w-full focus:outline-primary"
+        placeholder=""
+        required
+      />
+      <label
+        for="form-name"
+        class="flex items-center gap-1"
+      >
+        <IconUser aria-hidden="true" />
+         Your Name
+      </label>
+    </div>
+
+    <div class="floating-label">
+      <input
+        id="form-email"
+        name="email"
+        type="email"
+        class="dui-input dui-input-bordered w-full focus:outline-primary"
+        placeholder=""
+        required
+      />
+      <label
+        for="form-email"
+        class="flex items-center gap-1"
+      >
+        <IconMail aria-hidden="true" />
+         Your E-Mail
+      </label>
+    </div>
+
+    <div class="floating-label col-span-2">
+      <textarea
+        id="form-message"
+        name="message"
+        class="dui-textarea dui-textarea-bordered w-full text-base focus:outline-primary"
+        rows="3"
+        placeholder=""
+        required
+      ></textarea>
+      <label
+        for="form-message"
+        class="flex items-center gap-1"
+      >
+        <IconMessage aria-hidden="true" />
+         Your Message
+      </label>
+    </div>
+
+    <div class="dui-form-control flex-row items-center gap-3 col-span-2">
+      <input
+        type="checkbox"
+        class="dui-checkbox dui-checkbox-primary"
+        id="form__gdpr"
+        required
+      />
+      <label
+        class="dui-label leading-snug cursor-pointer text-sm text-wrap-pretty"
+        for="form__gdpr"
+      >
+        Agreement that the data will be stored and processed only for the purpose of communication.
+        The data will not be passed on to third parties!
+      </label>
+    </div>
+
+    <button
+      type="reset"
+      class="dui-btn dui-btn-secondary"
+    >
+      Reset
+    </button>
+    <button
+      type="submit"
+      class="dui-btn dui-btn-primary"
+    >
+      Send
+    </button>
+  </div>
+</form>

@@ -1,24 +1,23 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "@/layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import Layout from '@/layouts/Layout.astro';
 
-import IconLaptop from "~icons/icon-park-twotone/laptop-one";
-import IconDrone from "~icons/icon-park-twotone/drone";
-import IconShirt from "~icons/ph/t-shirt-duotone";
-// import IconSewing from '~icons/game-icons/sewing-machine';
+import ImgMoritz from '@/assets/images/moritz.jpg';
+import ImgCV from '@/assets/images/cv.jpg';
 
-import ImgMoritz from "@/assets/images/moritz.jpg";
-import ImgCV from "@/assets/images/cv.jpg";
-
-import ImageBlob from "@/components/ImageBlob.astro";
-import DripDivider from "@/components/DripDivider.astro";
-import HeroSection from "@/components/HeroSection.astro";
+import ImageBlob from '@/components/ImageBlob.astro';
+import DripDivider from '@/components/DripDivider.astro';
+import HeroSection from '@/components/HeroSection.astro';
+import ContactForm from '@/components/ContactForm.astro';
 ---
 
 <Layout title="Home">
   <section class="dui-hero min-h-[80vh] bg-base-300">
     <div class="dui-hero-content flex max-w-prose flex-col gap-8 text-center">
-      <ImageBlob imgPath={ImgMoritz} class="drop-shadow-2xl saturate-[.8]" />
+      <ImageBlob
+        imgPath={ImgMoritz}
+        class="drop-shadow-2xl saturate-[.8]"
+      />
       <h1 class="text-4xl font-thin">
         Hi there, I'm <span class="font-bold">Moritz Brunnengräber</span>
       </h1>
@@ -28,33 +27,39 @@ import HeroSection from "@/components/HeroSection.astro";
   <DripDivider class="bg-base-300" />
 
   <HeroSection class="bg-primary text-primary-content pt-24 pb-4">
-    <h2 class="text-3xl">About me</h2>
-    <hr class="mb-8 mt-2 w-32 rounded border-2 border-secondary" />
-    <p class="max-w-sm px-4">
-      I'm a frontend software engineer who finds joy in the intricacies of code,
-      design and user-experience. If you want to get to know me better, be sure
-      to check out my CV.
-    </p>
+    <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+      <div class="flex flex-col items-center">
+        <h2 class="text-3xl">About me</h2>
+        <hr class="mb-8 mt-2 w-32 rounded border-2 border-secondary" />
+        <p class="max-w-sm px-4">
+          I'm a frontend software engineer who finds joy in the intricacies of code, design and user-experience. If you
+          want to get to know me better, be sure to check out my CV.
+        </p>
+      </div>
+      <a
+        href="CV-Moritz-Brunnengraeber.pdf"
+        class="dui-link dui-tooltip dui-tooltip-secondary min-w-fit max-w-[50vw] transition hover:scale-105 mb-8 rounded-lg"
+        data-tip="Click to open"
+        target="_blank"
+      >
+        <Image
+          src={ImgCV}
+          width="256"
+          class="rounded-lg shadow-xl md:shadow-2xl"
+          alt="CV Moritz Brunnengräber"
+        />
+      </a>
+    </div>
   </HeroSection>
 
   <DripDivider class="bg-primary" />
 
   <HeroSection class="bg-base-200 text-base-content pt-24 pb-4">
-    <h2 class="text-3xl">My CV</h2>
-    <hr class="mb-8 mt-2 w-32 rounded border-2 border-primary" />
-    <a
-      href="CV-Moritz-Brunnengraeber.pdf"
-      class="dui-link dui-tooltip dui-tooltip-secondary min-w-fit max-w-[50vw] transition hover:scale-105 mb-8 rounded-lg"
-      data-tip="Click to open"
-      target="_blank"
-    >
-      <Image
-        src={ImgCV}
-        width="256"
-        class="rounded-lg shadow-xl md:shadow-2xl"
-        alt="CV Moritz Brunnengräber"
-      />
-    </a>
+    <h2 class="text-3xl">Get in touch</h2>
+    <hr class="mb-8 mt-2 w-32 rounded border-2 border-secondary" />
+
+    <ContactForm />
+
     {
       /*
       <div class="flex flex-col gap-8 md:flex-row">
@@ -91,13 +96,4 @@ import HeroSection from "@/components/HeroSection.astro";
   </HeroSection>
 
   <DripDivider class="bg-base-200" />
-
-  <HeroSection class="bg-secondary text-secondary-content pt-24 pb-4">
-    <h2 class="text-3xl">Get in touch</h2>
-    <hr class="mb-8 mt-2 w-32 rounded border-2 border-accent" />
-    <form class="w-full">
-    </form>
-  </HeroSection>
-
-  <DripDivider class="bg-secondary" />
 </Layout>
