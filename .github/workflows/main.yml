@@ -13,7 +13,7 @@ jobs:
     steps:
 
     - name: Checkout latest code
-      uses: actions/checkout@4
+      uses: actions/checkout@v4
 
     - name: Setup node LTS
       uses: actions/setup-node@v4
