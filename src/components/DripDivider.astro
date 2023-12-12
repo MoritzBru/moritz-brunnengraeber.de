@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"hr">;
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<hr class:list={["drip-mask -mb-20 h-20 border-none", className]} {...attrs} />
+
+<style>
+  .drip-mask {
+    mask-image: url("drip-mask.svg");
+    mask-repeat: repeat-x;
+    mask-position: top center;
+  }
+</style>

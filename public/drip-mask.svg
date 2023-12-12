@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80">
+  <defs>
+    <mask id="mask">
+      <rect width="100%" height="100%" fill="#fff" />
+      <rect x="05%" y="10" height="60" width="5%" rx="12"/>
+      <rect x="15%" y="23" height="60" width="5%" rx="12"/>
+      <rect x="25%" y="21" height="60" width="5%" rx="12"/>
+      <rect x="35%" y="13" height="60" width="5%" rx="12"/>
+      <rect x="45%" y="14" height="60" width="5%" rx="12"/>
+      <rect x="55%" y="15" height="60" width="5%" rx="12"/>
+      <rect x="65%" y="19" height="60" width="5%" rx="12"/>
+      <rect x="75%" y="22" height="60" width="5%" rx="12"/>
+      <rect x="85%" y="11" height="60" width="5%" rx="12"/>
+      <rect x="95%" y="29" height="60" width="5%" rx="12"/>
+    </mask>
+  </defs>
+  <g mask="url(#mask)">
+    <rect width="100%" height="40" />
+    <rect x="00%" y="0" height="80" width="5%" rx="12" />
+    <rect x="10%" y="0" height="72" width="5%" rx="12" />
+    <rect x="20%" y="0" height="62" width="5%" rx="12" />
+    <rect x="30%" y="0" height="61" width="5%" rx="12" />
+    <rect x="40%" y="0" height="78" width="5%" rx="12" />
+    <rect x="50%" y="0" height="62" width="5%" rx="12" />
+    <rect x="60%" y="0" height="80" width="5%" rx="12" />
+    <rect x="70%" y="0" height="60" width="5%" rx="12" />
+    <rect x="80%" y="0" height="80" width="5%" rx="12" />
+    <rect x="90%" y="0" height="72" width="5%" rx="12" />
+
+  </g>
+</svg>

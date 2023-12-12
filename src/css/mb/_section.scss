@@ -1,7 +1,0 @@
-.mb-section {
-    padding-top: 2 * $mb-transition-height;
-    padding-bottom: 1.5 * $mb-transition-height;
-    margin-top: -$mb-transition-height;
-    clip-path: polygon(0 0, 50% $mb-transition-height, 100% 0, 100% 100%, 0 100%);
-    overflow-x: hidden; // can grow larger if we animate in from the side (scrollReveal)
-}

@@ -1,0 +1,52 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'svg'>;
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<svg
+  class:list={['hamburger', className]}
+  viewBox="0 0 100 100"
+  {...attrs}
+>
+  <g
+    fill="none"
+    stroke="currentColor"
+    stroke-width="6"
+    stroke-linecap="round"
+  >
+    <path
+      class="top"
+      d="m 70,33 h -40 c 0,0 -8.5,-0.15 -8.5,8.5 0,8.65 8.5,8.5 8.5,8.5 h 20 v -20"
+    ></path>
+    <path d="m 70,50 h -40"></path>
+    <path
+      class="bottom"
+      d="m 30,67 h 40 c 0,0 8.5,0.15 8.5,-8.5 0,-8.65 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+    ></path>
+  </g>
+</svg>
+
+<style>
+  .hamburger {
+    --transition-duration: 400ms;
+    transition: transform var(--transition-duration);
+  }
+
+  .hamburger :is(.top, .bottom) {
+    stroke-dasharray: 40 121;
+    transition:
+      stroke-dasharray var(--transition-duration),
+      stroke-dashoffset var(--transition-duration);
+  }
+
+  .hamburger.isOpen {
+    transform: rotate(45deg);
+  }
+
+  .hamburger.isOpen :is(.top, .bottom) {
+    stroke-dashoffset: -68;
+  }
+</style>

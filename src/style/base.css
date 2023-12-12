@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .floating-label {
+    @apply relative mt-2;
+  }
+  .floating-label label {
+    @apply absolute left-4 top-3 origin-top-left transition duration-200 motion-reduce:transition-none;
+  }
+  .floating-label :is(input, textarea):is(:focus, :not(:placeholder-shown)) ~ label {
+    @apply -translate-y-10 scale-90 text-inherit;
+  }
+}
+
+@layer utilities {
+  .text-wrap-pretty {
+    text-wrap: pretty;
+  }
+}
