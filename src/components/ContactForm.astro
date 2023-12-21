@@ -2,12 +2,19 @@
 import IconUser from '~icons/ph/user-duotone';
 import IconMail from '~icons/ph/envelope-duotone';
 import IconMessage from '~icons/ph/chat-dots-duotone';
+import IconSuccess from '~icons/line-md/confirm-circle-twotone';
+import IconAlert from '~icons/line-md/alert-twotone';
+import IconLoading from '~icons/svg-spinners/ring-resize';
 ---
 
 <form
   class="w-full"
+  x-data="contactForm()"
+  x-bind:class="isValidated && 'validated'"
+  @submit.prevent="submit"
+  @reset="reset"
   action="https://api.web3forms.com/submit"
-  method="POST"
+  novalidate
 >
   <input
     type="hidden"
@@ -15,26 +22,33 @@ import IconMessage from '~icons/ph/chat-dots-duotone';
     value="56c27341-a6f4-4f96-a28b-69093b842c8d"
   />
   <input
-    type="hidden"
-    name="redirect"
-    value={new URL('form-success', Astro.site).toString()}
-  />
-  <input
     type="checkbox"
     name="botcheck"
-    id=""
     class="hidden"
   />
+  <input
+    type="hidden"
+    name="subject"
+    value="New message"
+  />
+  <input
+    type="hidden"
+    name="from_name"
+    value="Contact Form"
+  />
+
   <div class="grid grid-cols-2 gap-x-4 gap-y-8">
-    <div class="floating-label">
+    <div class="floating-label col-span-2 md:col-span-1">
       <input
         id="form-name"
         name="name"
         type="text"
         class="dui-input dui-input-bordered w-full focus:outline-primary"
         placeholder=""
+        autocomplete="name"
         required
       />
+      <div class="invalid-feedback">I want to know who wrote me.</div>
       <label
         for="form-name"
         class="flex items-center gap-1"
@@ -44,15 +58,17 @@ import IconMessage from '~icons/ph/chat-dots-duotone';
       </label>
     </div>
 
-    <div class="floating-label">
+    <div class="floating-label col-span-2 md:col-span-1">
       <input
         id="form-email"
         name="email"
         type="email"
         class="dui-input dui-input-bordered w-full focus:outline-primary"
         placeholder=""
+        autocomplete="email"
         required
       />
+      <div class="invalid-feedback">I need a valid email so that I can perhaps reply.</div>
       <label
         for="form-email"
         class="flex items-center gap-1"
@@ -71,6 +87,7 @@ import IconMessage from '~icons/ph/chat-dots-duotone';
         placeholder=""
         required
       ></textarea>
+      <div class="invalid-feedback">I thought you were here to write me a message?!</div>
       <label
         for="form-message"
         class="flex items-center gap-1"
@@ -80,20 +97,24 @@ import IconMessage from '~icons/ph/chat-dots-duotone';
       </label>
     </div>
 
-    <div class="dui-form-control flex-row items-center gap-3 col-span-2">
+    <div class="dui-form-control grid grid-cols-[auto_1fr] items-center gap-x-3 col-span-2">
       <input
+        id="form-gdpr"
+        name="gdpr"
         type="checkbox"
         class="dui-checkbox dui-checkbox-primary"
-        id="form__gdpr"
         required
       />
       <label
-        class="dui-label leading-snug cursor-pointer text-sm text-wrap-pretty"
-        for="form__gdpr"
+        class="dui-label leading-snug cursor-pointer text-sm text-wrap-pretty py-0"
+        for="form-gdpr"
       >
-        Agreement that the data will be stored and processed only for the purpose of communication.
-        The data will not be passed on to third parties!
+        Agreement that the data will be stored and processed only for the purpose of communication. The data will not be
+        passed on to third parties!
       </label>
+      <div class="invalid-feedback col-span-2">
+        Please check this. I promise, this data is only used for sending me an email with your issue.
+      </div>
     </div>
 
     <button
@@ -105,8 +126,161 @@ import IconMessage from '~icons/ph/chat-dots-duotone';
     <button
       type="submit"
       class="dui-btn dui-btn-primary"
+      x-bind:disabled="isBusy"
     >
-      Send
+      <IconLoading
+        class="h-6 w-6"
+        x-cloak
+        x-show="isBusy"
+        x-tansition
+      />
+       Send
     </button>
   </div>
+
+  <div
+    role="alert"
+    class="dui-alert dui-alert-success bg-green-100 mt-4"
+    x-cloak
+    x-show="isSubmitSuccess"
+    x-transition:enter="transition origin-top"
+    x-transition:enter-start="opacity-0 -translate-y-4"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition origin-top"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-4"
+  >
+    <IconSuccess class="h-8 w-8 text-success" />
+    <p>The form was submitted successfully. Thank you!</p>
+  </div>
+
+  <div
+    role="alert"
+    class="dui-alert dui-alert-error bg-red-100 mt-4"
+    x-cloak
+    x-show="isSubmitError"
+    x-transition:enter="transition origin-top"
+    x-transition:enter-start="opacity-0 -translate-y-4"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition origin-top"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-4"
+  >
+    <IconAlert class="h-8 w-8 text-error" />
+    <div>
+      <p>There was a problem while submitting the form.</p>
+      <p>Please try again later or reach me via the other platforms in the footer.</p>
+    </div>
+  </div>
 </form>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('contactForm', () => ({
+      isBusy: false,
+      isValidated: false,
+      isSubmitSuccess: false,
+      isSubmitError: false,
+
+      async submit(event: SubmitEvent) {
+        const form = event.target as HTMLFormElement;
+        const url = form.action;
+
+        this.isSubmitSuccess = false;
+        this.isSubmitError = false;
+
+        if (!form.checkValidity()) {
+          this.isValidated = true;
+          form.querySelector<HTMLInputElement | HTMLTextAreaElement>(':invalid')?.focus();
+          this.isSubmitError = true;
+
+          return;
+        }
+
+        this.isBusy = true;
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData.entries());
+        const jsonString = JSON.stringify(object);
+
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: jsonString,
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          this.isSubmitSuccess = true;
+          form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[name]').forEach((el) => (el.value = ''));
+        } else {
+          this.isSubmitError = true;
+        }
+
+        this.isBusy = false;
+      },
+
+      reset() {
+        this.isBusy = false;
+        this.isValidated = false;
+        this.isSubmitSuccess = false;
+        this.isSubmitError = false;
+      },
+    }));
+  });
+</script>
+
+<style>
+  .floating-label {
+    @apply relative mt-2;
+  }
+  .floating-label label {
+    @apply absolute left-4 top-3 origin-top-left transition duration-200 motion-reduce:transition-none;
+  }
+  .floating-label :is(input, textarea):is(:focus, :not(:placeholder-shown)) ~ label {
+    @apply -translate-y-10 scale-90 text-inherit;
+  }
+
+  .validated :is(.dui-input, .dui-textarea, .dui-checkbox):invalid {
+    @apply border-error focus:outline-error transition-colors;
+  }
+  .invalid-feedback {
+    @apply text-sm text-error mx-2 mt-1 hidden;
+    animation: hide 150ms ease-in-out;
+  }
+  .validated :invalid ~ .invalid-feedback {
+    @apply block;
+    animation: reveal 150ms ease-in-out;
+  }
+
+  @keyframes reveal {
+    from {
+      display: none;
+      opacity: 0;
+      transform: translateY(-10%);
+      transform-origin: top;
+    }
+    to {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hide {
+    from {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      transform-origin: top;
+    }
+    to {
+      display: none;
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+  }
+</style>
