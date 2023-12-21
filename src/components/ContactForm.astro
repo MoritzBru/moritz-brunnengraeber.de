@@ -192,8 +192,6 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
         if (!form.checkValidity()) {
           this.isValidated = true;
           form.querySelector<HTMLInputElement | HTMLTextAreaElement>(':invalid')?.focus();
-          this.isSubmitError = true;
-
           return;
         }
 
