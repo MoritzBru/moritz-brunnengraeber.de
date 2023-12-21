@@ -6,6 +6,9 @@ export default {
       center: true,
     },
     extend: {
+      width: {
+        'hr': '10ch',
+      },
       typography: {
         DEFAULT: {
           css: {

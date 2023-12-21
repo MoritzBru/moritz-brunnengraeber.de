@@ -106,7 +106,7 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
         required
       />
       <label
-        class="dui-label leading-snug cursor-pointer text-sm text-wrap-pretty py-0"
+        class="dui-label leading-snug cursor-pointer text-sm text-pretty py-0"
         for="form-gdpr"
       >
         Agreement that the data will be stored and processed only for the purpose of communication. The data will not be
@@ -129,7 +129,7 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
       x-bind:disabled="isBusy"
     >
       <IconLoading
-        class="h-6 w-6"
+        class="size-6"
         x-cloak
         x-show="isBusy"
         x-tansition
@@ -150,7 +150,7 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
     x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 -translate-y-4"
   >
-    <IconSuccess class="h-8 w-8 text-success" />
+    <IconSuccess class="size-8 text-success" />
     <p>The form was submitted successfully. Thank you!</p>
   </div>
 
@@ -166,7 +166,7 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
     x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 -translate-y-4"
   >
-    <IconAlert class="h-8 w-8 text-error" />
+    <IconAlert class="size-8 text-error" />
     <div>
       <p>There was a problem while submitting the form.</p>
       <p>Please try again later or reach me via the other platforms in the footer.</p>

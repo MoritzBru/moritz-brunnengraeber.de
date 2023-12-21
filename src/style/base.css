@@ -10,9 +10,3 @@
   /* https://alpinejs.dev/directives/cloak */
   [x-cloak] { display: none !important; }
 }
-
-@layer utilities {
-  .text-wrap-pretty {
-    text-wrap: pretty;
-  }
-}
