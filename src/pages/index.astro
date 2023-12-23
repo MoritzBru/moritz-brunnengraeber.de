@@ -16,7 +16,13 @@ import ContactForm from '@/components/ContactForm.astro';
     <div class="dui-hero-content flex max-w-prose flex-col gap-8 text-center">
       <ImageBlob
         imgPath={ImgMoritz}
-        class="drop-shadow-2xl saturate-[.8]"
+        class="drop-shadow-2xl saturate-[.8] motion-reduce:hidden"
+      />
+      <Image
+        src={ImgMoritz}
+        width="512"
+        alt="Portrait of Moritz"
+        class="rounded-full shadow-2xl saturate-[.8] hidden motion-reduce:block"
       />
       <h1 class="text-4xl font-thin">
         Hi there, I'm <span class="font-bold">Moritz Brunnengräber</span>
@@ -38,7 +44,7 @@ import ContactForm from '@/components/ContactForm.astro';
       </div>
       <a
         href="CV-Moritz-Brunnengraeber.pdf"
-        class="dui-link dui-tooltip dui-tooltip-secondary min-w-fit max-w-[50vw] transition hover:scale-105 mb-8 rounded-lg"
+        class="dui-link dui-tooltip dui-tooltip-secondary min-w-fit max-w-[50vw] transition motion-safe:hover:scale-105 mb-8 rounded-lg"
         data-tip="Click to open"
         target="_blank"
       >
