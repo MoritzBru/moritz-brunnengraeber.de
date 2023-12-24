@@ -9,9 +9,6 @@
 * setup Analytics
 * check a11y (Pa11y?, Lighthouse CI?)
 * check Performance (Lighthouse CI?)
-* support prefers-reduced-motion
-* check high contrast mode
-* adjust scrollbar style
 * opengraph stuff
 * 404 page
 * email assets
