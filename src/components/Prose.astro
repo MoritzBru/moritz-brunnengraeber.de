@@ -8,10 +8,9 @@ const { class: className } = Astro.props;
 
 <div
   class:list={[
-    'prose dark:prose-invert prose-a:text-primary prose-a:break-words prose-p:text-pretty prose-hr:border-t-4 prose-hr:border-secondary prose-hr:w-hr',
+    'prose dark:prose-invert prose-p:text-pretty prose-a:break-words prose-a:text-primary prose-hr:w-hr prose-hr:border-t-4 prose-hr:border-secondary',
     className,
   ]}
-
 >
   <slot />
 </div>

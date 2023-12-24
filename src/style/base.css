@@ -4,13 +4,11 @@
 
 @layer base {
   @media (prefers-reduced-motion: no-preference) {
-
     html,
     body {
       scroll-behavior: smooth;
     }
   }
-
 
   /* https://alpinejs.dev/directives/cloak */
   [x-cloak] {
@@ -20,12 +18,11 @@
 
 @layer components {
   @media (forced-colors: active) {
-
     /* https://github.com/saadeghi/daisyui/blob/master/src/components/styled/checkbox.css */
     /* https://github.com/twbs/bootstrap/blob/main/scss/forms/_form-check.scss */
     .dui-checkbox:checked,
-    .dui-checkbox[checked="true"],
-    .dui-checkbox[aria-checked="true"] {
+    .dui-checkbox[checked='true'],
+    .dui-checkbox[aria-checked='true'] {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
     }
   }

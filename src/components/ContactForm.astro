@@ -97,23 +97,24 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
       </label>
     </div>
 
-    <div class="dui-form-control grid grid-cols-[auto_1fr] items-center gap-x-3 col-span-2">
+    <div class="dui-form-control col-span-2 grid grid-cols-[auto_1fr] items-center gap-x-3">
       <input
         id="form-gdpr"
         name="gdpr"
         type="checkbox"
-        class="dui-checkbox dui-checkbox-primary"
+        class="dui-checkbox-primary dui-checkbox"
         required
       />
       <label
-        class="dui-label leading-snug cursor-pointer text-sm text-pretty py-0"
+        class="dui-label cursor-pointer text-pretty py-0 text-sm leading-snug"
         for="form-gdpr"
       >
-        Agreement that the data will be stored and processed only for the purpose of communication. The data will not be
-        passed on to third parties!
+        Agreement that the data will be stored and processed only for the purpose of communication.
+        The data will not be passed on to third parties!
       </label>
       <div class="invalid-feedback col-span-2">
-        Please check this. I promise, this data is only used for sending me an email with your issue.
+        Please check this. I promise, this data is only used for sending me an email with your
+        issue.
       </div>
     </div>
 
@@ -140,7 +141,7 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
 
   <div
     role="alert"
-    class="dui-alert dui-alert-success bg-green-100 mt-4"
+    class="dui-alert dui-alert-success mt-4 bg-green-100"
     x-cloak
     x-show="isSubmitSuccess"
     x-transition:enter="transition origin-top"
@@ -156,7 +157,7 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
 
   <div
     role="alert"
-    class="dui-alert dui-alert-error bg-red-100 mt-4"
+    class="dui-alert dui-alert-error mt-4 bg-red-100"
     x-cloak
     x-show="isSubmitError"
     x-transition:enter="transition origin-top"
@@ -205,7 +206,7 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            Accept: 'application/json',
+            'Accept': 'application/json',
           },
           body: jsonString,
         });
@@ -213,7 +214,9 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
 
         if (result.success) {
           this.isSubmitSuccess = true;
-          form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[name]').forEach((el) => (el.value = ''));
+          form
+            .querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[name]')
+            .forEach((el) => (el.value = ''));
         } else {
           this.isSubmitError = true;
         }
@@ -243,10 +246,10 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
   }
 
   .validated :is(.dui-input, .dui-textarea, .dui-checkbox):invalid {
-    @apply border-error focus:outline-error transition-colors;
+    @apply border-error transition-colors focus:outline-error;
   }
   .invalid-feedback {
-    @apply text-sm text-error mx-2 mt-1 hidden;
+    @apply mx-2 mt-1 hidden text-sm text-error;
     animation: hide 150ms ease-in-out;
   }
   .validated :invalid ~ .invalid-feedback {

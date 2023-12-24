@@ -22,7 +22,7 @@ import ContactForm from '@/components/ContactForm.astro';
         src={ImgMoritz}
         width="512"
         alt="Portrait of Moritz"
-        class="rounded-full shadow-2xl saturate-[.8] hidden motion-reduce:block"
+        class="hidden rounded-full shadow-2xl saturate-[.8] motion-reduce:block"
       />
       <h1 class="text-4xl font-thin">
         Hi there, I'm <span class="font-bold">Moritz Brunnengräber</span>
@@ -32,19 +32,19 @@ import ContactForm from '@/components/ContactForm.astro';
 
   <DripDivider class="bg-base-300" />
 
-  <HeroSection class="bg-primary text-primary-content pt-24 pb-4">
-    <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+  <HeroSection class="bg-primary pb-4 pt-24 text-primary-content">
+    <div class="flex flex-col items-center justify-center gap-8 md:flex-row">
       <div class="flex flex-col items-center">
         <h2 class="text-3xl">About me</h2>
         <hr class="mb-8 mt-2 w-hr rounded border-2 border-secondary" />
-        <p class="max-w-sm px-4 text-balance">
-          I'm a frontend software engineer who finds joy in the intricacies of code, design and user-experience. If you
-          want to get to know me better, be sure to check out my CV.
+        <p class="max-w-sm text-balance px-4">
+          I'm a frontend software engineer who finds joy in the intricacies of code, design and
+          user-experience. If you want to get to know me better, be sure to check out my CV.
         </p>
       </div>
       <a
         href="CV-Moritz-Brunnengraeber.pdf"
-        class="dui-link dui-tooltip dui-tooltip-secondary min-w-fit max-w-[50vw] transition motion-safe:hover:scale-105 mb-8 rounded-lg"
+        class="dui-link dui-tooltip dui-tooltip-secondary mb-8 min-w-fit max-w-[50vw] rounded-lg transition motion-safe:hover:scale-105"
         data-tip="Click to open"
         target="_blank"
       >
@@ -60,7 +60,7 @@ import ContactForm from '@/components/ContactForm.astro';
 
   <DripDivider class="bg-primary" />
 
-  <HeroSection class="bg-base-200 text-base-content pt-24 pb-4">
+  <HeroSection class="bg-base-200 pb-4 pt-24 text-base-content">
     <h2 class="text-3xl">Get in touch</h2>
     <hr class="mb-8 mt-2 w-hr rounded border-2 border-secondary" />
 

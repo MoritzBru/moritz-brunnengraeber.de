@@ -1,50 +1,50 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     container: {
       center: true,
     },
     extend: {
       width: {
-        'hr': '10ch',
+        hr: '10ch',
       },
       typography: {
         DEFAULT: {
           css: {
-            "ol ol": {
-              listStyle: "lower-alpha",
+            'ol ol': {
+              listStyle: 'lower-alpha',
             },
           },
         },
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
-  darkMode: ["class", '[data-theme="dark"]'],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  darkMode: ['class', '[data-theme="dark"]'],
   daisyui: {
     themes: [
       {
         light: {
-          ...require("daisyui/src/theming/themes")["light"],
-          primary: "#3F51B5",
-          secondary: "#AD1457",
-          accent: "#1A237E",
+          ...require('daisyui/src/theming/themes')['light'],
+          primary: '#3F51B5',
+          secondary: '#AD1457',
+          accent: '#1A237E',
         },
         dark: {
-          ...require("daisyui/src/theming/themes")["dark"],
-          primary: "#3F51B5",
-          secondary: "#AD1457",
-          accent: "#1A237E",
+          ...require('daisyui/src/theming/themes')['dark'],
+          primary: '#3F51B5',
+          secondary: '#AD1457',
+          accent: '#1A237E',
         },
       },
     ],
-    darkTheme: "dark",
+    darkTheme: 'dark',
     base: true,
     styled: true,
     utils: true,
-    prefix: "dui-",
+    prefix: 'dui-',
     logs: false,
-    themeRoot: ":root",
+    themeRoot: ':root',
   },
 };

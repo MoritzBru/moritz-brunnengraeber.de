@@ -110,7 +110,7 @@ const { title } = Astro.props;
           },
           theme: localStorage.getItem('theme') ?? preferredTheme,
           toggleTheme() {
-            this.theme = (this.theme === 'light') ? 'dark' : 'light';
+            this.theme = this.theme === 'light' ? 'dark' : 'light';
             localStorage.setItem('theme', this.theme);
           },
         }));
