@@ -12,9 +12,13 @@ import IconB from '~icons/mb/b';
     <a
       class="dui-btn dui-btn-ghost dui-btn-lg gap-1 text-xl font-semibold tracking-wide"
       href="/"
-      aria-label="Moritz Brunnengräber"
+      aria-label="Moritz Brunnengräber Home"
     >
       <IconM
+        class="size-10"
+        aria-hidden="true"
+      />
+      <IconB
         class="size-10"
         aria-hidden="true"
       />
@@ -22,25 +26,15 @@ import IconB from '~icons/mb/b';
         class="hidden sm:block"
         aria-hidden="true"
       >
-        oritz</span
-      >
-      <IconB
-        class="size-10 sm:ml-4"
-        aria-hidden="true"
-      />
-      <span
-        class="hidden sm:block"
-        aria-hidden="true"
-      >
-        runnengräber</span
-      >
+        Moritz Brunnengräber
+      </span>
     </a>
   </div>
   <div class="dui-navbar-end">
     <button
       class="dui-btn dui-btn-circle dui-btn-ghost dui-swap dui-swap-rotate dui-btn-lg"
       x-bind:class="{ 'dui-swap-active': theme === 'dark' }"
-      x-on:click="toggleTheme"
+      x-on:click="transitionTheme"
     >
       <span class="sr-only">Toggle Theme</span>
       <IconMoon
