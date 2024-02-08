@@ -1,0 +1,341 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="448" height="160" viewBox="0 0 448 160">
+    <style>
+        :root {
+            --color-1: #3f51b5;
+            --color-2: #a6adbb;
+            --color-3: #1a237e;
+            --animation-properties: 2500ms ease-in-out infinite alternate;
+        }
+
+        .bottom,
+        .slant {
+            fill: var(--color-3);
+        }
+
+        .hz,
+        .circle {
+            fill: var(--color-2);
+        }
+
+        .top,
+        .highlight {
+            fill: var(--color-1);
+        }
+
+        .mb404_4 .slant_wrapper {
+            animation: animation_4_slant var(--animation-properties);
+        }
+
+        @keyframes animation_4_slant {
+            0% {
+                transform: translate(64px, 64px) scale(0, 0)
+            }
+
+            28% {
+                transform: translate(64px, 64px) scale(0, 0);
+            }
+
+            40% {
+                transform: translate(64px, 64px) scale(1, 1)
+            }
+
+            100% {
+                transform: translate(64px, 64px) scale(1, 1)
+            }
+        }
+
+        .mb404_4 .hz_wrapper_wrapper {
+            animation: animation_4_hz_1 var(--animation-properties);
+        }
+
+        @keyframes animation_4_hz_1 {
+            0% {
+                transform: translate(128px, 112px)
+            }
+
+            12% {
+                transform: translate(128px, 112px);
+            }
+
+            24% {
+                transform: translate(128px, 80px)
+            }
+
+            100% {
+                transform: translate(128px, 80px)
+            }
+        }
+
+        .mb404_4 .hz_wrapper {
+            animation: animation_4_hz_2 var(--animation-properties);
+        }
+
+        @keyframes animation_4_hz_2 {
+            0% {
+                transform: scale(0.5, 1)
+            }
+
+            20% {
+                transform: scale(0.5, 1);
+            }
+
+            32% {
+                transform: scale(1, 1)
+            }
+
+            100% {
+                transform: scale(1, 1)
+            }
+        }
+
+        .mb404_4 .top_wrapper_wrapper {
+            animation: animation_4_top_1 var(--animation-properties);
+        }
+
+        @keyframes animation_4_top_1 {
+            0% {
+                transform: translate(96px, 128px)
+            }
+
+            12% {
+                transform: translate(96px, 128px);
+            }
+
+            24% {
+                transform: translate(96px, 64px)
+            }
+
+            100% {
+                transform: translate(96px, 64px)
+            }
+        }
+
+        .mb404_4 .top_wrapper {
+            animation: animation_4_top_2 var(--animation-properties);
+        }
+
+        @keyframes animation_4_top_2 {
+            0% {
+                transform: scale(1, 0.5)
+            }
+
+            12% {
+                transform: scale(1, 0.5);
+            }
+
+            24% {
+                transform: scale(1, 1)
+            }
+
+            100% {
+                transform: scale(1, 1)
+            }
+        }
+
+        .mb404_40 .circle_wrapper,
+        .mb404_40 .mask_circle_wrapper,
+        #mb404_40_mask {
+            animation: animation_40_circle var(--animation-properties);
+        }
+
+        @keyframes animation_40_circle {
+            0% {
+                transform: translate(288px, 144px) scale(0.5, 0.5)
+            }
+
+            32% {
+                transform: translate(288px, 144px) scale(0.5, 0.5);
+            }
+
+            56% {
+                transform: translate(288px, 144px) scale(1, 1)
+            }
+
+            100% {
+                transform: translate(288px, 144px) scale(1, 1)
+            }
+        }
+
+        .mb404_40 .highlight_wrapper {
+            animation: animation_40_highlight var(--animation-properties);
+        }
+
+        @keyframes animation_40_highlight {
+            0% {
+                transform: translate(288px, 144px) scale(0, 0)
+            }
+
+            44% {
+                transform: translate(288px, 144px) scale(0, 0);
+            }
+
+            60% {
+                transform: translate(288px, 144px) scale(1, 1)
+            }
+
+            100% {
+                transform: translate(288px, 144px) scale(1, 1)
+            }
+        }
+
+        .mb404_404 .slant_wrapper {
+            animation: animation_404_slant var(--animation-properties);
+        }
+
+        @keyframes animation_404_slant {
+            0% {
+                transform: translate(64px, 64px) scale(0, 0)
+            }
+
+            64% {
+                transform: translate(64px, 64px) scale(0, 0);
+            }
+
+            76% {
+                transform: translate(64px, 64px) scale(1, 1)
+            }
+
+            100% {
+                transform: translate(64px, 64px) scale(1, 1)
+            }
+        }
+
+        .mb404_404 .hz_wrapper_wrapper {
+            animation: animation_404_hz_1 var(--animation-properties);
+        }
+
+        @keyframes animation_404_hz_1 {
+            0% {
+                transform: translate(128px, 112px)
+            }
+
+            48% {
+                transform: translate(128px, 112px);
+            }
+
+            60% {
+                transform: translate(128px, 80px)
+            }
+
+            100% {
+                transform: translate(128px, 80px)
+            }
+        }
+
+        .mb404_404 .hz_wrapper {
+            animation: animation_404_hz_2 var(--animation-properties);
+        }
+
+        @keyframes animation_404_hz_2 {
+            0% {
+                transform: scale(0.5, 1)
+            }
+
+            56% {
+                transform: scale(0.5, 1);
+            }
+
+            68% {
+                transform: scale(1, 1)
+            }
+
+            100% {
+                transform: scale(1, 1)
+            }
+        }
+
+        .mb404_404 .top_wrapper_wrapper {
+            animation: animation_404_top_1 var(--animation-properties);
+        }
+
+        @keyframes animation_404_top_1 {
+            0% {
+                transform: translate(96px, 128px)
+            }
+
+            48% {
+                transform: translate(96px, 128px);
+            }
+
+            60% {
+                transform: translate(96px, 64px)
+            }
+
+            100% {
+                transform: translate(96px, 64px)
+            }
+        }
+
+        .mb404_404 .top_wrapper {
+            animation: animation_404_top_2 var(--animation-properties);
+        }
+
+        @keyframes animation_404_top_2 {
+            0% {
+                transform: scale(1, 0.5)
+            }
+
+            48% {
+                transform: scale(1, 0.5);
+            }
+
+            60% {
+                transform: scale(1, 1)
+            }
+
+            100% {
+                transform: scale(1, 1)
+            }
+        }
+    </style>
+
+    <g class="mb404_4" transform="translate(16 16)">
+        <rect class="bottom" width="64" height="32" rx="0" ry="0" transform="translate(64 96)" />
+        <g class="slant_wrapper" transform="translate(64,64) scale(0,0)">
+            <polygon class="slant" points="64,0 64,64 0,64" transform="translate(-64,-64)" />
+        </g>
+        <g class="hz_wrapper_wrapper" transform="translate(128,112)">
+            <g class="hz_wrapper" transform="scale(0.5,1)">
+                <rect class="hz" width="128" height="32" rx="0" ry="0" transform="translate(-128,-16)" />
+            </g>
+        </g>
+        <g class="top_wrapper_wrapper" transform="translate(96,128)">
+            <g class="top_wrapper" transform="scale(1,0.5)">
+                <rect class="top" width="64" height="64" rx="0" ry="0" transform="translate(-32,-64)" />
+            </g>
+        </g>
+    </g>
+
+    <g class="mb404_40">
+        <g class="circle_wrapper" transform="translate(288,144) scale(0.5,0.5)">
+            <circle class="circle" r="64" transform="translate(-64,-64)" />
+        </g>
+        <mask id="mb404_40_mask" maskUnits="userSpaceOnUse">
+            <g class="mask_circle_wrapper" transform="translate(288,144) scale(0.5,0.5)">
+                <circle r="64" transform="translate(-64,-64)" fill="#fff" />
+            </g>
+        </mask>
+        <g mask="url(#mb404_40_mask)">
+            <g class="highlight_wrapper" transform="translate(288,144) scale(1,1)">
+                <polygon class="highlight" points="0 128 128 128 128 0" transform="translate(-128,-128)" />
+            </g>
+        </g>
+    </g>
+
+    <g class="mb404_404" transform="translate(304 16)">
+        <rect class="bottom" width="64" height="32" rx="0" ry="0" transform="translate(64 96)" />
+        <g class="slant_wrapper" transform="translate(64,64) scale(0,0)">
+            <polygon class="slant" points="64,0 64,64 0,64" transform="translate(-64,-64)" />
+        </g>
+        <g class="hz_wrapper_wrapper" transform="translate(128,112)">
+            <g class="hz_wrapper" transform="scale(0.5,1)">
+                <rect class="hz" width="128" height="32" rx="0" ry="0" transform="translate(-128,-16)" />
+            </g>
+        </g>
+        <g class="top_wrapper_wrapper" transform="translate(96,128)">
+            <g class="top_wrapper" transform="scale(1,0.5)">
+                <rect class="top" width="64" height="64" rx="0" ry="0" transform="translate(-32,-64)" />
+            </g>
+        </g>
+    </g>
+</svg>

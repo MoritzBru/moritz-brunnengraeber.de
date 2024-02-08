@@ -17,6 +17,7 @@ export default defineConfig({
     plugins: [
       Icons({
         compiler: 'astro',
+        scale: 1,
         customCollections: {
           mb: FileSystemIconLoader('./src/assets/icons'),
         },
