@@ -9,6 +9,5 @@
 - setup Analytics
 - check a11y (Pa11y?, Lighthouse CI?)
 - check Performance (Lighthouse CI?)
-- 404 page
 - email assets
 - custom font ?
