@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import alpinejs from '@astrojs/alpinejs';
+import compressor from 'astro-compressor';
 import Icons from 'unplugin-icons/vite';
 import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 
@@ -12,6 +13,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     alpinejs(),
+    compressor(),
   ],
   vite: {
     plugins: [
