@@ -5,7 +5,6 @@ import Layout from '@/layouts/Layout.astro';
 import ImgMoritz from '@/assets/images/moritz.jpg';
 import ImgCV from '@/assets/images/cv.jpg';
 
-import ImageBlob from '@/components/ImageBlob.astro';
 import DripDivider from '@/components/DripDivider.astro';
 import HeroSection from '@/components/HeroSection.astro';
 import ContactForm from '@/components/ContactForm.astro';
@@ -14,15 +13,11 @@ import ContactForm from '@/components/ContactForm.astro';
 <Layout title="Home">
   <section class="dui-hero min-h-[80vh] bg-base-300">
     <div class="dui-hero-content flex max-w-prose flex-col gap-8 text-center">
-      <ImageBlob
-        imgPath={ImgMoritz}
-        class="drop-shadow-2xl saturate-[.8] motion-reduce:hidden"
-      />
       <Image
         src={ImgMoritz}
         width="512"
         alt="Portrait of Moritz"
-        class="hidden rounded-full shadow-2xl saturate-[.8] motion-reduce:block"
+        class="image-blob rounded-full shadow-xl saturate-[.8]"
       />
       <h1 class="text-4xl font-thin">
         Hi there, I'm <span class="font-bold">Moritz Brunnengräber</span>
@@ -68,3 +63,27 @@ import ContactForm from '@/components/ContactForm.astro';
 
   <DripDivider class="bg-base-200" />
 </Layout>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .image-blob {
+      animation: image-blob-animation 24s ease-in-out infinite;
+    }
+  }
+
+  @keyframes image-blob-animation {
+    0%,
+    100% {
+      border-radius: 53% 47% 33% 67% / 44% 45% 55% 56%;
+    }
+    25% {
+      border-radius: 40% 60% 59% 41% / 37% 60% 40% 63%;
+    }
+    50% {
+      border-radius: 29% 71% 29% 71% / 56% 44% 56% 44%;
+    }
+    75% {
+      border-radius: 56% 44% 25% 75% / 34% 38% 62% 66%;
+    }
+  }
+</style>
