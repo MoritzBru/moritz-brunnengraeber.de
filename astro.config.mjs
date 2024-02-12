@@ -13,7 +13,10 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     alpinejs(),
-    compressor(),
+    compressor({
+      gzip: false,
+      brotli: true,
+    }),
   ],
   vite: {
     plugins: [
