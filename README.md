@@ -5,9 +5,8 @@
 
 ## TODOs
 
-- bring back creepyface
-- setup Analytics
+- change twitter icon from bird to x
+- setup Analytics (Goatcounter ?)
 - check a11y (Pa11y?, Lighthouse CI?)
 - check Performance (Lighthouse CI?)
-- email assets
 - custom font ?
