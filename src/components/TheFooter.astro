@@ -1,5 +1,5 @@
 ---
-import IconTwitter from '~icons/ph/twitter-logo-duotone';
+import IconTwitter from '~icons/ph/x-logo-duotone';
 import IconGithub from '~icons/ph/github-logo-duotone';
 import IconLinkedin from '~icons/ph/linkedin-logo-duotone';
 import IconM from '~icons/mb/m';
@@ -10,20 +10,15 @@ const socialLinks = [
     label: 'twitter',
     url: 'https://twitter.com/moritz_bru',
     Icon: IconTwitter,
-    activeClass: 'hover:text-[#1da1f2] focus:text-[#1da1f2]',
   },
   {
     label: 'github',
     url: 'https://github.com/MoritzBru',
-    Icon: IconGithub,
-    activeClass: 'hover:text-[#000000] focus:text-[#000000]',
-  },
+    Icon: IconGithub,  },
   {
     label: 'linkedin',
     url: 'https://www.linkedin.com/in/moritz-brunnengraeber/',
-    Icon: IconLinkedin,
-    activeClass: 'hover:text-[#0a66c2] focus:text-[#0a66c2]',
-  },
+    Icon: IconLinkedin,  },
 ];
 ---
 
@@ -50,7 +45,7 @@ const socialLinks = [
               href={item.url}
               target="_blank"
               rel="noopener"
-              class:list={['dui-btn dui-btn-circle dui-btn-ghost', item.activeClass]}
+              class="dui-btn dui-btn-circle dui-btn-ghost"
               title={item.label}
             >
               <span class="sr-only">{item.label}</span>
