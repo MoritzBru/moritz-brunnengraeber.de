@@ -17,11 +17,11 @@ import ContactForm from '@/components/ContactForm.astro';
         src={ImgMoritz}
         width="512"
         alt="Portrait of Moritz"
-        class="image-blob rounded-full shadow-xl saturate-[.8]"
+        class="rounded-full shadow-xl saturate-[.8] motion-safe:animate-[image-blob_20s_ease-in-out_infinite]"
         loading="eager"
       />
       <h1 class="text-4xl font-thin">
-        Hi there, I'm <span class="font-bold">Moritz Brunnengräber</span>
+        Hi there, I'm <span class="font-black bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-primary to-secondary motion-safe:text-transparent bg-clip-text motion-safe:animate-[bg-move_8s_linear_infinite_alternate]">Moritz Brunnengräber</span>
       </h1>
     </div>
   </section>
@@ -66,13 +66,18 @@ import ContactForm from '@/components/ContactForm.astro';
 </Layout>
 
 <style>
-  @media (prefers-reduced-motion: no-preference) {
-    .image-blob {
-      animation: image-blob-animation 24s ease-in-out infinite;
+  @keyframes bg-move {
+    0% {
+      background-size: 300% 300%;
+      background-position: 0% 0%;
+    }
+    100% {
+      background-size: 300% 300%;
+      background-position: 100% 100%;
     }
   }
 
-  @keyframes image-blob-animation {
+  @keyframes image-blob {
     0%,
     100% {
       border-radius: 53% 47% 33% 67% / 44% 45% 55% 56%;
