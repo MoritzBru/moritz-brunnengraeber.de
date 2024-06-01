@@ -21,8 +21,19 @@ import ContactForm from '@/components/ContactForm.astro';
         loading="eager"
       />
       <h1 class="text-4xl font-thin">
-        Hi there, I'm <span class="font-black bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-primary to-secondary motion-safe:text-transparent bg-clip-text motion-safe:animate-[bg-move_8s_linear_infinite_alternate]">Moritz Brunnengräber</span>
+        Hi there, my name is<br>
+        <span
+          class="bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-primary to-secondary bg-clip-text font-black motion-safe:animate-[bg-move_8s_linear_infinite_alternate] motion-safe:text-transparent"
+        >
+          Moritz Brunnengräber
+        </span>
       </h1>
+      <p class="text-2xl font-light">
+        Among many other things, I am a<br>
+        <span
+          class="font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text typed-caret text-transparent typed-caret-color-[color:oklch(var(--s))] typed-[frontend_developer;drone_pilot;pocket_tailor;dog_dad]"
+        />
+      </p>
     </div>
   </section>
 
@@ -68,11 +79,11 @@ import ContactForm from '@/components/ContactForm.astro';
 <style>
   @keyframes bg-move {
     0% {
-      background-size: 300% 300%;
+      background-size: 200% 200%;
       background-position: 0% 0%;
     }
     100% {
-      background-size: 300% 300%;
+      background-size: 200% 200%;
       background-position: 100% 100%;
     }
   }

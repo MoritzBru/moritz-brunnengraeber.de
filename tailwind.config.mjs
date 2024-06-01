@@ -1,3 +1,7 @@
+import typography from '@tailwindcss/typography';
+import daisyui from 'daisyui';
+import typed from 'tailwind-plugin-typed';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -20,7 +24,14 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [
+    typography(),
+    daisyui,
+    typed({
+      pauseAfterDeletionDuration: 1,
+      pauseAfterWordDuration: 1,
+    })
+  ],
   darkMode: ['class', '[data-theme="dark"]'],
   daisyui: {
     themes: [
