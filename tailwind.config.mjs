@@ -30,7 +30,7 @@ export default {
     typed({
       pauseAfterDeletionDuration: 1,
       pauseAfterWordDuration: 1,
-    })
+    }),
   ],
   darkMode: ['class', '[data-theme="dark"]'],
   daisyui: {
