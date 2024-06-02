@@ -6,6 +6,11 @@
       --color-3: oklch(var(--a));
       --animation-properties: 2500ms ease-in-out infinite alternate;
     }
+    @media (prefers-reduced-motion: reduce) {
+      :root {
+        --animation-properties: 2500ms ease-in-out 1 forwards;
+      }
+    }
     .bottom,
     .slant {
       fill: var(--color-3);
