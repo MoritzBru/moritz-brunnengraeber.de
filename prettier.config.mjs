@@ -1,15 +1,7 @@
 /** @type {import("prettier").Config} */
 export default {
   plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
-  overrides: [
-    {
-      files: '*.astro',
-      options: {
-        parser: 'astro',
-      },
-    },
-  ],
-  printWidth: 100,
+  printWidth: 120,
   tabWidth: 2,
   useTabs: false,
   semi: true,
@@ -22,4 +14,20 @@ export default {
   proseWrap: 'preserve',
   htmlWhitespaceSensitivity: 'css',
   singleAttributePerLine: true,
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+    {
+      files: '*.svg',
+      options: {
+        parser: 'html',
+        printWidth: 999,
+        singleAttributePerLine: false,
+      },
+    },
+  ],
 };
