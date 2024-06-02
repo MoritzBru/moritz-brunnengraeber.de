@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="448" height="160" viewBox="0 0 448 160">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 160" class="h-auto w-full">
     <style>
         :root {
-            --color-1: #3f51b5;
-            --color-2: #a6adbb;
-            --color-3: #1a237e;
+            --color-1: oklch(var(--p));
+            --color-2: oklch(var(--nc));
+            --color-3: oklch(var(--a));
             --animation-properties: 2500ms ease-in-out infinite alternate;
         }
 

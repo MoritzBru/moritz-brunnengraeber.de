@@ -1,10 +1,5 @@
 ---
-import IconUser from '~icons/ph/user-duotone';
-import IconMail from '~icons/ph/envelope-duotone';
-import IconMessage from '~icons/ph/chat-dots-duotone';
-import IconSuccess from '~icons/line-md/confirm-circle-twotone';
-import IconAlert from '~icons/line-md/alert-twotone';
-import IconLoading from '~icons/svg-spinners/ring-resize';
+import { Icon } from 'astro-icon/components';
 ---
 
 <form
@@ -53,7 +48,10 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
         for="form-name"
         class="flex items-center gap-1"
       >
-        <IconUser aria-hidden="true" />
+        <Icon
+          name="ph:user-duotone"
+          aria-hidden="true"
+        />
         Your Name
       </label>
     </div>
@@ -73,7 +71,10 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
         for="form-email"
         class="flex items-center gap-1"
       >
-        <IconMail aria-hidden="true" />
+        <Icon
+          name="ph:envelope-duotone"
+          aria-hidden="true"
+        />
         Your E-Mail
       </label>
     </div>
@@ -92,7 +93,10 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
         for="form-message"
         class="flex items-center gap-1"
       >
-        <IconMessage aria-hidden="true" />
+        <Icon
+          name="ph:chat-dots-duotone"
+          aria-hidden="true"
+        />
         Your Message
       </label>
     </div>
@@ -129,11 +133,12 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
       class="dui-btn dui-btn-primary"
       x-bind:disabled="isBusy"
     >
-      <IconLoading
+      <Icon
+        name="svg-spinners:ring-resize"
+        aria-hidden="true"
         class="size-6"
         x-cloak
         x-show="isBusy"
-        x-tansition
       />
       Send
     </button>
@@ -151,7 +156,11 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
     x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 -translate-y-4"
   >
-    <IconSuccess class="size-8 text-success" />
+    <Icon
+      name="ph:check-circle-duotone"
+      class="size-8 text-success"
+      aria-hidden="true"
+    />
     <p>The form was submitted successfully. Thank you!</p>
   </div>
 
@@ -167,7 +176,11 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
     x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 -translate-y-4"
   >
-    <IconAlert class="size-8 text-error" />
+    <Icon
+      name="ph:warning-duotone"
+      class="size-8 text-error"
+      aria-hidden="true"
+    />
     <div>
       <p>There was a problem while submitting the form.</p>
       <p>Please try again later or reach me via the other platforms in the footer.</p>
@@ -213,10 +226,8 @@ import IconLoading from '~icons/svg-spinners/ring-resize';
         const result = await response.json();
 
         if (result.success) {
+          form.reset();
           this.isSubmitSuccess = true;
-          form
-            .querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[name]')
-            .forEach((el) => (el.value = ''));
         } else {
           this.isSubmitError = true;
         }

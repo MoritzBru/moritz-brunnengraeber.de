@@ -2,8 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import alpinejs from '@astrojs/alpinejs';
 import compressor from 'astro-compressor';
-import Icons from 'unplugin-icons/vite';
-import { FileSystemIconLoader } from 'unplugin-icons/loaders';
+import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,16 +16,12 @@ export default defineConfig({
       gzip: false,
       brotli: true,
     }),
+    icon({
+      iconDir: 'src/assets/icons',
+      include: {
+        'svg-spinner': ['ring-resize'],
+        ph: ['*'],
+      },
+    }),
   ],
-  vite: {
-    plugins: [
-      Icons({
-        compiler: 'astro',
-        scale: 1,
-        customCollections: {
-          mb: FileSystemIconLoader('./src/assets/icons'),
-        },
-      }),
-    ],
-  },
 });

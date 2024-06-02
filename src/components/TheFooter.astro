@@ -1,25 +1,21 @@
 ---
-import IconTwitter from '~icons/ph/x-logo-duotone';
-import IconGithub from '~icons/ph/github-logo-duotone';
-import IconLinkedin from '~icons/ph/linkedin-logo-duotone';
-import IconM from '~icons/mb/m';
-import IconB from '~icons/mb/b';
+import { Icon } from 'astro-icon/components';
 
 const socialLinks = [
   {
     label: 'twitter',
     url: 'https://twitter.com/moritz_bru',
-    Icon: IconTwitter,
+    icon: 'ph:x-logo-duotone',
   },
   {
     label: 'github',
     url: 'https://github.com/MoritzBru',
-    Icon: IconGithub,
+    icon: 'ph:github-logo-duotone',
   },
   {
     label: 'linkedin',
     url: 'https://www.linkedin.com/in/moritz-brunnengraeber/',
-    Icon: IconLinkedin,
+    icon: 'ph:linkedin-logo-duotone',
   },
 ];
 ---
@@ -28,7 +24,16 @@ const socialLinks = [
   <div class="container flex flex-col items-center justify-around gap-8 sm:flex-row">
     <aside class="gap-px text-lg">
       <div class="mb-4 flex gap-1">
-        <IconM class="size-8" /><IconB class="size-8" />
+        <Icon
+          name="m"
+          class="size-8"
+          aria-hidden="true"
+        />
+        <Icon
+          name="b"
+          class="size-8"
+          aria-hidden="true"
+        />
       </div>
       <p>Moritz Brunnengräber</p>
       <p>2017 - {new Date().getFullYear()}</p>
@@ -50,10 +55,10 @@ const socialLinks = [
               title={item.label}
             >
               <span class="sr-only">{item.label}</span>
-              <item.Icon
-                is:raw
-                aria-hidden="true"
+              <Icon
+                name={item.icon}
                 class="size-8"
+                aria-hidden="true"
               />
             </a>
           </li>

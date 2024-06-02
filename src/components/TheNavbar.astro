@@ -1,8 +1,5 @@
 ---
-import IconMoon from '~icons/ph/moon-stars-duotone';
-import IconSun from '~icons/ph/sun-duotone';
-import IconM from '~icons/mb/m';
-import IconB from '~icons/mb/b';
+import { Icon } from 'astro-icon/components';
 ---
 
 <nav
@@ -14,11 +11,13 @@ import IconB from '~icons/mb/b';
       href="/"
       aria-label="Moritz Brunnengräber Home"
     >
-      <IconM
+      <Icon
+        name="m"
         class="size-10"
         aria-hidden="true"
       />
-      <IconB
+      <Icon
+        name="b"
         class="size-10"
         aria-hidden="true"
       />
@@ -37,13 +36,15 @@ import IconB from '~icons/mb/b';
       x-on:click="transitionTheme"
     >
       <span class="sr-only">Toggle Theme</span>
-      <IconMoon
-        aria-hidden="true"
+      <Icon
+        name="ph:moon-stars-duotone"
         class="dui-swap-off size-10"
-      />
-      <IconSun
         aria-hidden="true"
+      />
+      <Icon
+        name="ph:sun-duotone"
         class="dui-swap-on size-10"
+        aria-hidden="true"
       />
     </button>
   </div>
