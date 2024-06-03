@@ -160,6 +160,35 @@ const description = 'Get to know me! I am a web developer who loves technology.'
         }
       }
     </style>
+
+    <script>
+      import { count } from 'diet-goat';
+
+      const endpoint = 'https://moritzbru.goatcounter.com/count';
+
+      count(endpoint);
+
+      document.querySelector('a#cv-link')?.addEventListener('click', () => {
+        count(endpoint, {
+          p: 'cv opened',
+          e: true,
+        });
+      });
+
+      document.querySelector('form#contact-form')?.addEventListener('change', () => {
+        count(endpoint, {
+          p: 'contact form interacted',
+          e: true,
+        });
+      });
+
+      document.querySelector('form#contact-form')?.addEventListener('submit', () => {
+        count(endpoint, {
+          p: 'contact form submitted',
+          e: true,
+        });
+      });
+    </script>
   </head>
 
   <body>
